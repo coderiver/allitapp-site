@@ -44,8 +44,18 @@
 				+g(#ae653e, #f1dc9d)
 	&.info
 		+g(#d4ecf0, #ebf3f4)
-	.btn
-		display: none
+		.section__in
+			padding-bottom: 20px
+			vertical-align: top
+			z-index: auto
+		.skew
+			&:after
+				top: 90%
+				width: 100%
+				transform: skewY(3deg)
+				box-shadow: 0 0 80px 5px rgba(0,0,0,0.2)
+				z-index: 2
+				+gh(#9dc6d4, #aacdda)
 	+r(1024)
 		.model
 			margin: 0 auto
@@ -87,9 +97,6 @@
 					top: 25%
 					left: 0
 					transform: skewX(-65deg)
-		.btn
-			display: block
-			margin: 65px auto
 	+r(830)
 		&.ads
 			.skew
@@ -106,6 +113,10 @@
 			.skew
 				&:after
 					top: 300px
+		&.info
+			.skew
+				&:after
+					box-shadow: none
 
 // inner centered block
 .inner
@@ -114,6 +125,12 @@
 	margin: 0 auto
 	padding: 0 15px
 	+clr
+	.btn
+		display: none
+	+r(1024)
+		.btn
+			display: block
+			margin: 65px auto
 
 .skew
 	position: absolute
@@ -322,10 +339,12 @@
 
 // news
 .news
+	position: relative
 	max-width: 800px
 	margin: 0 auto
 	font-size: 16px
 	color: #dc6c7a
+	z-index: 2
 	.h2
 		margin-bottom: 50px
 	&__bl
@@ -350,12 +369,16 @@
 	&__day
 		font-size: 36px
 		line-height: 1
-	&__img
+	&__gal
 		margin: 26px -5px 0
 		+clr
+	&__img
+		display: block
+		max-width: 90px
+		float: left
+		margin: 0 5px
 		img
-			float: left
-			margin: 0 5px
+			width: 100%
 	&-ico
 		position: absolute
 		top: 5px

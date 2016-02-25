@@ -19,4 +19,12 @@ $(document).ready(function() {
 		$(this).toggleClass('is-arrow').parent().find('.js-content').slideToggle();
 	});
 
+	$('.js-fancybox').fancybox({
+		helpers: {
+			overlay: {
+				locked: false
+			}
+		}
+	});
+
 });
