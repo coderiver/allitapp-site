@@ -29,9 +29,9 @@ html { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .icon-fb:before { content: ""; }
 
-.icon-tw:before { content: ""; }
-
 .icon-linkedin:before { content: ""; }
+
+.icon-tw:before { content: ""; }
 
 @font-face { font-family: campton-book; src: url("fonts/campton-book.eot"); src: url("fonts/campton-book.eot?#iefix") format("embedded-opentype"), url("fonts/campton-book.woff2") format("woff2"), url("fonts/campton-book.woff") format("woff"), url("fonts/campton-book.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: campton-light; src: url("fonts/campton-light.eot"); src: url("fonts/campton-light.eot?#iefix") format("embedded-opentype"), url("fonts/campton-light.woff2") format("woff2"), url("fonts/campton-light.woff") format("woff"), url("fonts/campton-light.ttf") format("truetype"); font-weight: normal; font-style: normal; }
