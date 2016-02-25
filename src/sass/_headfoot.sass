@@ -1,0 +1,118 @@
+// header
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 10
+	&.is-ads
+		.menu-ico
+			&:before,
+			&:after
+				background: #257749
+			span
+				background: #257749
+
+
+// footer
+.footer
+	position: fixed
+	bottom: 0
+	left: 0
+	right: 0
+	margin-bottom: 25px
+	padding: 0 30px
+	z-index: 10
+	&.is-ads
+		.footer__bl,
+		.footer__mail,
+		.footer__icons
+			color: #257749
+		.footer__icons
+			&:hover
+				color: darken(#257749, 10%)
+		.btn
+			border-color: #257749
+			color: #257749
+			&:before
+				background: #257749
+			&:hover
+				color: #FFF
+			i
+				+s(arr-green)
+				&:before
+					+s(arr-white)
+	&__in
+		display: table
+		width: 100%
+		border-collapse: collapse
+		table-layout: fixed
+	&__bl
+		display: table-cell
+		font-size: 14px
+		color: #c4c3ec
+		vertical-align: middle
+		+tr(color 0.3s ease)
+		&.is-right
+			text-align: right
+			font-size: 0
+		&.is-center
+			text-align: center
+	&__address
+		+cl
+	&__mail
+		display: inline-block
+		margin-right: 27px
+		font-size: 14px
+		color: #c4c3ec
+		vertical-align: middle
+		+cl
+		+tr(color 0.3s)
+		&:hover
+			text-decoration: underline
+	&__social
+		display: inline-block
+		margin: 0 -15px
+		vertical-align: middle
+	&__icons
+		padding: 0 15px
+		font-size: 16px
+		color: #c4c3ec
+		vertical-align: middle
+		+tr(color 0.3s)
+		&:hover
+			color: darken(#c4c3ec, 10%)
+	.icon-tw
+		font-size: 14px
+	+r(850)
+		&__mail
+			display: block
+			margin: 0 0 10px 0
+			padding-right: 0
+	+r1
+		position: static
+		&__in,
+		&__bl
+			display: block
+			&.is-right
+				text-align: left
+		&__bl
+			font-size: 16px
+		&__address
+			margin-bottom: 46px
+		&__mail
+			margin-bottom: 65px
+		&__social
+			display: table
+			width: 100%
+			margin: 0
+			table-layout: fixed
+		&__icons
+			display: table-cell
+			padding: 0
+			&.is-center
+				text-align: center
+			&:last-child
+				text-align: right
+		.btn
+			display: none

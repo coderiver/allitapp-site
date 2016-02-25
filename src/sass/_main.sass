@@ -1,1 +1,293 @@
-// Normally mainpage styles
+
+
+.section
+	position: relative
+	display: table
+	width: 100%
+	height: 100%
+	&__in
+		position: relative
+		display: table-cell
+		padding: 100px 0
+		vertical-align: middle
+		z-index: 1
+	&.main
+		background-color: #25345c
+		background-image: linear-gradient(#25345c, #314477 50%, #324577 80%)
+	&.ads
+		+gh(#f8f1f0, #ecd3cc)
+		.skew
+			&:after
+				left: 50%
+				width: 100%
+				background-image: linear-gradient(#7abdb8, #7dbfac 50%, #95cca9 80%)
+				transform: skewX(-38deg)
+	&.affiliate
+		+gh(#c54a5f, #f3a998)
+		.inner
+			position: static
+		.skew
+			&:after
+				//left: 196px
+				left: 13%
+				width: 200%
+				transform: skewX(-63deg)
+				+gh(#ebf5f3, #b8dfd8)
+		.model
+			top: 67px
+			transform: translateY(0)
+	.btn
+		display: none
+	+r(1024)
+		&.ads
+			.model
+				max-width: 585px
+				margin: 0 auto
+				&__mobile
+					display: block
+					height: 577px
+					background-image: url(../img/ads-circle.png)
+					background-repeat: no-repeat
+					+cover
+			.skew
+				&:after
+					width: 200%
+					left: 70%
+		&.affiliate
+			.model
+				max-width: 303px
+				margin: 0 auto
+				padding-right: 20px
+				&__mobile
+					display: block
+					height: 630px
+					background-image: url(../img/affiliate-cube.png)
+					background-repeat: no-repeat
+					+cover
+			.skew
+				&:after
+					width: 3000px
+					left: 0
+					transform: skewX(65deg)
+		.btn
+			display: block
+			margin: 65px auto
+	+r(830)
+		&.ads
+			.skew
+				top: 50%
+				&:after
+					width: 500%
+					left: 45%
+					transform: skewX(-55deg)
+		&.affiliate
+			.skew
+				&:after
+					left: -300px
+
+.inner
+	position: relative
+	max-width: 1300px
+	margin: 0 auto
+	padding: 0 15px
+	+clr
+
+.skew
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: hidden
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		height: 100%
+
+// menu
+.menu
+	+clr
+
+.menu-ico
+	float: right
+	padding: 40px 28px 0 0
+	border-radius: 50%
+	&:before,
+	&:after
+		content: ""
+		display: inline-block
+		margin: 0 2px
+		width: 6px
+		height: 6px
+		background: #F3F1ED
+		border-radius: 50%
+		vertical-align: middle
+		+tr(background 0.3s)
+	span
+		display: inline-block
+		width: 6px
+		height: 6px
+		margin: 0 2px
+		background: #F3F1ED
+		border-radius: 50%
+		vertical-align: middle
+		+tr(background 0.3s)
+
+.main
+	&__bl
+		position: absolute
+		&.is-right
+			top: 135px
+			right: 0
+			width: 260px
+			height: 297px
+			background: url(../img/main-bl-right.jpg) no-repeat
+		&.is-left
+			left: 0
+			bottom: 0
+			width: 239px
+			height: 422px
+			background: url(../img/main-bl-left.jpg) no-repeat
+	+r(830)
+		&__bl
+			display: none
+
+.logo
+	position: relative
+	display: inline-block
+	width: 100%
+	vertical-align: middle
+	text-align: center
+	font-size: 36px
+	color: #f3f1ed
+	&__main
+		position: relative
+		max-width: 400px
+		height: 265px
+		margin: 0 auto 14px
+		+vertical
+	&__sq
+		position: absolute
+	&-blue,
+	&-red
+		top: 50%
+		width: 182px
+		height: 182px
+		margin-top: -91px
+	&-blue
+		left: 0
+		background-image: url(../img/svg-bg/logo-blue.svg)
+		background-repeat: no-repeat
+	&-violet
+		top: 50%
+		left: 17%
+		width: 172px
+		height: 172px
+		margin-top: -86px
+		background-image: url(../img/svg-bg/logo-violet.svg)
+		background-repeat: no-repeat
+	&-green
+		top: 50%
+		left: 22%
+		width: 265px
+		height: 265px
+		margin-top: -132.5px
+		background-image: url(../img/svg-bg/logo-green.svg)
+		background-repeat: no-repeat
+	&-red
+		right: 0
+		background-image: url(../img/svg-bg/logo-red.svg)
+	&__name
+		position: relative
+		display: inline-block
+		width: 303px
+		height: 82px
+		background-image: url(../img/svg-bg/logo-text.svg)
+		background-repeat: no-repeat
+		background-size: 303px 82px
+		line-height: 1
+		vertical-align: middle
+	+r(530)
+		font-size: 24px
+		&__main
+			max-width: 268px
+			height: 174px
+		&-blue,
+		&-red
+			width: 119px
+			height: 119px
+			margin-top: -59.5px
+			background-size: contain
+		&-violet
+			width: 113px
+			height: 113px
+			margin-top: -56.5px
+			background-size: contain
+		&-green
+			width: 174px
+			height: 174px
+			margin-top: -87px
+			background-size: contain
+		&__name
+			width: 202px
+			height: 55px
+			background-size: contain
+
+.text
+	position: relative
+	max-width: 475px
+	padding-bottom: 70px
+	font-size: 16px
+	color: #DC6C7A
+	z-index: 1
+	&.is-right
+		float: right
+		max-width: 475px
+	&__subttl
+		max-width: 375px
+		margin-bottom: 68px
+		font-size: 24px
+		+cm
+	&__bl
+		p
+			margin-bottom: 33px
+	+r(1440)
+		max-width: 350px
+		&.is-right
+			padding-bottom: 0
+	+r(1200)
+		&.is-right
+			max-width: 350px
+	+r(1024)
+		margin: 0 auto
+		max-width: 475px
+		padding-bottom: 0
+		&.is-right
+			float: none
+			max-width: 475px
+
+.model
+	position: absolute
+	top: 50%
+	right: 15px
+	transform: translateY(-50%)
+	&.is-left
+		left: 5vw
+		padding-left: 0
+	img
+		display: block
+		max-width: 100%
+	&__mobile
+		display: none
+		margin: 0 -15px
+	+r(1200)
+		padding-left: 365px
+		&.is-left
+			padding-right: 350px
+	+r(1024)
+		position: static
+		padding-left: 0
+		transform: translateY(0)
+		img
+			display: none
