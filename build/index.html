@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="theme-color" content="#fff">
-	<link rel="stylesheet" media="all" href="css/fullpage.min.css" >
 	<link rel="stylesheet" media="all" href="css/style.css" >
 	<script src="js/app.js"></script>
 </head>
@@ -14,10 +13,30 @@
 <!-- BEGIN  out-->
 <div class="out">
 	<div class="header js-header">
-		<div class="menu">
-			<a href="#" class="menu-ico"><span></span></a>
+		<div class="header__in">
+			<a href="#" class="logo is-fixed">
+				<div class="logo__main">
+					<div class="logo__sq logo-red"></div>
+					<div class="logo__sq logo-green"></div>
+					<div class="logo__sq logo-violet"></div>
+					<div class="logo__sq logo-blue"></div>
+					<p class="logo__name"></p>
+				</div>
+			</a>
+			<a href="#" class="menu-ico js-show-menu"><span></span></a>
 		</div>
 	</div>
+	<div class="menu js-menu">
+		<a href="#" class="menu__close js-close-menu"><i class="close-ico"></i></a>
+		<ul class="menu__list">
+			<li><a href="#" class="menu__option menu__option-1">Advertisers</a></li>
+			<li><a href="#" class="menu__option menu__option-2">Affiliates</a></li>
+			<li><a href="#" class="menu__option menu__option-3">Company</a></li>
+			<li><a href="#" class="menu__option menu__option-4">News</a></li>
+			<li><a href="#" class="menu__option menu__option-5">About us</a></li>
+		</ul>
+	</div>
+	
 	<div class="section main">
 		<div class="section__in">
 			<div class="main__bl is-left"></div>
@@ -77,7 +96,7 @@
 		</div>
 		<div class="skew"></div>
 	</div>
-	<div class="section ads">
+	<div class="section company">
 		<div class="section__in">
 			<div class="inner">
 				<div class="text">
@@ -99,7 +118,60 @@
 		<div class="skew"></div>
 	</div>
 	
-	
+	<div class="section info">
+		<div class="section__in">
+			<div class="inner">
+				<div class="news">
+					<h2 class="h2">News</h2>
+					<div class="news__bl">
+						<div class="news__date">
+							<p class="news__day">21</p>
+							<p>November</p>
+						</div>
+						<div class="news__text">
+							<p class="news__subttl">Platform launch</p>
+							<div class="news__content js-content">
+								<p>Raised from the ashes of an old project, Stump Valley is a funny old place in the countryside by the forest, where deers and boars run free in the street, that’s the place where the most of S.V. music was made.!</p>
+								<div class="news__img">
+									<img src="img/news1.jpg" alt="">
+									<img src="img/news2.jpg" alt="">
+									<img src="img/news3.jpg" alt="">
+								</div>
+							</div>
+						</div>
+						<a href="#" class="news-ico js-toggle-news"><span></span></a>
+					</div>
+					<div class="news__bl">
+						<div class="news__date">
+							<p class="news__day">23</p>
+							<p>October</p>
+						</div>
+						<div class="news__text">
+							<p class="news__subttl">Testing mode</p>
+							<div class="news__content js-content">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo incidunt qui laborum cum optio aliquam quas quisquam quidem quaerat nesciunt vero unde, eligendi, adipisci ut recusandae odio error. Impedit, debitis.</p>
+							</div>
+						</div>
+						<a href="#" class="news-ico js-toggle-news"><span></span></a>
+					</div>
+					<div class="news__bl">
+						<div class="news__date">
+							<p class="news__day">9</p>
+							<p>October</p>
+						</div>
+						<div class="news__text">
+							<p class="news__subttl">Allitapp team visited Casual Content.</p>
+							<div class="news__content js-content">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum deserunt soluta nostrum eum rem vel vero laudantium nobis adipisci aut, alias quisquam, assumenda eius neque tempora hic. Dolores, animi consectetur.</p>
+							</div>
+						</div>
+						<a href="#" class="news-ico js-toggle-news"><span></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="skew"></div>
+	</div>
 	<div class="footer js-footer">
 		<div class="footer__in">
 			<div class="footer__bl">
