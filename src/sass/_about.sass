@@ -1,0 +1,68 @@
+.about
+	+gh(#eeefff, #fafaff)
+	&__btns
+		font-size: 0
+		text-align: center
+		padding: 38px 0 65px 
+		.btn, .btn-next
+			display: none
+			+r(1024)
+				margin: 0 15px
+				display: inline-block
+				vertical-align: middle
+	.model
+		+r(1024)
+			max-width: 461px
+			margin: 0 auto 
+		&__mobile
+			+r(1024)
+				max-width: 461px
+				height: 402px
+				background-image: url(../img/about-mobile.png)
+				+cover
+				display: block
+	.skew
+		&:after
+			top: 59%
+			left: 0
+			width: 100%
+			background: #ffcda0 
+			transform: skewY(-7deg)
+
+.text
+	&_about
+		max-width: 540px
+		min-height: 580px
+
+
+.btn-next
+	color: #dc6c7a
+	font-size: 12px
+	line-height: 1
+	display: inline-block
+	vertical-align: top
+	text-transform: uppercase
+	position: relative
+	padding-right: 14px
+	i
+		+s(next-red)
+		position: absolute
+		top: 1px
+		right: 0
+
+.team
+	&__row
+		text-align: center
+		font-size: 0
+		margin: 0 -35px 
+
+.member
+	display: inline-block
+	vertical-align: top
+	width: 33.33%
+	padding: 0 5.225%
+	&__img
+		width: 100%
+		height: 0
+		padding-bottom: 137% 
+		+cover

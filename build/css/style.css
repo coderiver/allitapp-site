@@ -49,15 +49,15 @@ a { text-decoration: none; }
 .btn.is-red { border-color: #DC6C7A; color: #DC6C7A; }
 .btn.is-red:before { background: #DC6C7A; }
 .btn.is-red:hover { color: #fff; }
-.btn.is-red i { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -26px -18px; }
-.btn.is-red i:before { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -39px -18px; }
+.btn.is-red i { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -40px -18px; }
+.btn.is-red i:before { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: 0px -31px; }
 .btn:before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 0; background: #c6c5ee; -webkit-transition: width 0.2s; transition: width 0.2s; }
 .btn:hover { color: #000; }
 .btn:hover:before { width: 100%; }
 .btn:hover i:before { opacity: 1; }
 .btn span { position: relative; display: inline-block; z-index: 1; }
-.btn i { position: relative; display: inline-block; margin-left: 5px; background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: 0px -31px; }
-.btn i:before { content: ""; position: absolute; top: 0; left: 0; opacity: 0; -webkit-transition: opacity 0.3s; transition: opacity 0.3s; background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -13px -18px; }
+.btn i { position: relative; display: inline-block; margin-left: 5px; background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -13px -31px; }
+.btn i:before { content: ""; position: absolute; top: 0; left: 0; opacity: 0; -webkit-transition: opacity 0.3s; transition: opacity 0.3s; background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -27px -18px; }
 
 .section { position: relative; display: table; width: 100%; height: 100%; }
 .section__in { position: relative; display: table-cell; padding: 100px 0; vertical-align: middle; z-index: 1; }
@@ -108,6 +108,21 @@ a { text-decoration: none; }
 .model img { display: block; max-width: 100%; }
 .model__mobile { display: none; margin: 0 -15px; }
 
+.about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
+.about__btns { font-size: 0; text-align: center; padding: 38px 0 65px; }
+.about__btns .btn, .about__btns .btn-next { display: none; }
+.about .skew:after { top: 59%; left: 0; width: 100%; background: #ffcda0; -webkit-transform: skewY(-7deg); -ms-transform: skewY(-7deg); transform: skewY(-7deg); }
+
+.text_about { max-width: 540px; min-height: 580px; }
+
+.btn-next { color: #dc6c7a; font-size: 12px; line-height: 1; display: inline-block; vertical-align: top; text-transform: uppercase; position: relative; padding-right: 14px; }
+.btn-next i { background-image: url("../img/icons.png"); width: 10px; height: 9px; background-position: 0px -18px; position: absolute; top: 1px; right: 0; }
+
+.team__row { text-align: center; font-size: 0; margin: 0 -35px; }
+
+.member { display: inline-block; vertical-align: top; width: 33.33%; padding: 0 5.225%; }
+.member__img { width: 100%; height: 0; padding-bottom: 137%; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+
 .header { position: fixed; top: 0; left: 0; right: 0; z-index: 10; }
 .header.is-ads .menu-ico:before, .header.is-ads .menu-ico:after { background: #257749; }
 .header.is-ads .menu-ico span { background: #257749; }
@@ -118,8 +133,8 @@ a { text-decoration: none; }
 .footer.is-ads .btn { border-color: #257749; color: #257749; }
 .footer.is-ads .btn:before { background: #257749; }
 .footer.is-ads .btn:hover { color: #FFF; }
-.footer.is-ads .btn i { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: 0px -18px; }
-.footer.is-ads .btn i:before { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -39px -18px; }
+.footer.is-ads .btn i { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: -14px -18px; }
+.footer.is-ads .btn i:before { background-image: url("../img/icons.png"); width: 9px; height: 9px; background-position: 0px -31px; }
 .footer__in { display: table; width: 100%; border-collapse: collapse; table-layout: fixed; }
 .footer__bl { display: table-cell; font-size: 14px; color: #c4c3ec; vertical-align: middle; -webkit-transition: color 0.3s ease; transition: color 0.3s ease; }
 .footer__bl.is-right { text-align: right; font-size: 0; }
@@ -164,7 +179,10 @@ a { text-decoration: none; }
  .text{ margin: 0 auto; max-width: 475px; padding-bottom: 0; }
  .text.is-right{ float: none; max-width: 475px; }
  .model{ position: static; padding-left: 0; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
- .model img{ display: none; } }
+ .model img{ display: none; }
+ .about__btns .btn, .about__btns .btn-next{ margin: 0 15px; display: inline-block; vertical-align: middle; }
+ .about .model{ max-width: 461px; margin: 0 auto; }
+ .about .model__mobile{ max-width: 461px; height: 402px; background-image: url(../img/about-mobile.png); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; display: block; } }
 @media only screen and (max-width: 850px){
  .footer__mail{ display: block; margin: 0 0 10px 0; padding-right: 0; } }
 @media only screen and (max-width: 830px){
