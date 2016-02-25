@@ -1,5 +1,4 @@
-
-
+// sections
 .section
 	position: relative
 	display: table
@@ -36,19 +35,31 @@
 		.model
 			top: 67px
 			transform: translateY(0)
+	&.company
+		+gh(#ebf4ff, #dbeaff)
+		.skew
+			&:after
+				left: 50%
+				width: 100%
+				transform: skewX(19deg)
+				+g(#ae653e, #f1dc9d)
+	&.info
+		+g(#d4ecf0, #ebf3f4)
 	.btn
 		display: none
 	+r(1024)
+		.model
+			margin: 0 auto
+			&__mobile
+				display: block
+				background-repeat: no-repeat
+				+cover
 		&.ads
 			.model
 				max-width: 585px
-				margin: 0 auto
 				&__mobile
-					display: block
 					height: 577px
 					background-image: url(../img/ads-circle.png)
-					background-repeat: no-repeat
-					+cover
 			.skew
 				&:after
 					width: 200%
@@ -56,19 +67,27 @@
 		&.affiliate
 			.model
 				max-width: 303px
-				margin: 0 auto
 				padding-right: 20px
 				&__mobile
-					display: block
 					height: 630px
 					background-image: url(../img/affiliate-cube.png)
-					background-repeat: no-repeat
-					+cover
 			.skew
 				&:after
 					width: 3000px
 					left: 0
 					transform: skewX(65deg)
+		&.company
+			.model
+				max-width: 558px
+				&__mobile
+					height: 569px
+					background-image: url(../img/company-pic.png)
+			.skew
+				&:after
+					width: 3000px
+					top: 25%
+					left: 0
+					transform: skewX(-65deg)
 		.btn
 			display: block
 			margin: 65px auto
@@ -84,7 +103,12 @@
 			.skew
 				&:after
 					left: -300px
+		&.company
+			.skew
+				&:after
+					top: 300px
 
+// inner centered block
 .inner
 	position: relative
 	max-width: 1300px
@@ -104,35 +128,6 @@
 		position: absolute
 		top: 0
 		height: 100%
-
-// menu
-.menu
-	+clr
-
-.menu-ico
-	float: right
-	padding: 40px 28px 0 0
-	border-radius: 50%
-	&:before,
-	&:after
-		content: ""
-		display: inline-block
-		margin: 0 2px
-		width: 6px
-		height: 6px
-		background: #F3F1ED
-		border-radius: 50%
-		vertical-align: middle
-		+tr(background 0.3s)
-	span
-		display: inline-block
-		width: 6px
-		height: 6px
-		margin: 0 2px
-		background: #F3F1ED
-		border-radius: 50%
-		vertical-align: middle
-		+tr(background 0.3s)
 
 .main
 	&__bl
@@ -161,6 +156,37 @@
 	text-align: center
 	font-size: 36px
 	color: #f3f1ed
+	&.is-hidden
+		visibility: hidden
+		opacity: 0
+	&.is-fixed
+		float: left
+		display: block
+		width: 103px
+		margin: 20px 0 0 28px
+		.logo__main
+			max-width: 103px
+			height: 66px
+			margin-bottom: 0
+		.logo__sq
+			background-size: contain
+		.logo-blue,
+		.logo-red
+			width: 46px
+			height: 46px
+			margin-top: -23px
+		.logo-violet
+			width: 44px
+			height: 44px
+			margin-top: -22px
+		.logo-green
+			width: 66px
+			height: 66px
+			margin-top: -33px
+		.logo__name
+			width: 77px
+			height: 20px
+			background-size: contain
 	&__main
 		position: relative
 		max-width: 400px
@@ -210,6 +236,8 @@
 		vertical-align: middle
 	+r(530)
 		font-size: 24px
+		&.is-fixed
+			margin-left: 15px
 		&__main
 			max-width: 268px
 			height: 174px
@@ -267,6 +295,7 @@
 			float: none
 			max-width: 475px
 
+// for 3d models
 .model
 	position: absolute
 	top: 50%
@@ -282,7 +311,7 @@
 		display: none
 		margin: 0 -15px
 	+r(1200)
-		padding-left: 365px
+		padding-left: 375px
 		&.is-left
 			padding-right: 350px
 	+r(1024)
@@ -291,3 +320,72 @@
 		transform: translateY(0)
 		img
 			display: none
+
+// news
+.news
+	max-width: 800px
+	margin: 0 auto
+	font-size: 16px
+	color: #dc6c7a
+	.h2
+		margin-bottom: 50px
+	&__bl
+		position: relative
+		margin-bottom: 50px
+		+clr
+	&__subttl
+		font-size: 24px
+		+cm
+	&__content
+		//display: none
+	&__date
+		float: left
+		width: 144px
+		+cm
+	&__text
+		max-width: 520px
+		padding-right: 20px
+		margin-top: 3px
+		overflow: hidden
+	&__content
+		margin-top: 49px
+	&__day
+		font-size: 36px
+		line-height: 1
+	&__img
+		margin: 26px -5px 0
+		+clr
+		img
+			float: left
+			margin: 0 5px
+	&-ico
+		position: absolute
+		top: 5px
+		right: 0
+		width: 14px
+		height: 14px
+		&:hover
+			&:before,
+			&:after
+				background: lighten(#dc6c7a, 10%)
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			top: 50%
+			left: 0
+			width: 100%
+			height: 2px
+			background: #dc6c7a
+		&:before
+			+rotate(45)
+		&:after
+			+rotate(-45)
+	+r(530)
+		&__date
+			float: none
+			margin-bottom: 28px
+		&__text
+			padding: 0
+		&__subttl
+			font-size: 22px

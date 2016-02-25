@@ -1,18 +1,150 @@
 // header
 .header
 	position: fixed
+	min-width: 320px
+	min-height: 100px
 	top: 0
 	left: 0
 	right: 0
 	z-index: 10
+	&__in
+		+clr
 	&.is-ads
 		.menu-ico
 			&:before,
 			&:after
-				background: #257749
+				background: #646aaf
 			span
-				background: #257749
+				background: #646aaf
+	&.is-company
+		.menu-ico
+			&:before,
+			&:after
+				background: #646aaf
+			span
+				background: #646aaf
+	&.is-news
+		.menu-ico
+			&:before,
+			&:after
+				background: #646aaf
+			span
+				background: #646aaf
 
+// menu
+.menu
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-align: right
+	overflow: auto
+	opacity: 0
+	visibility: hidden
+	z-index: 20
+	+tr(0.5s)
+	+gh(#8eccdf, #97cab7)
+	&.is-active
+		opacity: 1
+		visibility: visible
+		.menu__option
+			animation: menu 0.5s forwards
+	&__list
+		overflow: hidden
+		li
+			margin: 30px 0
+	&__option
+		display: inline-block
+		padding: 0 30px
+		font-size: 32px
+		color: #1C4149
+		opacity: 0
+		transform: translateX(100%)
+		+csb
+		&:hover
+			color: lighten(#1C4149 , 10%)
+	&__close
+		display: inline-block
+		&.is-active
+			.close-ico
+				+rotate(0)
+	+r(530)
+		+g(#8eccdf, #97cab7)
+		&__option
+			color: #FFF
+
+@for $i from 1 through 5
+	$value: $i / 5
+	.menu.is-active .menu__option-#{$i}
+		animation-delay: $value + s
+
+@keyframes menu
+	0%
+		opacity: 0
+		transform: translateX(100%)
+	30%
+		opacity: 0.3
+	100%
+		opacity: 1
+		transform: translateX(0)
+
+.menu-ico
+	float: right
+	margin: 40px 28px 0 0
+	border-radius: 50%
+	&:before,
+	&:after
+		content: ""
+		display: inline-block
+		margin: 0 2px
+		width: 6px
+		height: 6px
+		background: #F3F1ED
+		border-radius: 50%
+		vertical-align: middle
+		+tr(background 0.3s)
+	span
+		display: inline-block
+		width: 6px
+		height: 6px
+		margin: 0 2px
+		background: #F3F1ED
+		border-radius: 50%
+		vertical-align: middle
+		+tr(background 0.3s)
+	+r(530)
+		margin-right: 15px
+
+.close-ico
+	position: relative
+	display: inline-block
+	width: 14px
+	height: 14px
+	margin: 35px 20px 0 0
+	+rotate(-90)
+	+tr(0.5s)
+	&:hover
+		&:before,
+		&:after
+			background: lighten(#0f323d, 10%)
+	&:before,
+	&:after
+		content: ""
+		position: absolute
+		top: 50%
+		left: 0
+		width: 100%
+		height: 2px
+		background: #0f323d
+	&:before
+		+rotate(45)
+	&:after
+		+rotate(-45)
+	+r(530)
+		&:before,
+		&:after
+			background: #fff
 
 // footer
 .footer
@@ -40,6 +172,44 @@
 				color: #FFF
 			i
 				+s(arr-green)
+				&:before
+					+s(arr-white)
+	&.is-company
+		.footer__bl,
+		.footer__mail,
+		.footer__icons
+			color: #cb572f
+		.footer__icons
+			&:hover
+				color: darken(#cb572f, 10%)
+		.btn
+			border-color: #cb572f
+			color: #cb572f
+			&:before
+				background: #cb572f
+			&:hover
+				color: #FFF
+			i
+				+s(arr-brown)
+				&:before
+					+s(arr-white)
+	&.is-news
+		.footer__bl,
+		.footer__mail,
+		.footer__icons
+			color: #646aaf
+		.footer__icons
+			&:hover
+				color: lighten(#646aaf, 10%)
+		.btn
+			border-color: #646aaf
+			color: #646aaf
+			&:before
+				background: #646aaf
+			&:hover
+				color: #FFF
+			i
+				+s(arr-blue)
 				&:before
 					+s(arr-white)
 	&__in
