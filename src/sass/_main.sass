@@ -27,10 +27,9 @@
 			position: static
 		.skew
 			&:after
-				//left: 196px
-				left: 13%
+				left: 200px
 				width: 200%
-				transform: skewX(-63deg)
+				transform: skewX(-63.3deg)
 				+gh(#ebf5f3, #b8dfd8)
 		.model
 			top: 67px
@@ -334,21 +333,20 @@
 		margin-bottom: 50px
 		+clr
 	&__subttl
+		margin-bottom: 39px
 		font-size: 24px
 		+cm
 	&__content
-		//display: none
+		display: none
 	&__date
 		float: left
 		width: 144px
 		+cm
 	&__text
 		max-width: 520px
-		padding-right: 20px
+		padding-right: 30px
 		margin-top: 3px
 		overflow: hidden
-	&__content
-		margin-top: 49px
 	&__day
 		font-size: 36px
 		line-height: 1
@@ -365,6 +363,7 @@
 		width: 14px
 		height: 14px
 		&:hover
+			span,
 			&:before,
 			&:after
 				background: lighten(#dc6c7a, 10%)
@@ -381,6 +380,28 @@
 			+rotate(45)
 		&:after
 			+rotate(-45)
+		&.is-arrow
+			&:before,
+			&:after
+				top: 41%
+				width: 70%
+			&:before
+				transform-origin: left bottom
+			&:after
+				transform-origin: right bottom
+				right: 0
+				left: auto
+			span
+				opacity: 1
+		span
+			position: absolute
+			top: 0
+			height: 100%
+			left: 50%
+			width: 2px
+			margin-left: -1px
+			background: #dc6c7a
+			opacity: 0
 	+r(530)
 		&__date
 			float: none
