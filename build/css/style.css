@@ -136,7 +136,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; }
 .news-ico span { position: absolute; top: 0; height: 100%; left: 50%; width: 2px; margin-left: -1px; background: #dc6c7a; opacity: 0; }
 
 .about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
-.about__btns { font-size: 0; text-align: center; padding: 38px 0 65px; }
+.about__btns { font-size: 0; text-align: center; padding: 38px 0 0; }
 .about__btns .btn, .about__btns .btn-next { display: none; }
 .about .skew:after { top: 59%; left: 0; width: 100%; background: #ffcda0; -webkit-transform: skewY(-7deg); -ms-transform: skewY(-7deg); transform: skewY(-7deg); }
 
@@ -145,10 +145,15 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; }
 .btn-next { color: #dc6c7a; font-size: 12px; line-height: 1; display: inline-block; vertical-align: top; text-transform: uppercase; position: relative; padding-right: 14px; }
 .btn-next i { background-image: url("../img/icons.png"); width: 10px; height: 9px; background-position: 0px -18px; position: absolute; top: 1px; right: 0; }
 
+.team { background-color: #ffcda0; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcda0), to(#fff4d1)); background-image: -webkit-linear-gradient(#ffcda0, #fff4d1); background-image: linear-gradient(#ffcda0, #fff4d1); }
+.team .section__in { vertical-align: top; padding-top: 20px; }
 .team__row { text-align: center; font-size: 0; margin: 0 -35px; }
 
-.member { display: inline-block; vertical-align: top; width: 33.33%; padding: 0 5.225%; }
-.member__img { width: 100%; height: 0; padding-bottom: 137%; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+.member { display: inline-block; vertical-align: top; width: 33.33%; padding: 0 5.225%; color: #dc6c7a; text-align: left; }
+.member__img { width: 100%; height: 0; padding-bottom: 137%; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; margin: 15px 0 49px; }
+.member__title { font-size: 30px; line-height: 1; font-family: "campton-medium", Arial, sans-serif; margin-bottom: 2px; }
+.member p, .member li { font-size: 14px; font-family: "campton-light", Arial, sans-serif; line-height: 24px; }
+.member p, .member ul { padding: 0 0 23px; }
 
 .header { position: fixed; min-width: 320px; min-height: 100px; top: 0; left: 0; right: 0; z-index: 10; }
 .header__in { *zoom: 1; }
@@ -249,6 +254,9 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; }
 @media only screen and (max-width: 1440px){
  .text{ max-width: 350px; }
  .text.is-right{ padding-bottom: 0; } }
+@media only screen and (max-width: 1380px){
+ .team__row{ margin: 0; }
+ .member{ padding: 0 4%; } }
 @media only screen and (max-width: 1200px){
  .text.is-right{ max-width: 350px; }
  .model{ padding-left: 375px; }
@@ -270,9 +278,15 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; }
  .text.is-right{ float: none; max-width: 475px; }
  .model{ position: static; padding-left: 0; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
  .model img{ display: none; }
+ .about{ background: #f7f6ff; }
  .about__btns .btn, .about__btns .btn-next{ margin: 0 15px; display: inline-block; vertical-align: middle; }
- .about .model{ max-width: 461px; margin: 0 auto; }
- .about .model__mobile{ max-width: 461px; height: 402px; background-image: url(../img/about-mobile.png); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; display: block; } }
+ .about .skew{ display: none; }
+ .text_about{ min-height: 1px; }
+ .team{ background-color: #f7f6ff; background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f6ff), to(#e8e8ff)); background-image: -webkit-linear-gradient(#f7f6ff, #e8e8ff); background-image: linear-gradient(#f7f6ff, #e8e8ff); }
+ .team__row{ padding-bottom: 70px; }
+ .team .model{ max-width: 461px; margin: 0 auto; }
+ .team .model__mobile{ max-width: 461px; height: 402px; background-image: url(../img/about-mobile.png); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; display: block; }
+ .member{ width: 100%; max-width: 320px; padding: 0 25px; display: block; margin: 0 auto; } }
 @media only screen and (max-width: 830px){
  .section.ads .skew{ top: 50%; }
  .section.ads .skew:after{ width: 500%; left: 45%; -webkit-transform: skewX(-55deg); -ms-transform: skewX(-55deg); transform: skewX(-55deg); }
