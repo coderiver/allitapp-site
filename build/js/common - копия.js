@@ -29,7 +29,23 @@ $(document).ready(function() {
 
 	//scroll
 
-	
+	var lastScrollTop = 0;
+	$('.out').on('scroll', function(){
+		$(window).trigger('scroll');
+	});
+	$(window).scroll(function() {
+		var st = $('.out').scrollTop();
+		$('.out').perfectScrollbar('destroy');
+		if (st > lastScrollTop){
+			console.log('DOWN');
+			// disableScroll();
+		} else {
+			console.log('UP');
+			// enableScroll();
+		}
+		console.log(st)
+		lastScrollTop = st;
+	});
 
 	// $('body').bind('mousewheel', function(e){
  //        if(e.originalEvent.wheelDelta /120 > 0) {
@@ -75,6 +91,7 @@ $(document).ready(function() {
 	// 	window.ontouchmove = null;  
 	// 	document.onkeydown = null;  
 	// }
+	$('.out').perfectScrollbar();
 
 
 });

@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="theme-color" content="#fff">
+	<link rel="stylesheet" media="all" href="css/perfect-scrollbar.min.css" >
 	<link rel="stylesheet" media="all" href="css/fancybox.css" >
 	<link rel="stylesheet" media="all" href="css/style.css" >
 	<script src="js/app.js"></script>
@@ -15,7 +16,7 @@
 <div class="out">
 	<div class="header js-header">
 		<div class="header__in">
-			<a href="#" class="logo is-fixed">
+			<a href="#" class="logo js-small-logo is-hidden is-fixed">
 				<div class="logo__main">
 					<div class="logo__sq logo-red"></div>
 					<div class="logo__sq logo-green"></div>
@@ -38,242 +39,245 @@
 		</ul>
 	</div>
 	
-	<div class="section main">
-		<div class="section__in">
-			<div class="main__bl is-left"></div>
-			<div class="main__bl is-right"></div>
-			<div class="inner">
-				<div class="logo">
-					<div class="logo__main">
-						<div class="logo__sq logo-red"></div>
-						<div class="logo__sq logo-green"></div>
-						<div class="logo__sq logo-violet"></div>
-						<div class="logo__sq logo-blue"></div>
-						<p class="logo__name"></p>
+	<div class="sections">
+		<div class="section main js-main">
+			<div class="section__in">
+				<div class="main__bl is-left js-main-left"></div>
+				<div class="main__bl is-right js-main-right"></div>
+				<div class="inner">
+					<div class="logo">
+						<div class="logo__main">
+							<div class="logo__sq js-red-square logo-red"></div>
+							<div class="logo__sq js-green-square logo-green"><div></div></div>
+							<div class="logo__sq js-violet-square logo-violet"></div>
+							<div class="logo__sq js-blue-square logo-blue"></div>
+							<p class="logo__name js-logo-name"></p>
+						</div>
+						<p class="js-main-text">value each click</p>
 					</div>
-					<p>value each click</p>
-				</div>
-				<a href="#" class="btn"><span>Join us<i></i></span></a>
-			</div>
-		</div>
-	</div>
-	<div class="section ads">
-		<div class="section__in">
-			<div class="inner">
-				<div class="text">
-					<h2 class="h2">Advertisers</h2>
-					<p class="text__subttl">We are offers quality traffic for your campaigns</p>
-					<div class="text__bl">
-						<p>Allitapp put a lot of effort into studying the behaviour of users in different app verticals, learning about the latest tendencies in mobile traffic, implementing the most recent, reliable and convenient technical solutions for quality monitoring and mobile traffic tracking.</p>
-						<p>Quality is also ensured by trusted publishers only. Our services will help to turn your expenses into solid profit.</p>
-						<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
-					</div>
-				</div>
-				<div class="model">
-					<img src="img/ads-pic.png" alt="">
-					<div class="model__mobile"></div>
+					<a href="#" class="btn"><span>Join us<i></i></span></a>
 				</div>
 			</div>
 		</div>
-		<div class="skew"></div>
-	</div>
-	<div class="section affiliate">
-		<div class="section__in">
-			<div class="inner">
-				<div class="text is-right">
-					<h2 class="h2">Affiliates</h2>
-					<p class="text__subttl">Our team is looking for the traffic. Best campaigns and flexible payment terms.</p>
-					<div class="text__bl">
-						<p>We brought best converting and newest offers to our platform. Besides, we offer the highest payouts and flexible payment terms. This is a perfect environment for your business bloom with us.</p>
-						<p>What is the formula of success and high revenue? It’s simple. We find the best application and you place an ad of it. Every day our new great pubs join our platform. Be one of them and grow with us. Join the best.</p>
-						<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
-					</div>
-				</div>
-				<div class="model is-left">
-					<img src="img/affiliate-pic.png" alt="">
-					<div class="model__mobile"></div>
-				</div>
-			</div>
-		</div>
-		<div class="skew"></div>
-	</div>
-	<div class="section company">
-		<div class="section__in">
-			<div class="inner">
-				<div class="text">
-					<h2 class="h2">Company</h2>
-					<p class="text__subttl">We consider our work done</p>
-					<div class="text__bl">
-						<p>Allitapp is a performance based network founded in 2015 in Hong Kong that works on CPI/CPA basis. It grants you access to the most profitable markets for mobile business in the world.</p>
-						<p>The Allitapp team consisting of experienced and ambitious professionals provides you with effective communication and constant online support for you, taking care of the traffic quality, monitoring it 24/7.</p>
-						<p>We consider our work done well seeing your investments return swiftly and bring more and more profit as you engage in cooperation with us.</p>
-						<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
-					</div>
-				</div>
-				<div class="model">
-					<img src="img/company-pic.png" alt="">
-					<div class="model__mobile"></div>
-				</div>
-			</div>
-		</div>
-		<div class="skew"></div>
-	</div>
-	<div class="section about">	
-		<div class="section__in">
-			<div class="inner">
-				<div class="text text_about">
-					<h2 class="h2">About us</h2>
-					<div class="text__bl">
-						<p>Allitapp are a team of young motivated and truly interested in mobile professionals. Every experience we gained is a treasure that we would like to share with you.</p>
-						<p>Allitapp is a best choice for those who is interested in cost turn into profit. Be with us. Join the best.</p>
-						<div class="about__btns">
+		<div class="section ads js-ads">
+			<div class="section__in">
+				<div class="inner">
+					<div class="text">
+						<h2 class="h2 js-title">Advertisers</h2>
+						<p class="text__subttl js-subtitle">We are offers quality traffic for your campaigns</p>
+						<div class="text__bl js-text">
+							<p>Allitapp put a lot of effort into studying the behaviour of users in different app verticals, learning about the latest tendencies in mobile traffic, implementing the most recent, reliable and convenient technical solutions for quality monitoring and mobile traffic tracking.</p>
+							<p>Quality is also ensured by trusted publishers only. Our services will help to turn your expenses into solid profit.</p>
 							<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
-							<a href="#" class="btn-next">show next<i></i></a>
 						</div>
 					</div>
-				</div>
-				<div class="model">
-					<img src="img/about-pic.png" alt="">
+					<div class="model">
+						<img src="img/ads-pic.png" alt="">
+						<div class="model__mobile"></div>
+					</div>
 				</div>
 			</div>
+			<div class="skew"></div>
 		</div>
-		<div class="skew"></div>
-	</div>
-	<div class="section team">	
-		<div class="section__in">
-			<div class="inner">
-				<div class="team__row">
-					<div class="member">
-						<div class="member__top">
-							<h4 class="member__title">Marina Tkalenko</h4>
-							<p>— Founder & CEO</p>
-						</div>
-						<div class="member__img" style="background-image: url(https://placecage.com/309/421);"></div>
-						<div class="member__info">
-							<p>Looking for mobile CPI campaigns worldwide. Feel free to contact me at.</p>
-							<ul>
-								<li>E-mail: nat@allitapp.com</li>
-								<li>Skype: allitapp.adv2</li>
-								<li>Phone: +972533316903</li>
-							</ul>
+		<div class="section affiliate js-affiliate">
+			<div class="section__in">
+				<div class="inner">
+					<div class="text is-right">
+						<h2 class="h2 js-title">Affiliates</h2>
+						<p class="text__subttl js-subtitle">Our team is looking for the traffic. Best campaigns and flexible payment terms.</p>
+						<div class="text__bl js-text">
+							<p>We brought best converting and newest offers to our platform. Besides, we offer the highest payouts and flexible payment terms. This is a perfect environment for your business bloom with us.</p>
+							<p>What is the formula of success and high revenue? It’s simple. We find the best application and you place an ad of it. Every day our new great pubs join our platform. Be one of them and grow with us. Join the best.</p>
+							<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
 						</div>
 					</div>
-					<div class="member">
-						<div class="member__top">
-							<h4 class="member__title">Alyona Savenko</h4>
-							<p>— Head Of Advertiser Development</p>
-						</div>
-						<div class="member__img" style="background-image: url(https://fillmurray.com/309/421);"></div>
-						<div class="member__info">
-							<p>Looking for mobile CPI campaigns worldwide. Feel free to contact me at.</p>
-							<ul>
-								<li>E-mail: nat@allitapp.com</li>
-								<li>Skype: allitapp.adv2</li>
-								<li>Phone: +972533316903</li>
-							</ul>
-						</div>
+					<div class="model is-left">
+						<img src="img/affiliate-pic.png" alt="">
+						<div class="model__mobile"></div>
 					</div>
-					<div class="member">
-						<div class="member__top">
-							<h4 class="member__title">Alex Melnik</h4>
-							<p>— Head Of Publishing Development</p>
-						</div>
-						<div class="member__img" style="background-image: url(https://placecage.com/g/309/421);"></div>
-						<div class="member__info">
-							<p>Looking for mobile CPI campaigns worldwide. Feel free to contact me at.</p>
-							<ul>
-								<li>E-mail: nat@allitapp.com</li>
-								<li>Skype: allitapp.adv2</li>
-								<li>Phone: +972533316903</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="model">
-					<div class="model__mobile"></div>
 				</div>
 			</div>
+			<div class="skew"></div>
 		</div>
-		<div class="skew"></div>
-	</div>
-	<div class="section info">
-		<div class="section__in">
-			<div class="inner">
-				<div class="news">
-					<h2 class="h2">News</h2>
-					<div class="news__bl">
-						<div class="news__date">
-							<p class="news__day">21</p>
-							<p>November</p>
+		<div class="section company">
+			<div class="section__in">
+				<div class="inner">
+					<div class="text">
+						<h2 class="h2">Company</h2>
+						<p class="text__subttl">We consider our work done</p>
+						<div class="text__bl">
+							<p>Allitapp is a performance based network founded in 2015 in Hong Kong that works on CPI/CPA basis. It grants you access to the most profitable markets for mobile business in the world.</p>
+							<p>The Allitapp team consisting of experienced and ambitious professionals provides you with effective communication and constant online support for you, taking care of the traffic quality, monitoring it 24/7.</p>
+							<p>We consider our work done well seeing your investments return swiftly and bring more and more profit as you engage in cooperation with us.</p>
+							<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
 						</div>
-						<div class="news__text">
-							<p class="news__subttl">Platform launch</p>
-							<div class="news__content js-content" style="display: block">
-								<p>Raised from the ashes of an old project, Stump Valley is a funny old place in the countryside by the forest, where deers and boars run free in the street, that’s the place where the most of S.V. music was made.!</p>
-								<div class="news__gal">
-									<a class="news__img js-fancybox" rel="gallery" href="img/news1.jpg">
-										<img src="img/news1.jpg" alt="">
-									</a>
-									<a class="news__img js-fancybox" rel="gallery" href="img/news2.jpg">
-										<img src="img/news2.jpg" alt="">
-									</a>
-									<a class="news__img js-fancybox" rel="gallery" href="img/news3.jpg">
-										<img src="img/news3.jpg" alt="">
-									</a>
+					</div>
+					<div class="model">
+						<img src="img/company-pic.png" alt="">
+						<div class="model__mobile"></div>
+					</div>
+				</div>
+			</div>
+			<div class="skew"></div>
+		</div>
+		<div class="section about">	
+			<div class="section__in">
+				<div class="inner">
+					<div class="text text_about">
+						<h2 class="h2">About us</h2>
+						<div class="text__bl">
+							<p>Allitapp are a team of young motivated and truly interested in mobile professionals. Every experience we gained is a treasure that we would like to share with you.</p>
+							<p>Allitapp is a best choice for those who is interested in cost turn into profit. Be with us. Join the best.</p>
+							<div class="about__btns">
+								<a href="#" class="btn is-red"><span>Join us<i></i></span></a>
+								<a href="#" class="btn-next">show next<i></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="model">
+						<img src="img/about-pic.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="skew"></div>
+		</div>
+		<div class="section team">	
+			<div class="section__in">
+				<div class="inner">
+					<div class="team__row">
+						<div class="member">
+							<div class="member__top">
+								<h4 class="member__title">Marina Tkalenko</h4>
+								<p>— Founder & CEO</p>
+							</div>
+							<div class="member__img" style="background-image: url(https://placecage.com/309/421);"></div>
+							<div class="member__info">
+								<p>Looking for mobile CPI campaigns worldwide. Feel free to contact me at.</p>
+								<ul>
+									<li>E-mail: nat@allitapp.com</li>
+									<li>Skype: allitapp.adv2</li>
+									<li>Phone: +972533316903</li>
+								</ul>
+							</div>
+						</div>
+						<div class="member">
+							<div class="member__top">
+								<h4 class="member__title">Alyona Savenko</h4>
+								<p>— Head Of Advertiser Development</p>
+							</div>
+							<div class="member__img" style="background-image: url(https://fillmurray.com/309/421);"></div>
+							<div class="member__info">
+								<p>Looking for mobile CPI campaigns worldwide. Feel free to contact me at.</p>
+								<ul>
+									<li>E-mail: nat@allitapp.com</li>
+									<li>Skype: allitapp.adv2</li>
+									<li>Phone: +972533316903</li>
+								</ul>
+							</div>
+						</div>
+						<div class="member">
+							<div class="member__top">
+								<h4 class="member__title">Alex Melnik</h4>
+								<p>— Head Of Publishing Development</p>
+							</div>
+							<div class="member__img" style="background-image: url(https://placecage.com/g/309/421);"></div>
+							<div class="member__info">
+								<p>Looking for mobile CPI campaigns worldwide. Feel free to contact me at.</p>
+								<ul>
+									<li>E-mail: nat@allitapp.com</li>
+									<li>Skype: allitapp.adv2</li>
+									<li>Phone: +972533316903</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="model">
+						<div class="model__mobile"></div>
+					</div>
+				</div>
+			</div>
+			<div class="skew"></div>
+		</div>
+		<div class="section info">
+			<div class="section__in">
+				<div class="inner">
+					<div class="news">
+						<h2 class="h2">News</h2>
+						<div class="news__bl">
+							<div class="news__date">
+								<p class="news__day">21</p>
+								<p>November</p>
+							</div>
+							<div class="news__text">
+								<p class="news__subttl">Platform launch</p>
+								<div class="news__content js-content" style="display: block">
+									<p>Raised from the ashes of an old project, Stump Valley is a funny old place in the countryside by the forest, where deers and boars run free in the street, that’s the place where the most of S.V. music was made.!</p>
+									<div class="news__gal">
+										<a class="news__img js-fancybox" rel="gallery" href="img/news1.jpg">
+											<img src="img/news1.jpg" alt="">
+										</a>
+										<a class="news__img js-fancybox" rel="gallery" href="img/news2.jpg">
+											<img src="img/news2.jpg" alt="">
+										</a>
+										<a class="news__img js-fancybox" rel="gallery" href="img/news3.jpg">
+											<img src="img/news3.jpg" alt="">
+										</a>
+									</div>
 								</div>
 							</div>
+							<a href="#" class="news-ico js-toggle-news"><span></span></a>
 						</div>
-						<a href="#" class="news-ico js-toggle-news"><span></span></a>
-					</div>
-					<div class="news__bl">
-						<div class="news__date">
-							<p class="news__day">23</p>
-							<p>October</p>
-						</div>
-						<div class="news__text">
-							<p class="news__subttl">Testing mode</p>
-							<div class="news__content js-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo incidunt qui laborum cum optio aliquam quas quisquam quidem quaerat nesciunt vero unde, eligendi, adipisci ut recusandae odio error. Impedit, debitis.</p>
+						<div class="news__bl">
+							<div class="news__date">
+								<p class="news__day">23</p>
+								<p>October</p>
 							</div>
-						</div>
-						<a href="#" class="news-ico is-arrow js-toggle-news"><span></span></a>
-					</div>
-					<div class="news__bl">
-						<div class="news__date">
-							<p class="news__day">9</p>
-							<p>October</p>
-						</div>
-						<div class="news__text">
-							<p class="news__subttl">Allitapp team visited Casual Content.</p>
-							<div class="news__content js-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum deserunt soluta nostrum eum rem vel vero laudantium nobis adipisci aut, alias quisquam, assumenda eius neque tempora hic. Dolores, animi consectetur.</p>
+							<div class="news__text">
+								<p class="news__subttl">Testing mode</p>
+								<div class="news__content js-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo incidunt qui laborum cum optio aliquam quas quisquam quidem quaerat nesciunt vero unde, eligendi, adipisci ut recusandae odio error. Impedit, debitis.</p>
+								</div>
 							</div>
+							<a href="#" class="news-ico is-arrow js-toggle-news"><span></span></a>
 						</div>
-						<a href="#" class="news-ico is-arrow js-toggle-news"><span></span></a>
+						<div class="news__bl">
+							<div class="news__date">
+								<p class="news__day">9</p>
+								<p>October</p>
+							</div>
+							<div class="news__text">
+								<p class="news__subttl">Allitapp team visited Casual Content.</p>
+								<div class="news__content js-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum deserunt soluta nostrum eum rem vel vero laudantium nobis adipisci aut, alias quisquam, assumenda eius neque tempora hic. Dolores, animi consectetur.</p>
+								</div>
+							</div>
+							<a href="#" class="news-ico is-arrow js-toggle-news"><span></span></a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="footer js-footer">
-				<div class="footer__in">
-					<div class="footer__bl">
-						<p class="footer__address">Shalom Meir Tower, Ehad Ha’am 9, Tel Aviv, Israel</p>
-					</div>
-					<div class="footer__bl is-center">
-						<a href="#" class="btn"><span>Join us<i></i></span></a>
-					</div>
-					<div class="footer__bl is-right">
-						<a href="mailto: info@allitapp.com" class="footer__mail">info@allitapp.com</a>
-						<div class="footer__social">
-							<a href="#" class="footer__icons"><i class="icon-fb"></i></a>
-							<a href="#" class="footer__icons is-center"><i class="icon-linkedin"></i></a>
-							<a href="#" class="footer__icons"><i class="icon-tw"></i></a>
-						</div>
-					</div>
+			<div class="skew"></div>
+		</div>
+	</div>
+	<div class="footer js-footer">
+		<div class="footer__in">
+			<div class="footer__bl">
+				<p class="footer__address">Shalom Meir Tower, Ehad Ha’am 9, Tel Aviv, Israel</p>
+			</div>
+			<div class="footer__bl is-center">
+				<a href="#" class="btn"><span>Join us<i></i></span></a>
+			</div>
+			<div class="footer__bl is-right">
+				<a href="mailto: info@allitapp.com" class="footer__mail">info@allitapp.com</a>
+				<div class="footer__social">
+					<a href="#" class="footer__icons"><i class="icon-fb"></i></a>
+					<a href="#" class="footer__icons is-center"><i class="icon-linkedin"></i></a>
+					<a href="#" class="footer__icons"><i class="icon-tw"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="skew"></div>
 	</div>
+	<div class="scroll"></div>
 </div>
 <!-- END out-->
 </body>
