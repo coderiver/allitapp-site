@@ -16,9 +16,12 @@ $(document).ready(function() {
 		var current = $('.section.is-active'),
 			currentIndex = current.index(),
 			animate = 'is-animate';
+
 		disableScroll();
 		$('.section').eq(currentIndex + 1).addClass(animate);
+
 		console.log(currentIndex);
+
 		if (!$('.section').last().hasClass('is-active')) {
 			$('.scroll').height($('.scroll').height() + 20);
 			$('.out').perfectScrollbar('update');
@@ -126,15 +129,16 @@ $(document).ready(function() {
 		mainText = $('.js-main-text');
 
 	//remove styles after tween ending
-	function allRemover() {
-		var a = [$(logoRed), $(logoGreenIn), $(logoGreen), $(logoViolet), $(logoBlue), $(logoName)];
-		for (var i = 0; i < a.length; i++) {
-			a[i].removeAttr('style');
-		};
-	}
-	function removeAds() {
-		$('.js-ads').removeAttr('style');
-	}
+	// function allRemover() {
+	// 	var a = [$(logoRed), $(logoGreenIn), $(logoGreen), $(logoViolet), $(logoBlue), $(logoName)];
+	// 	for (var i = 0; i < a.length; i++) {
+	// 		a[i].removeAttr('style');
+	// 	};
+	// }
+
+	// function removeAds() {
+	// 	$('.js-ads').removeAttr('style');
+	// }
 	//header/footer
 	var headerBtn = $('.js-show-menu'),
 		footer = $('.js-footer');
@@ -148,7 +152,7 @@ $(document).ready(function() {
 	mainTm
 		.add(main)
 		.from(logoGreen, 0.5, {
-			scale: 0.5, 
+			scale: 0.5,
 			opacity: 0,
 			left: "20%"
 			}
@@ -251,7 +255,7 @@ $(document).ready(function() {
 			)
 			.fromTo(logoGreenIn, 1, {
 					x: '-50%',
-					y: '-50%',					
+					y: '-50%',
 				}, {
 					rotation: '-60deg',
 					x: '-50%',
@@ -269,7 +273,7 @@ $(document).ready(function() {
 			.staggerFrom(adsList, 0.5, {
 					opacity: 0,
 					y: '50px'
-				}, 
+				},
 				0.3,
 				"-=0.4"
 			)
@@ -278,11 +282,13 @@ $(document).ready(function() {
 
 	function adsAnimationUp() {
 		ads
-			.add(allRemover)
+			//.add(allRemover)
+			.set([logoGreenIn, logoBlue, logoRed, logoViolet, logoName], {clearProps:'all'})
 			.to(adsSlide, 0.7, {
 					x: '200%'
 				}
 			)
+			.set(adsSlide, {clearProps: 'all'})
 			.add(animateLeave);
 	}
 	//tween Affiliate
@@ -301,7 +307,7 @@ $(document).ready(function() {
 			.staggerTo(adsList, 0.5, {
 				opacity: 0,
 				y: '-150px'
-				}, 
+				},
 				0.3,
 				"-=0.4"
 			)
@@ -317,7 +323,7 @@ $(document).ready(function() {
 			.staggerFrom(affiliateList, 0.5, {
 					opacity: 0,
 					y: '50px'
-				}, 
+				},
 				0.3
 			)
 			.add(animateLeave);
@@ -339,7 +345,7 @@ $(document).ready(function() {
 			.staggerTo(affiliateList, 0.5, {
 				opacity: 0,
 				y: '-150px'
-				}, 
+				},
 				0.3,
 				"-=0.4"
 			)
@@ -355,7 +361,7 @@ $(document).ready(function() {
 			.staggerFrom(companyList, 0.5, {
 					opacity: 0,
 					y: '50px'
-				}, 
+				},
 				0.3
 			)
 			.add(animateLeave);
@@ -377,10 +383,10 @@ $(document).ready(function() {
 			.staggerTo(companyList, 0.5, {
 				opacity: 0,
 				y: '-150px'
-				}, 
+				},
 				0.3,
 				"-=0.4"
-			)	
+			)
 			.to(companySlide, 0.7, {
 					x: '-145%'
 				}
@@ -393,7 +399,7 @@ $(document).ready(function() {
 			.staggerFrom(newsList, 0.5, {
 					opacity: 0,
 					y: '50px'
-				}, 
+				},
 				0.3
 			)
 			.add(animateLeave);
@@ -416,10 +422,10 @@ $(document).ready(function() {
 			.staggerTo(newsList, 0.5, {
 				opacity: 0,
 				y: '-150px'
-				}, 
+				},
 				0.3,
 				"-=0.4"
-			)	
+			)
 			.to(newsSlide, 0.6, {
 					y: '-165%'
 				}
@@ -444,7 +450,7 @@ $(document).ready(function() {
 			.staggerFrom(aboutList, 0.5, {
 					opacity: 0,
 					y: '50px'
-				}, 
+				},
 				0.3
 			)
 			.add(animateLeave);
@@ -476,7 +482,7 @@ $(document).ready(function() {
 			.staggerFrom(teamList, 0.4, {
 					opacity: 0,
 					y: '60px'
-				}, 
+				},
 				0.3,
 				"-=0.4"
 			)
