@@ -1,5 +1,5 @@
 .about
-	+gh(#eeefff, #fafaff)
+	//+gh(#eeefff, #fafaff)
 	+r(1024)
 		background: #f7f6ff 
 	&__btns
@@ -15,6 +15,13 @@
 	.skew
 		+r(1024)
 			display: none
+		&:before
+			top: -30%
+			left: -35% 
+			width: 200%
+			height: 130%
+			transform: skew(20deg, 3deg)
+			+gh(#eeefff, #fafaff)	
 		&:after
 			top: 59%
 			left: 0
@@ -47,6 +54,7 @@
 
 .team
 	+g(#ffcda0, #fff4d1)
+	padding-top: 100px
 	+r(1024)
 		+g(#f7f6ff, #e8e8ff)
 	.section__in

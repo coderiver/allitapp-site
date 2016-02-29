@@ -23,7 +23,7 @@
 		background-color: #25345c
 		background-image: linear-gradient(#25345c, #314477 50%, #324577 80%)
 	&.ads
-		+gh(#f8f1f0, #ecd3cc)
+		//+gh(#f8f1f0, #ecd3cc)
 		.skew
 			&:after, &:before
 				width: 100%
@@ -36,37 +36,54 @@
 				+gh(#f8f1f0, #ecd3cc)
 				
 	&.affiliate
-		+gh(#c54a5f, #f3a998)
+		//+gh(#c54a5f, #f3a998)
 		.inner
 			position: static
 		.skew
+			&:after, &:before
+				width: 200%
+			&:before
+				left: -100%
+				transform: skewX(-40deg)
+				+gh(#c54a5f, #f3a998)				
 			&:after
 				left: 200px
-				width: 200%
 				transform: skewX(-63.3deg)
 				+gh(#ebf5f3, #b8dfd8)
 		.model
 			top: 67px
 			transform: translateY(0)
 	&.company
-		+gh(#ebf4ff, #dbeaff)
+		//+gh(#ebf4ff, #dbeaff)
 		.skew
+			&:before
+				width: 200% 
+				left: -100%
+				transform: skewX(-35deg)
+				+gh(#ebf4ff, #dbeaff)				
 			&:after
 				left: 50%
 				width: 100%
 				transform: skewX(19deg)
 				+g(#ae653e, #f1dc9d)
 	&.info
-		+g(#d4ecf0, #ebf3f4)
+		//+g(#d4ecf0, #ebf3f4)
 		.section__in
 			padding-bottom: 20px
 			vertical-align: top
 			z-index: auto
 		.skew
+			&:before
+				width: 200% 
+				left: -50%
+				transform: skewX(20deg)
+				+gh(#d4ecf0, #ebf3f4)	
 			&:after
 				top: 90%
-				width: 100%
-				transform: skewY(3deg)
+				left: -30% 
+				width: 200%
+				height: 130%
+				transform: skew(20deg, 3deg)
 				box-shadow: 0 0 80px 5px rgba(0,0,0,0.2)
 				z-index: 2
 				+gh(#9dc6d4, #aacdda)

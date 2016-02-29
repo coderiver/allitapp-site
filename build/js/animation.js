@@ -13,10 +13,12 @@ $(document).ready(function() {
 
 	//Move to next slide
 	function moveToNextSlide() {
-		var current = $('.section.is-active').index(),
-			active  = 'is-active',
-			animate  = 'is-active is-animate';
-		$('.section').removeClass(animate).eq(current + 1).addClass(active);
+		var current = $('.section.is-active'),
+			currentIndex = current.index(),
+			animate = 'is-animate';
+		disableScroll();
+		$('.section').eq(currentIndex + 1).addClass(animate);
+		console.log(currentIndex);
 		if (!$('.section').last().hasClass('is-active')) {
 			$('.scroll').height($('.scroll').height() + 20);
 			$('.out').perfectScrollbar('update');
@@ -25,12 +27,12 @@ $(document).ready(function() {
 
 	//Move to prev slide
 	function moveToPrevSlide() {
-		var current = $('.section.is-active').index(),
-			active  = 'is-active',
-			animate  = 'is-active is-animate';
-
-		$('.section').removeClass(animate).eq(current - 1).addClass(active);
-
+		var current = $('.section.is-active'),
+			currentIndex = current.index(),
+			animate  = 'is-animate';
+		disableScroll();
+		current.siblings('.section').eq(currentIndex - 1).addClass(animate);
+		console.log(currentIndex);
 		if (!$('.section').first().hasClass('is-active')) {
 			$('.scroll').height($('.scroll').height() - 20);
 			$('.out').perfectScrollbar('update');
@@ -38,10 +40,15 @@ $(document).ready(function() {
 	}
 	//Animate leave Slide
 	function animateLeave() {
-		var current = $('.section.is-active').index(),
-			active  = 'is-animate';
+		var current = $('.section.is-active'),
+			currentIndex = current.index(),
+			active  = 'is-active',
+			animated = $('.section.is-animate');
 
-		$('.section').removeClass(active).eq(current + 1).addClass(active);
+		current.removeClass(active);
+		animated.addClass(active).removeClass('is-animate');
+		enableScroll();
+		console.log('animated');
 	}
 
 	function scrollMove() {
@@ -49,18 +56,47 @@ $(document).ready(function() {
 		//scroll detection
 		if (st > lastScrollTop){
 			console.log('DOWN');
-			
-			if (!$('.js-ads').hasClass('animation-finish')) {
+			moveToNextSlide();
+			if ($('.js-ads').hasClass('is-animate')) {
 				adsAnimation();
 			}
-			// affiliateAnimation();
+			if ($('.js-affiliate').hasClass('is-animate')) {
+				affiliateAnimation();
+			}
+			if ($('.js-company').hasClass('is-animate')) {
+				companyAnimation();
+			}
+			if ($('.js-news').hasClass('is-animate')) {
+				newsAnimation();
+			}
+			if ($('.js-about').hasClass('is-animate')) {
+				aboutAnimation();
+			}
+			if ($('.js-team').hasClass('is-animate')) {
+				teamAnimation();
+			}
 
 		} else {
 			console.log('UP');
 			moveToPrevSlide();
-			if ($('.js-ads').hasClass('animation-finish')) {
-				$('.js-ads').removeClass('animation-finish')
+			if ($('.js-main').hasClass('is-animate')) {
+				adsAnimationUp();
 			}
+			// if ($('.js-affiliate').hasClass('is-animate')) {
+			// 	affiliateAnimation();
+			// }
+			// if ($('.js-company').hasClass('is-animate')) {
+			// 	companyAnimation();
+			// }
+			// if ($('.js-news').hasClass('is-animate')) {
+			// 	newsAnimation();
+			// }
+			// if ($('.js-about').hasClass('is-animate')) {
+			// 	aboutAnimation();
+			// }
+			// if ($('.js-team').hasClass('is-animate')) {
+			// 	teamAnimation();
+			// }
 		}
 		lastScrollTop = st;
 	}
@@ -89,6 +125,16 @@ $(document).ready(function() {
 		mainRight = $('.js-main-right'),
 		mainText = $('.js-main-text');
 
+	//remove styles after tween ending
+	function allRemover() {
+		var a = [$(logoRed), $(logoGreenIn), $(logoGreen), $(logoViolet), $(logoBlue), $(logoName)];
+		for (var i = 0; i < a.length; i++) {
+			a[i].removeAttr('style');
+		};
+	}
+	function removeAds() {
+		$('.js-ads').removeAttr('style');
+	}
 	//header/footer
 	var headerBtn = $('.js-show-menu'),
 		footer = $('.js-footer');
@@ -180,9 +226,6 @@ $(document).ready(function() {
 
 	function adsAnimation() {
 		ads
-			.add(animatedFinish)
-			.add(disableScroll)
-			.add(animateLeave)
 			.to(logoBlue, 0.5, {
 					x: '-40%',
 					opacity: 0
@@ -217,7 +260,6 @@ $(document).ready(function() {
 				},
 				"-=0.05"
 			)
-			.add(moveToNextSlide)
 			.add(footerAds, "-=1")
 			.from(adsSlide, 0.7, {
 					x: '200%'
@@ -231,14 +273,18 @@ $(document).ready(function() {
 				0.3,
 				"-=0.4"
 			)
-			.add(enableScroll);
-
-		if (adsSlide.hasClass('is-animate')) {
-			ads.play();
-		}
-
+			.add(animateLeave);
 	}
 
+	function adsAnimationUp() {
+		ads
+			.add(allRemover)
+			.to(adsSlide, 0.7, {
+					x: '200%'
+				}
+			)
+			.add(animateLeave);
+	}
 	//tween Affiliate
 	var affiliate = new TimelineMax({ pause: true });
 
@@ -252,28 +298,189 @@ $(document).ready(function() {
 
 	function affiliateAnimation() {
 		affiliate
-			.add(disableScroll)
-			.add(moveToNextSlide)
-			.add(animateLeave)
 			.staggerTo(adsList, 0.5, {
 				opacity: 0,
 				y: '-150px'
 				}, 
 				0.3,
 				"-=0.4"
-			)			
-			.from(affiliateSlide, 0.7, {
-					x: '200%'
+			)
+			.to(adsSlide, 0.7, {
+					x: '-145%'
 				}
 			)
-			.add(enableScroll);
-
-		if (affiliateSlide.hasClass('is-animate')) {
-			affiliate.play();
-		}
-
+			.from(affiliateSlide, 0.7, {
+					x: '250%'
+				},
+				"-=0.7"
+			)
+			.staggerFrom(affiliateList, 0.5, {
+					opacity: 0,
+					y: '50px'
+				}, 
+				0.3
+			)
+			.add(animateLeave);
 	}
 
+	//tween Company
+	var company = new TimelineMax({ pause: true });
 
+	var companySlide = $('.js-company'),
+		companyTitle = companySlide.find('.js-title'),
+		companySubtitle = companySlide.find('.js-subtitle'),
+		companyText = companySlide.find('.js-text');
+
+	//array
+	var companyList = [companyTitle, companySubtitle, companyText];
+
+	function companyAnimation() {
+		company
+			.staggerTo(affiliateList, 0.5, {
+				opacity: 0,
+				y: '-150px'
+				}, 
+				0.3,
+				"-=0.4"
+			)
+			.to(affiliateSlide, 0.7, {
+					x: '-145%'
+				}
+			)
+			.from(companySlide, 0.9, {
+					x: '250%'
+				},
+				"-=0.7"
+			)
+			.staggerFrom(companyList, 0.5, {
+					opacity: 0,
+					y: '50px'
+				}, 
+				0.3
+			)
+			.add(animateLeave);
+	}
+
+	//tween News
+	var news = new TimelineMax({ pause: true });
+
+	var newsSlide = $('.js-news'),
+		newsTitle = newsSlide.find('.js-title'),
+		newsSubtitle = newsSlide.find('.js-subtitle'),
+		newsText = newsSlide.find('.js-text');
+
+	//array
+	var newsList = [newsTitle, newsSubtitle, newsText];
+
+	function newsAnimation() {
+		news
+			.staggerTo(companyList, 0.5, {
+				opacity: 0,
+				y: '-150px'
+				}, 
+				0.3,
+				"-=0.4"
+			)	
+			.to(companySlide, 0.7, {
+					x: '-145%'
+				}
+			)
+			.from(newsSlide, 0.9, {
+					x: '200%'
+				},
+				"-=0.7"
+			)
+			.staggerFrom(newsList, 0.5, {
+					opacity: 0,
+					y: '50px'
+				}, 
+				0.3
+			)
+			.add(animateLeave);
+	}
+
+	//tween News
+	var about = new TimelineMax({ pause: true });
+
+	var aboutSlide = $('.js-about'),
+		aboutTitle = aboutSlide.find('.js-title'),
+		aboutText = aboutSlide.find('.js-text'),
+		aboutSkew = aboutSlide.find('.js-skew'),
+		aboutModel = aboutSlide.find('.js-model');
+
+	//array
+	var aboutList = [aboutTitle, aboutText];
+
+	function aboutAnimation() {
+		about
+			.staggerTo(newsList, 0.5, {
+				opacity: 0,
+				y: '-150px'
+				}, 
+				0.3,
+				"-=0.4"
+			)	
+			.to(newsSlide, 0.6, {
+					y: '-165%'
+				}
+			)
+			.from(aboutSlide, 0.4, {
+					y: '155%'
+				},
+				"-=0.9"
+			)
+			.from(aboutSkew, 0.7, {
+					y: '130%',
+					ease:Power2.easeOut
+				},
+				"-=0.3"
+			)
+			.from(aboutModel, 0.5, {
+					x: '100%',
+					ease:Power2.easeOut
+				},
+				"-=0.5"
+			)
+			.staggerFrom(aboutList, 0.5, {
+					opacity: 0,
+					y: '50px'
+				}, 
+				0.3
+			)
+			.add(animateLeave);
+	}
+
+	//tween Team
+	var team = new TimelineMax({ pause: true });
+
+	var teamSlide = $('.js-team'),
+		teamItem = teamSlide.find('.js-item');
+
+	//array
+	var teamList = [];
+	teamItem.each(function() {
+		teamList.push($(this));
+	});
+
+	function teamAnimation() {
+		team
+			.to(aboutSlide, 0.6, {
+					y: '-100%'
+				}
+			)
+			.from(teamSlide, 0.6, {
+					y: '100%'
+				},
+				"-=0.6"
+			)
+			.staggerFrom(teamList, 0.4, {
+					opacity: 0,
+					y: '60px'
+				}, 
+				0.3,
+				"-=0.4"
+			)
+			.add(animateLeave);
+	}
 
 });
