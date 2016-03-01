@@ -1,5 +1,5 @@
 .about
-	//+gh(#eeefff, #fafaff)
+	+gh(#eeefff, #fafaff)
 	+r(1024)
 		background: #f7f6ff 
 	&__btns
@@ -17,15 +17,17 @@
 			display: none
 		&:before
 			top: -30%
-			left: -35% 
-			width: 200%
-			height: 130%
-			transform: skew(20deg, 3deg)
+			left: -100% 
+			width: 300%
+			height: 160%
+			transform: skew(30deg, 3deg)
 			+gh(#eeefff, #fafaff)	
-		&:after
-			top: 59%
-			left: 0
-			width: 100%
+		div
+			position: absolute
+			height: 100%
+			top: 60%
+			left: -100%
+			width: 300%
 			background: #ffcda0 
 			transform: skewY(-7deg)
 
@@ -79,6 +81,16 @@
 				background-image: url(../img/about-mobile.png)
 				+cover
 				display: block
+	.skew
+		+r(1024)
+			display: none
+		&:before
+			top: 0
+			left: -20% 
+			width: 140%
+			height: 100%
+			transform: skewX(20deg)
+			+g(#ffcda0, #fff4d1)
 
 .member
 	display: inline-block
