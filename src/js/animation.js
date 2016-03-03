@@ -148,7 +148,8 @@ $(document).ready(function() {
 			)
 			.add(scrollWheel),
 		//ads
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.to(logoBlue, 0.5, {
 					x: '-40%',
 					opacity: 0
@@ -184,8 +185,8 @@ $(document).ready(function() {
 				},
 				"-=0.05"
 			)
-			.from(logo, 0.5, {
-					x: '-130%'
+			.to(logo, 0.5, {
+					x: '0%'
 				},
 				"-=1"
 			)
@@ -194,7 +195,6 @@ $(document).ready(function() {
 				},
 				"-=1"
 			)
-			.addLabel('label')
 			.staggerFrom(adsList, 0.5, {
 					opacity: 0,
 					y: '50px'
@@ -203,15 +203,16 @@ $(document).ready(function() {
 				"-=0.4"
 			)
 			.add(animateLeave)
-			.set([logoGreenIn, logoBlue, logoRed, logoViolet, logoName], {clearProps:'all'}),
+			.set([adsSlide, adsTitle, adsSubtitle, adsText, logoGreenIn, logoBlue, logoRed, logoViolet, logoName], {clearProps:'all'});
+		}),
 		//affiliate
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.staggerTo(adsList, 0.5, {
 				opacity: 0,
 				y: '-150px'
 				},
 				0.3
-				// "-=0.4"
 			)
 			.to(adsSlide, 0.7, {
 					x: '-145%'
@@ -222,7 +223,6 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
-			.addLabel('label')
 			.staggerFrom(affiliateList, 0.5, {
 					opacity: 0,
 					y: '50px'
@@ -230,15 +230,16 @@ $(document).ready(function() {
 				0.3
 			)
 			.add(animateLeave)
-			.set([adsSlide, adsTitle, adsSubtitle, adsText], {clearProps: 'all'}),
+			.set([adsSlide, adsTitle, adsSubtitle, adsText, affiliateSlide, affiliateList], {clearProps: 'all'});
+		}),
 		//company
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.staggerTo(affiliateList, 0.5, {
 				opacity: 0,
 				y: '-150px'
 				},
 				0.3
-				// "-=0.4"
 			)
 			.call(changeColor, ['is-red'])
 			.to(affiliateSlide, 0.7, {
@@ -250,7 +251,6 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
-			.addLabel('label')
 			.staggerFrom(companyList, 0.5, {
 					opacity: 0,
 					y: '50px'
@@ -258,9 +258,11 @@ $(document).ready(function() {
 				0.3
 			)
 			.add(animateLeave)
-			.set([aboutSlide, affiliateSlide, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps:'all'}),
+			.set([affiliateSlide, affiliateTitle, affiliateSubtitle, affiliateText, companySlide, companyTitle, companySubtitle, companyText], {clearProps:'all'});
+		}),
 		//about
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.staggerTo(companyList, 0.5, {
 				opacity: 0,
 				y: '-150px'
@@ -285,7 +287,6 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
-			.addLabel('label')
 			.fromTo(aboutModel, 0.5, {
 					y: '-50%',
 					x: '100%',
@@ -304,9 +305,11 @@ $(document).ready(function() {
 				0.3
 			)
 			.add(animateLeave)
-			.set([companySlide, companyTitle, companySubtitle, companyText], {clearProps:'all'}),
+			.set([companySlide, companyTitle, companySubtitle, companyText, aboutTitle, aboutText, aboutModel, aboutSkew], {clearProps:'all'});
+		}),
 		//team
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.to(aboutSlide, 0.6, {
 					top: '-100%'
 				}
@@ -318,7 +321,6 @@ $(document).ready(function() {
 				},
 				"-=0.6"
 			)
-			.addLabel('label')
 			.staggerFrom(teamList, 0.4, {
 					opacity: 0,
 					y: '60px'
@@ -327,9 +329,11 @@ $(document).ready(function() {
 				"-=0.4"
 			)
 			.add(animateLeave)
-			.set([aboutSlide, aboutTitle, aboutSkew, aboutText, teamList], {clearProps:'all'}),
+			.set([aboutSlide, teamItem, teamSlide], {clearProps:'all'});
+		}),
 		//news
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.staggerFromTo(teamList, 0.5, {
 					opacity: 1,
 					y: '0%'
@@ -344,7 +348,6 @@ $(document).ready(function() {
 					left: '-180%'
 				}
 			)
-			.addLabel('label')
 			.from(newsSlide, 0.7, {
 					x: '180%'
 				},
@@ -357,11 +360,13 @@ $(document).ready(function() {
 				0.3
 			)
 			.add(animateLeave)
-			.set([teamSlide, teamList], {clearProps:'all'}),
+			.set([newsSlide, newsTitle, newsSubtitle, newsText, teamSlide, teamList], {clearProps:'all'});
+		}),
 	];
 	var animationUp = [
 		//ads
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.call(changeColor, ['is-first'])
 			.to(adsSlide, 0.7, {
 					x: '200%'
@@ -372,10 +377,12 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
-			.set(adsSlide, {clearProps: 'all'})
-			.add(animateLeave),
+			.set([adsSlide, logo], {clearProps: 'all'})
+			.add(animateLeave);
+		}),
 		//affiliate
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.to(affiliateSlide, 0.7, {
 					x: '250%'
 				}
@@ -387,10 +394,12 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
-			.set(affiliateSlide, {clearProps: 'all'})
-			.add(animateLeave),
+			.set([affiliateSlide, adsSlide, adsTitle, adsSubtitle, adsText], {clearProps: 'all'})
+			.add(animateLeave);
+		}),
 		//company
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.call(changeColor, ['is-green'])
 			.to(companySlide, 0.7, {
 					x: '250%'
@@ -403,8 +412,9 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
-			.set(companySlide, {clearProps: 'all'})
-			.add(animateLeave),
+			.set([companySlide, affiliateSlide], {clearProps: 'all'})
+			.add(animateLeave);
+		}),
 		//about
 		(function(){
 			new TimelineMax()
@@ -426,7 +436,7 @@ $(document).ready(function() {
 					},
 					"-=0.9"
 				)
-				.set(aboutSlide, {clearProps: 'all'})
+				.set([aboutSlide, aboutSkew, companySlide], {clearProps: 'all'})
 				.add(animateLeave);
 		}),
 		//team
@@ -445,7 +455,8 @@ $(document).ready(function() {
 				.add(animateLeave);
 		}),
 		//news
-		new TimelineMax({paused: true})
+		(function(){
+		new TimelineMax()
 			.call(changeColor, ['is-brown'])
 			.to(newsSlide, 0.7, {
 					x: '180%'
@@ -467,9 +478,184 @@ $(document).ready(function() {
 				0.3,
 				"-=0.4"
 			)
-			.set([teamSlide, newsSlide], {clearProps: 'all'})
-			.add(animateLeave),
+			.set([teamSlide, newsSlide, teamItem], {clearProps: 'all'})
+			.add(animateLeave);
+		}),
 	];
+	var animationClick = [
+		//main
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '-130%'
+				})
+				.from(logoGreen, 0.5, {
+					scale: 0.5,
+					opacity: 0,
+					left: "20%"
+					},
+					"-=0.5"
+				)
+				.from(logoViolet, 0.5, {
+					opacity: 0
+					},
+					"-=0.25"
+				)
+				.from(logoBlue, 0.5, {
+					opacity: 0,
+					left: "30px"
+					},
+					"-=0.6"
+				)
+				.from(logoRed, 0.5, {
+					opacity: 0,
+					right: "30px"
+					},
+					"-=0.6"
+				)
+				.from(logoName, 0.7, {
+					opacity: 0,
+					left: '20%'
+					},
+					"-=0.6"
+				)
+				.from(mainLeft, 1.2, {
+					left: '-100%',
+					bottom: '-45%'
+					},
+					"-=1.2"
+				)
+				.from(mainRight, 1.2, {
+					right: '-100%',
+					top: '-15%'
+					},
+					"-=1.2"
+				)
+				.from(mainText, 0.4, {
+					y: '70px',
+					opacity: 0
+					},
+					"-=0.25"
+				)
+				.from(headerBtn, 0.5, {
+					x: '60px'
+					}
+				)
+				.from(footer, 0.5, {
+					bottom: '-70px'
+					},
+					"-=0.5"
+				)
+				.add(scrollWheel)
+				.set([logoGreenIn, logoBlue, logoRed, logoViolet, logoName, logo], {clearProps:'all'});
+		}),
+		//ads
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '0%'
+				})
+				.staggerFrom(adsList, 0.5, {
+						opacity: 0,
+						y: '50px'
+					},
+					0.3,
+					"-=0.5"
+				)
+				.add(animateLeave)
+				.set([adsTitle, adsSubtitle, adsText], {clearProps:'all'});
+		}),
+		//affiliate
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '0%'
+				})
+				.staggerFrom(affiliateList, 0.5, {
+						opacity: 0,
+						y: '50px'
+					},
+					0.3,
+					"-=0.5"
+				)
+				.add(animateLeave)
+				.set([affiliateTitle, affiliateSubtitle, affiliateText], {clearProps: 'all'});
+		}),
+		//company
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '0%'
+				})
+				.staggerFrom(companyList, 0.5, {
+						opacity: 0,
+						y: '50px'
+					},
+					0.3,
+					"-=0.5"
+				)
+				.add(animateLeave)
+				.set([companyText, companyTitle, companySubtitle], {clearProps:'all'});
+		}),
+		//about
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '0%'
+				})
+				.fromTo(aboutModel, 0.5, {
+						y: '-50%',
+						x: '100%',
+						ease:Power2.easeOut
+					}, {
+						y: '-50%',
+						x: '0%',
+						ease:Power2.easeOut
+					},
+					"-=0.5"
+				)
+				.staggerFrom(aboutList, 0.5, {
+						opacity: 0,
+						y: '50px'
+					},
+					0.3
+				)
+				.add(animateLeave)
+				.set([aboutModel, aboutTitle, aboutText], {clearProps:'all'});
+			}),
+		//team
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '0%'
+				})
+				.staggerFrom(teamList, 0.4, {
+						opacity: 0,
+						y: '60px'
+					},
+					0.3,
+					"-=0.5"
+				)
+				.add(animateLeave)
+				.set([teamItem, logo], {clearProps:'all'});
+			}),
+		//news
+		(function(){
+			new TimelineMax()
+				.to(logo, 0.5, {
+					x: '0%'
+				})
+				.staggerFrom(newsList, 0.5, {
+						opacity: 0,
+						y: '50px'
+					},
+				0.3,
+					"-=0.5"
+				)
+				.add(animateLeave)
+				.set([newsTitle, newsText, newsSubtitle], {clearProps:'all'});
+		}),
+	]
 
 	//MainSlideAnimationOnLoad!!!
 	animationDown[currentIndex].play();
@@ -478,7 +664,13 @@ $(document).ready(function() {
 	function moveToNextSlide() {
 		currentIndex = currentIndex + 1;
 		slides.eq(currentIndex).addClass('is-animate');
-		animationDown[currentIndex].play(0);
+		// animationDown[currentIndex].play(0);
+
+		if (typeof animationDown[currentIndex] == 'function') {
+			animationDown[currentIndex]();
+		} else {
+			animationDown[currentIndex].play(0);
+		}
 	}
 
 	//Move to prev slide
@@ -498,11 +690,11 @@ $(document).ready(function() {
 		currentIndex = + num;
 		console.log(typeof currentIndex);
 
-		// slides.filter('.is-active').removeClass('is-active');
+		slides.filter('.is-active').removeClass('is-active');
 
 		slides.eq(currentIndex).addClass('is-animate');
 
-		animationDown[currentIndex].play('label');
+		animationClick[currentIndex]();
 
 		console.log(currentIndex);
 	}
@@ -566,13 +758,19 @@ $(document).ready(function() {
 
 	$('.js-link').click(function(e) {
 		e.preventDefault();
-		$('.out').off('wheel');
-		var id = $(this).attr('href');
-		var dataColor = 'is-' + $(this).data('color');
-		fastShowSlide(id);
-		changeColor(dataColor);
-		$('.js-show-menu').removeClass('is-active');
-		$('.js-menu').removeClass('is-active');
+		if (!$('.section').hasClass('is-animate')) {
+			$('.out').off('wheel');
+			var id = $(this).attr('href');
+			var dataColor = 'is-' + $(this).data('color');
+			$('.js-show-menu').removeClass('is-active');
+			fastShowSlide(id);
+			changeColor(dataColor);
+			$('.js-menu').removeClass('is-active');
+			if (id == 0) {
+				slides.filter(".is-active").removeClass('is-active');
+				slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
+			}
+		};
 	});
 
 });
