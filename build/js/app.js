@@ -753,18 +753,12 @@ $(document).ready(function() {
 	}
 	//fastShowSlide
 	function fastShowSlide(num) {
-		console.log(typeof currentIndex);
-		currentIndex = + num;
-		console.log(typeof currentIndex);
-
+		currentIndex = + num; //change typeof
 		slides.filter('.is-active').removeClass('is-active');
-
 		slides.eq(currentIndex).addClass('is-animate');
-
 		animationClick[currentIndex]();
-
-		console.log(currentIndex);
 	}
+
 	//Animate leave Slide
 	function animateLeave() {
 		slides.filter(".is-active").removeClass('is-active');
@@ -772,18 +766,19 @@ $(document).ready(function() {
 		scrollWheel();
 	}
 
-	//scrollToggle
-
+	//change color for header and footer
 	function changeColor(color) {
 		footer.removeClass(footer.attr('class').split(' ').pop()).addClass(color);
 		headerBtn.removeClass(headerBtn.attr('class').split(' ').pop()).addClass(color);
 	}
 
+	//wheelToggle
 	var prevDeltaY = null;
 	var direction  = null;
 	function scrollWheel() {
 		$('.out').one('wheel', function(e) {
 			if (!$('.js-menu').hasClass('is-active')) {
+				//mousewheel direction
 				var deltaY = e.originalEvent.deltaY;
 				if (deltaY / 50 < 0) {
 					direction = 'up';
@@ -800,19 +795,18 @@ $(document).ready(function() {
 						moveToNextSlide();
 					}
 				} else {
-					direction = (prevDeltaY < 0) ? 'up' : 'down';
+					direction = (prevDeltaY < 0) ? 'up' : 'down'; //for touchpad
 				}
 				prevDeltaY = deltaY;
-				console.log(currentIndex);
 			};
 		});
-		console.log('bla');
 	}
 
-
+	//showMenu
 	$('.js-show-menu').click(function(evt) {
 		evt.preventDefault();
-		$('.out').off('wheel');
+		$('.out').off('wheel'); //remove double call for scroll
+
 		if ($(this).hasClass('is-active')) {
 			$(this).removeClass('is-active');
 			$('.js-menu').removeClass('is-active');
