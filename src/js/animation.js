@@ -460,11 +460,10 @@ $(document).ready(function() {
 			.call(changeColor, ['is-brown'])
 			.to(newsSlide, 0.7, {
 					x: '180%'
-				},
-				"-=0.9"
+				}
 			)
-			.to(teamSlide, 0.7, {
-					x: '0%'
+			.from(teamSlide, 0.7, {
+					left: '-180%'
 				},
 				"-=0.9"
 			)
@@ -475,8 +474,7 @@ $(document).ready(function() {
 					opacity: 1,
 					y: '0%'
 				},
-				0.3,
-				"-=0.4"
+				0.3
 			)
 			.set([teamSlide, newsSlide, teamItem], {clearProps: 'all'})
 			.add(animateLeave);
@@ -718,7 +716,7 @@ $(document).ready(function() {
 		$('.out').one('wheel', function(e) {
 			if (!$('.js-menu').hasClass('is-active')) {
 				var deltaY = e.originalEvent.deltaY;
-				if (deltaY < 0) {
+				if (deltaY / 50 < 0) {
 					direction = 'up';
 					if (currentIndex == 0) {
 						scrollWheel();
