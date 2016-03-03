@@ -26,6 +26,7 @@ body
 a
 	text-decoration: none
 	-webkit-tap-highlight-color: transparent
+	cursor: pointer
 
 .h2
 	margin-bottom: 27px
@@ -45,37 +46,31 @@ a
 	font-size: 12px
 	color: #C6C5EE
 	border: 1px solid #c6c5ee
-	border-radius: 20px
 	overflow: hidden
-	transition: color 0.3s ease, border-color 0.3s ease
+	border-radius: 20px
 	+cb
+	transition: color 0.3s ease, background 0.2s ease
 	&.is-red
-		border-color: #DC6C7A
 		color: #DC6C7A
-		&:before
-			background: #DC6C7A
 		&:hover
 			color: #fff
+			background: #DC6C7A
+			border-color: #DC6C7A
+			i
+				&:before,
+				&:after
+					border-color: #FFF
 		i
-			+s(arr-red)
-			&:before
-				+s(arr-white)
-	&:before
-		content: ""
-		position: absolute
-		top: 0
-		left: 0
-		bottom: 0
-		width: 0
-		background: #c6c5ee
-		+tr(width 0.2s)
+			&:before,
+			&:after
+				border-color: #DC6C7A
 	&:hover
 		color: #000
-		&:before
-			width: 100%
+		background: #C6C5EE
 		i
-			&:before
-				opacity: 1
+			&:before,
+			&:after
+				border-color: #000
 	span
 		position: relative
 		display: inline-block
@@ -83,13 +78,26 @@ a
 	i
 		position: relative
 		display: inline-block
-		margin-left: 5px
-		+s(arr)
-		&:before
+		width: 9px
+		height: 9px
+		vertical-align: middle
+		margin: -2px 0 0 5px
+		&:before,
+		&:after
 			content: ""
 			position: absolute
+			+tr(border-color 0.3s)
+		&:before
+			width: 7px
+			height: 7px
+			border-top: 1px solid #C6C5EE
+			border-right: 1px solid #C6C5EE
 			top: 0
-			left: 0
-			opacity: 0
-			+tr(opacity 0.3s)
-			+s(arr-h)
+			right: 0
+		&:after
+			left: 1px
+			bottom: 0
+			width: 11px
+			border-bottom: 1px solid #C6C5EE
+			transform-origin: bottom left
+			+rotate(-45)

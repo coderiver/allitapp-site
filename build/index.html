@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="theme-color" content="#fff">
-	<link rel="stylesheet" media="all" href="css/perfect-scrollbar.min.css" >
 	<link rel="stylesheet" media="all" href="css/fancybox.css" >
 	<link rel="stylesheet" media="all" href="css/style.css" >
 	<script src="js/app.js"></script>
@@ -16,26 +15,28 @@
 <div class="out">
 	<div class="header js-header">
 		<div class="header__in">
-			<a href="#" class="logo js-small-logo is-hidden is-fixed">
+			<a href="0" data-color="first" class="logo js-link js-small-logo is-fixed">
 				<div class="logo__main">
 					<div class="logo__sq logo-red"></div>
-					<div class="logo__sq logo-green"></div>
+					<div class="logo__sq logo-green"><div></div></div>
 					<div class="logo__sq logo-violet"></div>
 					<div class="logo__sq logo-blue"></div>
 					<p class="logo__name"></p>
 				</div>
 			</a>
-			<a href="#" class="menu-ico js-show-menu"><span></span></a>
 		</div>
 	</div>
+	<a href="#" class="menu-ico js-show-menu is-first">
+		<div class="menu-ico__open"><span></span></div>
+		<div class="menu-ico__close"><i class="close-ico"></i></div>
+	</a>
 	<div class="menu js-menu">
-		<a href="#" class="menu__close js-close-menu"><i class="close-ico"></i></a>
 		<ul class="menu__list">
-			<li><a href="#" class="menu__option menu__option-1">Advertisers</a></li>
-			<li><a href="#" class="menu__option menu__option-2">Affiliates</a></li>
-			<li><a href="#" class="menu__option menu__option-3">Company</a></li>
-			<li><a href="#" class="menu__option menu__option-4">News</a></li>
-			<li><a href="#" class="menu__option menu__option-5">About us</a></li>
+			<li><a href="1" data-color="green" class="menu__option js-link menu__option-1">Advertisers</a></li>
+			<li><a href="2" data-color="green" class="menu__option js-link menu__option-2">Affiliates</a></li>
+			<li><a href="3" data-color="red" class="menu__option js-link menu__option-3">Company</a></li>
+			<li><a href="6" data-color="brown" class="menu__option js-link menu__option-4">News</a></li>
+			<li><a href="4" data-color="blue" class="menu__option js-link menu__option-5">About us</a></li>
 		</ul>
 	</div>
 	
@@ -211,7 +212,7 @@
 								<p>November</p>
 							</div>
 							<div class="news__text">
-								<p class="news__subttl">Platform launch</p>
+								<p class="news__subttl js-toggle-news">Platform launch <a href="#" class="news-ico"><span></span></a></p>
 								<div class="news__content js-content" style="display: block">
 									<p>Raised from the ashes of an old project, Stump Valley is a funny old place in the countryside by the forest, where deers and boars run free in the street, that’s the place where the most of S.V. music was made.!</p>
 									<div class="news__gal">
@@ -227,7 +228,6 @@
 									</div>
 								</div>
 							</div>
-							<a href="#" class="news-ico js-toggle-news"><span></span></a>
 						</div>
 						<div class="js-text">
 							<div class="news__bl">
@@ -236,12 +236,11 @@
 									<p>October</p>
 								</div>
 								<div class="news__text">
-									<p class="news__subttl">Testing mode</p>
+									<p class="news__subttl js-toggle-news">Testing mode <a href="#" class="news-ico is-arrow"><span></span></a></p>
 									<div class="news__content js-content">
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo incidunt qui laborum cum optio aliquam quas quisquam quidem quaerat nesciunt vero unde, eligendi, adipisci ut recusandae odio error. Impedit, debitis.</p>
 									</div>
 								</div>
-								<a href="#" class="news-ico is-arrow js-toggle-news"><span></span></a>
 							</div>
 							<div class="news__bl">
 								<div class="news__date">
@@ -249,21 +248,21 @@
 									<p>October</p>
 								</div>
 								<div class="news__text">
-									<p class="news__subttl">Allitapp team visited Casual Content.</p>
+									<p class="news__subttl js-toggle-news">Allitapp team visited Casual Content. <a href="#" class="news-ico is-arrow"><span></span></a></p>
 									<div class="news__content js-content">
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum deserunt soluta nostrum eum rem vel vero laudantium nobis adipisci aut, alias quisquam, assumenda eius neque tempora hic. Dolores, animi consectetur.</p>
 									</div>
 								</div>
-								<a href="#" class="news-ico is-arrow js-toggle-news"><span></span></a>
 							</div>
-						</div>				
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="skew"></div>
+			<div class="news__skew"></div>
 		</div>
 	</div>
-	<div class="footer js-footer">
+	<div class="footer js-footer is-active">
 		<div class="footer__in">
 			<div class="footer__bl">
 				<p class="footer__address">Shalom Meir Tower, Ehad Ha’am 9, Tel Aviv, Israel</p>
@@ -281,7 +280,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="scroll"></div>
 </div>
 <!-- END out-->
 </body>

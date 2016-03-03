@@ -4,10 +4,6 @@ $(document).ready(function() {
 	var headerBtn = $('.js-show-menu'),
 		footer = $('.js-footer');
 
-	function footerAds() {
-		footer.addClass('is-ads');
-	}
-
 	//Slides vars
 	var currentIndex = 0,
 		slides = $('.section'),
@@ -28,6 +24,7 @@ $(document).ready(function() {
 		logoViolet = $('.js-violet-square'),
 		logoBlue = $('.js-blue-square'),
 		logoName = $('.js-logo-name'),
+		logo = $('.js-small-logo'),
 		//mainBgBlocks
 		mainLeft = $('.js-main-left'),
 		mainRight = $('.js-main-right'),
@@ -149,7 +146,7 @@ $(document).ready(function() {
 				},
 				"-=0.5"
 			)
-			.add(firstCallForScroll),
+			.add(scrollWheel),
 		//ads
 		new TimelineMax({paused: true})
 			.to(logoBlue, 0.5, {
@@ -175,6 +172,7 @@ $(document).ready(function() {
 				},
 				"-=0.5"
 			)
+			.call(changeColor, ['is-green'])
 			.fromTo(logoGreenIn, 1, {
 					x: '-50%',
 					y: '-50%',
@@ -186,12 +184,17 @@ $(document).ready(function() {
 				},
 				"-=0.05"
 			)
-			.add(footerAds, "-=1")
+			.from(logo, 0.5, {
+					x: '-130%'
+				},
+				"-=1"
+			)
 			.from(adsSlide, 0.7, {
 					x: '200%'
 				},
 				"-=1"
 			)
+			.addLabel('label')
 			.staggerFrom(adsList, 0.5, {
 					opacity: 0,
 					y: '50px'
@@ -207,8 +210,8 @@ $(document).ready(function() {
 				opacity: 0,
 				y: '-150px'
 				},
-				0.3,
-				"-=0.4"
+				0.3
+				// "-=0.4"
 			)
 			.to(adsSlide, 0.7, {
 					x: '-145%'
@@ -219,6 +222,7 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
+			.addLabel('label')
 			.staggerFrom(affiliateList, 0.5, {
 					opacity: 0,
 					y: '50px'
@@ -233,9 +237,10 @@ $(document).ready(function() {
 				opacity: 0,
 				y: '-150px'
 				},
-				0.3,
-				"-=0.4"
+				0.3
+				// "-=0.4"
 			)
+			.call(changeColor, ['is-red'])
 			.to(affiliateSlide, 0.7, {
 					x: '-145%'
 				}
@@ -245,6 +250,7 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
+			.addLabel('label')
 			.staggerFrom(companyList, 0.5, {
 					opacity: 0,
 					y: '50px'
@@ -252,22 +258,24 @@ $(document).ready(function() {
 				0.3
 			)
 			.add(animateLeave)
-			.set([affiliateSlide, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps:'all'}),
+			.set([aboutSlide, affiliateSlide, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps:'all'}),
 		//about
 		new TimelineMax({paused: true})
 			.staggerTo(companyList, 0.5, {
 				opacity: 0,
 				y: '-150px'
 				},
-				0.3,
-				"-=0.4"
+				0.3
 			)
 			.to(companySlide, 0.7, {
 					x: '-145%'
 				}
 			)
-			.from(aboutSlide, 0.7, {
+			.call(changeColor, ['is-brown'])
+			.fromTo(aboutSlide, 0.7, {
 					x: '300%'
+				}, {
+					x: '0%'
 				},
 				"-=0.7"
 			)
@@ -277,6 +285,7 @@ $(document).ready(function() {
 				},
 				"-=0.7"
 			)
+			.addLabel('label')
 			.fromTo(aboutModel, 0.5, {
 					y: '-50%',
 					x: '100%',
@@ -299,7 +308,7 @@ $(document).ready(function() {
 		//team
 		new TimelineMax({paused: true})
 			.to(aboutSlide, 0.6, {
-					y: '-100%'
+					top: '-100%'
 				}
 			)
 			.fromTo(teamSlide, 0.6, {
@@ -309,6 +318,7 @@ $(document).ready(function() {
 				},
 				"-=0.6"
 			)
+			.addLabel('label')
 			.staggerFrom(teamList, 0.4, {
 					opacity: 0,
 					y: '60px'
@@ -320,21 +330,25 @@ $(document).ready(function() {
 			.set([aboutSlide, aboutTitle, aboutSkew, aboutText, teamList], {clearProps:'all'}),
 		//news
 		new TimelineMax({paused: true})
-			.staggerTo(teamList, 0.5, {
-				opacity: 0,
-				y: '-150px'
+			.staggerFromTo(teamList, 0.5, {
+					opacity: 1,
+					y: '0%'
+				}, {
+					opacity: 0,
+					y: '-150px'
 				},
-				0.3,
-				"-=0.4"
+				0.3
 			)
+			.call(changeColor, ['is-blue'])
 			.to(teamSlide, 0.7, {
-					x: '0%'
+					left: '-180%'
 				}
 			)
+			.addLabel('label')
 			.from(newsSlide, 0.7, {
 					x: '180%'
 				},
-				"-=0.7"
+				"-=0.9"
 			)
 			.staggerFrom(newsList, 0.5, {
 					opacity: 0,
@@ -348,9 +362,15 @@ $(document).ready(function() {
 	var animationUp = [
 		//ads
 		new TimelineMax({paused: true})
+			.call(changeColor, ['is-first'])
 			.to(adsSlide, 0.7, {
 					x: '200%'
 				}
+			)
+			.to(logo, 0.5, {
+					x: '-130%'
+				},
+				"-=0.7"
 			)
 			.set(adsSlide, {clearProps: 'all'})
 			.add(animateLeave),
@@ -371,6 +391,7 @@ $(document).ready(function() {
 			.add(animateLeave),
 		//company
 		new TimelineMax({paused: true})
+			.call(changeColor, ['is-green'])
 			.to(companySlide, 0.7, {
 					x: '250%'
 				}
@@ -385,40 +406,49 @@ $(document).ready(function() {
 			.set(companySlide, {clearProps: 'all'})
 			.add(animateLeave),
 		//about
-		new TimelineMax({paused: true})
-			.to(aboutSkew, 0.9, {
-					x: '100%',
-					y: '50%'
-				}
-			)
-			.to(aboutSlide, 0.7, {
-					x: '300%'
-				},
-				"-=0.9"
-			)
-			.fromTo(companySlide, 0.7, {
-					x: '-145%'
-				}, {
-					x: '0%'
-				},
-				"-=0.9"
-			)
-			.set(aboutSlide, {clearProps: 'all'})
-			.add(animateLeave),
+		(function(){
+			new TimelineMax()
+				.call(changeColor, ['is-red'])
+				.to(aboutSkew, 0.9, {
+						x: '100%',
+						y: '50%'
+					}
+				)
+				.to(aboutSlide, 0.7, {
+						x: '300%'
+					},
+					"-=0.9"
+				)
+				.fromTo(companySlide, 0.7, {
+						x: '-145%'
+					}, {
+						x: '0%'
+					},
+					"-=0.9"
+				)
+				.set(aboutSlide, {clearProps: 'all'})
+				.add(animateLeave);
+		}),
 		//team
-		new TimelineMax({paused: true})
-			.fromTo(teamSlide, 0.7, {
-					y: '0%'
-				}, {
-					y: '100%'
-				}
-			)
-			.set(teamSlide, {clearProps: 'all'})
-			.add(animateLeave),
+		(function(){
+			new TimelineMax()
+				.to(teamSlide, 0.7, {
+						y: '100%'
+					}
+				)
+				.from(aboutSlide, 0.7, {
+						top: '-100%'
+					},
+					"-=0.7"
+				)
+				.set([aboutSlide, teamSlide], {clearProps: 'all'})
+				.add(animateLeave);
+		}),
 		//news
 		new TimelineMax({paused: true})
+			.call(changeColor, ['is-brown'])
 			.to(newsSlide, 0.7, {
-					x: '180%' 
+					x: '180%'
 				},
 				"-=0.9"
 			)
@@ -437,80 +467,112 @@ $(document).ready(function() {
 				0.3,
 				"-=0.4"
 			)
-			.set([newsSlide], {clearProps: 'all'})
+			.set([teamSlide, newsSlide], {clearProps: 'all'})
 			.add(animateLeave),
 	];
-
-	//scroll
-	var lastScrollTop = 0;
-
-	$('.out').on('scroll', function(){
-		$(window).trigger('scroll');
-	});
-
-	$(window).scroll(function() {
-		scrollMove();
-	});
 
 	//MainSlideAnimationOnLoad!!!
 	animationDown[currentIndex].play();
 
-
 	//Move to next slide
 	function moveToNextSlide() {
-		disableScroll();
 		currentIndex = currentIndex + 1;
 		slides.eq(currentIndex).addClass('is-animate');
 		animationDown[currentIndex].play(0);
-
-		if (currentIndex != 6) {
-			$('.scroll').height($('.scroll').height() + 20);
-			$('.out').perfectScrollbar('update');
-		}
 	}
 
 	//Move to prev slide
 	function moveToPrevSlide() {
-		disableScroll();
 		currentIndex = currentIndex - 1;
 		slides.eq(currentIndex).addClass('is-animate');
-		animationUp[currentIndex].play(0);
-		console.log(currentIndex)
-		if (currentIndex != 0) {
-			$('.scroll').height($('.scroll').height() + 20);
-			$('.out').perfectScrollbar('update');
+
+		if (typeof animationUp[currentIndex] == 'function') {
+			animationUp[currentIndex]();
+		} else {
+			animationUp[currentIndex].play(0);
 		}
+	}
+	//fastShowSlide
+	function fastShowSlide(num) {
+		console.log(typeof currentIndex);
+		currentIndex = + num;
+		console.log(typeof currentIndex);
+
+		// slides.filter('.is-active').removeClass('is-active');
+
+		slides.eq(currentIndex).addClass('is-animate');
+
+		animationDown[currentIndex].play('label');
+
+		console.log(currentIndex);
 	}
 	//Animate leave Slide
 	function animateLeave() {
 		slides.filter(".is-active").removeClass('is-active');
 		slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
-		enableScroll();
-		console.log('animated');
-	}
-
-	function scrollMove() {
-		var st = $('.out').scrollTop();
-		//scroll detection
-		if (st > lastScrollTop){
-			console.log('DOWN');
-			moveToNextSlide();
-
-		} else {
-			console.log('UP');
-			moveToPrevSlide();
-		}
-		lastScrollTop = st;
+		scrollWheel();
 	}
 
 	//scrollToggle
-	function disableScroll() {
-		$('.out').perfectScrollbar('destroy');
+
+	function changeColor(color) {
+		footer.removeClass(footer.attr('class').split(' ').pop()).addClass(color);
+		headerBtn.removeClass(headerBtn.attr('class').split(' ').pop()).addClass(color);
 	}
-	function enableScroll() {
-		$('.out').perfectScrollbar();
+
+	var prevDeltaY = null;
+	var direction  = null;
+	function scrollWheel() {
+		$('.out').one('wheel', function(e) {
+			if (!$('.js-menu').hasClass('is-active')) {
+				var deltaY = e.originalEvent.deltaY;
+				if (deltaY < 0) {
+					direction = 'up';
+					if (currentIndex == 0) {
+						scrollWheel();
+					} else {
+						moveToPrevSlide();
+					}
+				} else if (deltaY > 0) {
+					direction = 'down';
+					if (currentIndex == 6) {
+						scrollWheel();
+					} else {
+						moveToNextSlide();
+					}
+				} else {
+					direction = (prevDeltaY < 0) ? 'up' : 'down';
+				}
+				prevDeltaY = deltaY;
+				console.log(currentIndex);
+			};
+		});
+		console.log('bla');
 	}
-	function firstCallForScroll() {
-		$('.out').perfectScrollbar();
-	}
+
+
+	$('.js-show-menu').click(function(evt) {
+		evt.preventDefault();
+		$('.out').off('wheel');
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			$('.js-menu').removeClass('is-active');
+			scrollWheel();
+		} else {
+			$(this).addClass('is-active');
+			$('.js-menu').addClass('is-active');
+		}
+	});
+
+	$('.js-link').click(function(e) {
+		e.preventDefault();
+		$('.out').off('wheel');
+		var id = $(this).attr('href');
+		var dataColor = 'is-' + $(this).data('color');
+		fastShowSlide(id);
+		changeColor(dataColor);
+		$('.js-show-menu').removeClass('is-active');
+		$('.js-menu').removeClass('is-active');
+	});
+
 });

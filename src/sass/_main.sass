@@ -11,8 +11,15 @@
 	display: table
 	width: 100%
 	height: 100%
+	visibility: hidden
 	&.is-active, &.is-animate
+		visibility: visible
+	&.is-active
+		z-index: 20
+	&.is-animate
 		z-index: 25
+		&:first-child
+			z-index: 15
 	&__in
 		position: relative
 		display: table-cell
@@ -23,7 +30,6 @@
 		background-color: #25345c
 		background-image: linear-gradient(#25345c, #314477 50%, #324577 80%)
 	&.ads
-		//+gh(#f8f1f0, #ecd3cc)
 		.skew
 			&:after, &:before
 				width: 100%
@@ -32,11 +38,10 @@
 				left: 50%
 				background-image: linear-gradient(#7abdb8, #7dbfac 50%, #95cca9 80%)
 			&:before
-				left: -50%
+				left: -49%
 				+gh(#f8f1f0, #ecd3cc)
-				
+
 	&.affiliate
-		//+gh(#c54a5f, #f3a998)
 		.inner
 			position: static
 		.skew
@@ -45,7 +50,7 @@
 			&:before
 				left: -100%
 				transform: skewX(-40deg)
-				+gh(#c54a5f, #f3a998)				
+				+gh(#c54a5f, #f3a998)
 			&:after
 				left: 200px
 				transform: skewX(-63.3deg)
@@ -54,20 +59,18 @@
 			top: 67px
 			transform: translateY(0)
 	&.company
-		//+gh(#ebf4ff, #dbeaff)
 		.skew
 			&:before
-				width: 200% 
+				width: 200%
 				left: -100%
 				transform: skewX(-35deg)
-				+gh(#ebf4ff, #dbeaff)				
+				+gh(#ebf4ff, #dbeaff)
 			&:after
 				left: 50%
 				width: 100%
 				transform: skewX(19deg)
-				+g(#ae653e, #f1dc9d)
+				+g(#ce986c, #f1dc9d)
 	&.info
-		//+g(#d4ecf0, #ebf3f4)
 		.section__in
 			padding-bottom: 20px
 			vertical-align: top
@@ -75,18 +78,20 @@
 		.skew
 			transform: skewX(20deg)
 			&:before
-				width: 200% 
-				left: -50%
-				+gh(#d4ecf0, #ebf3f4)	
-			&:after
-				top: 90%
-				left: -50% 
 				width: 200%
-				height: 130%
-				transform: skewY(3deg)
-				box-shadow: 0 0 80px 5px rgba(0,0,0,0.2)
-				z-index: 2
-				+gh(#9dc6d4, #aacdda)
+				left: -50%
+				+gh(#d4ecf0, #ebf3f4)
+				z-index: 1
+		.news__skew
+			position: absolute
+			top: 90%
+			left: -24%
+			width: 200%
+			height: 130%
+			transform: skew(20deg, 3deg)
+			box-shadow: 0 0 80px 5px rgba(0,0,0,0.2)
+			z-index: 3
+			+gh(#9dc6d4, #aacdda)
 	+r(1024)
 		.model
 			margin: 0 auto
@@ -169,7 +174,6 @@
 	left: 0
 	right: 0
 	bottom: 0
-	// overflow: hidden
 	&:after, &:before
 		content: ""
 		position: absolute
@@ -203,9 +207,6 @@
 	text-align: center
 	font-size: 36px
 	color: #f3f1ed
-	&.is-hidden
-		visibility: hidden
-		opacity: 0
 	&.is-fixed
 		float: left
 		display: block
@@ -230,6 +231,9 @@
 			width: 66px
 			height: 66px
 			margin-top: -33px
+			div
+				width: 66px
+				height: 66px
 		.logo__name
 			width: 77px
 			height: 20px
@@ -275,7 +279,7 @@
 			height: 265px
 			background-image: url(../img/svg-bg/logo-green.svg)
 			background-repeat: no-repeat
-			background-size: cover 
+			background-size: cover
 	&-red
 		right: 0
 		background-image: url(../img/svg-bg/logo-red.svg)
@@ -395,15 +399,22 @@
 		margin-bottom: 39px
 		font-size: 24px
 		+cm
+		cursor: pointer
+		padding-right: 30px
+		&:hover
+			.news-ico
+				span,
+				&:before,
+				&:after
+					background: lighten(#dc6c7a, 10%)
 	&__content
 		display: none
+		max-width: 520px
 	&__date
 		float: left
 		width: 144px
 		+cm
 	&__text
-		max-width: 520px
-		padding-right: 30px
 		margin-top: 3px
 		overflow: hidden
 	&__day
@@ -425,11 +436,6 @@
 		right: 0
 		width: 14px
 		height: 14px
-		&:hover
-			span,
-			&:before,
-			&:after
-				background: lighten(#dc6c7a, 10%)
 		&:before,
 		&:after
 			content: ""
@@ -473,10 +479,3 @@
 			padding: 0
 		&__subttl
 			font-size: 22px
-			
-
-.scroll
-	height: 110vh 			
-
-.ps-scrollbar-y-rail
-	z-index: 300

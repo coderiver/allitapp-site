@@ -44,92 +44,118 @@
 	visibility: hidden
 	z-index: 35
 	+tr(0.5s)
-	+gh(#8eccdf, #97cab7)
+	+gh(#384e86, #7261a9)
+	padding: 80px 0 0
 	&.is-active
 		opacity: 1
 		visibility: visible
-		.menu__option
-			animation: menu 0.5s forwards
+		li
+			margin: 0 0 25px
+			opacity: 1
+			transition-delay: 0.1s
 	&__list
 		overflow: hidden
 		li
-			margin: 30px 0
+			opacity: 0
+			transition: margin 0.2s linear, opacity 0.1s linear
 	&__option
-		display: inline-block
+		display: block
 		padding: 0 30px
-		font-size: 32px
-		color: #1C4149
-		opacity: 0
-		transform: translateX(100%)
+		font-size: 62px
+		color: #fff
 		+csb
 		&:hover
 			color: lighten(#1C4149 , 10%)
 	&__close
 		display: inline-block
-		&.is-active
-			.close-ico
-				+rotate(0)
-	+r(530)
-		+g(#8eccdf, #97cab7)
-		&__option
-			color: #FFF
 
-@for $i from 1 through 5
-	$value: $i / 5
-	.menu.is-active .menu__option-#{$i}
-		animation-delay: $value + s
-
-@keyframes menu
-	0%
-		opacity: 0
-		transform: translateX(100%)
-	30%
-		opacity: 0.3
-	100%
-		opacity: 1
-		transform: translateX(0)
 
 .menu-ico
 	float: right
-	margin: 40px 28px 0 0
+	margin: 33px 18px 0 0
 	border-radius: 50%
-	&:before,
-	&:after
-		content: ""
-		display: inline-block
-		margin: 0 2px
-		width: 6px
-		height: 6px
-		background: #F3F1ED
-		border-radius: 50%
-		vertical-align: middle
-		+tr(background 0.3s)
-	&.is-hidden
+	padding: 10px
+	position: relative
+	z-index: 40
+	&:hover
+		.menu-ico
+			&__open
+				&:before, &:after
+					margin: -3px -1px 0
+				span
+					width: 8px
+					height: 8px
+		.close-ico
+			width: 24px
+			height: 24px
+	&.is-active
+		.menu-ico__open
+			opacity: 0
+			&:before, &:after
+				margin: -3px 12px 0
+		.menu-ico__close
+			opacity: 1
+			transform: scale(1)
+	&.is-green
+		span, .menu-ico__open:before, .menu-ico__open:after
+			background: #257749
+	&.is-red
+		span, .menu-ico__open:before, .menu-ico__open:after
+			background: #cb572f
+	&.is-brown
+		span, .menu-ico__open:before, .menu-ico__open:after
+			background: #b16d35
+	&.is-blue
+		span, .menu-ico__open:before, .menu-ico__open:after
+			background: #42607c
+	&__open
+		position: relative
+		width: 30px
+		&:before,
+		&:after,
+		span
+			content: ""
+			width: 6px
+			height: 6px
+			background: #F3F1ED
+			border-radius: 50%
+			position: absolute
+			top: 50%
+			border-radius: 50%
+		&:before, &:after
+			margin: -3px 2px 0
+			transition: margin 0.1s linear
+		&:before
+			left: 0
+		&:after
+			right: 0
+		span
+			left: 50%
+			transform: translate(-50%, -50%)
+			transition: all 0.1s linear
+	&__close
+		position: absolute
+		top: 50%
+		left: 50%
+		margin: -11px 0 0 -10px
 		opacity: 0
-	span
-		display: inline-block
-		width: 6px
-		height: 6px
-		margin: 0 2px
-		background: #F3F1ED
-		border-radius: 50%
-		vertical-align: middle
-		+tr(background 0.3s)
+		transform: scale(0)
+		width: 20px
+		height: 20px
+	&__open, &__close
+		transition: opacity 0.2s 0.1s, transform 0.2s 0.1s
+
 	+r(530)
 		margin-right: 15px
 
 .close-ico
-	position: relative
-	display: inline-block
-	width: 14px
-	height: 14px
-	margin: 41px 26px 0 0
-	+rotate(-90)
-	+tr(0.5s)
-	&:hover
-		&:before,
-		&:after
-			background: lighten(#0f323d, 10%)
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 20px
+	height: 20px
+	+tr(0.15s)
 	&:before,
 	&:after
 		content: ""
@@ -137,8 +163,8 @@
 		top: 50%
 		left: 0
 		width: 100%
-		height: 2px
-		background: #0f323d
+		height: 3px
+		background: #fff
 	&:before
 		+rotate(45)
 	&:after
@@ -157,7 +183,7 @@
 	margin-bottom: 25px
 	padding: 0 30px
 	z-index: 30
-	&.is-ads
+	&.is-green
 		.footer__bl,
 		.footer__mail,
 		.footer__icons
@@ -166,17 +192,20 @@
 			&:hover
 				color: darken(#257749, 10%)
 		.btn
-			border-color: #257749
 			color: #257749
-			&:before
-				background: #257749
+			border-color: #257749
 			&:hover
 				color: #FFF
+				background: #257749
+				i
+					&:before,
+					&:after
+						border-color: #fff
 			i
-				+s(arr-green)
-				&:before
-					+s(arr-white)
-	&.is-company
+				&:before,
+				&:after
+					border-color: #257749
+	&.is-red
 		.footer__bl,
 		.footer__mail,
 		.footer__icons
@@ -185,35 +214,63 @@
 			&:hover
 				color: darken(#cb572f, 10%)
 		.btn
-			border-color: #cb572f
 			color: #cb572f
-			&:before
-				background: #cb572f
+			border-color: #cb572f
 			&:hover
+				background: #cb572f
 				color: #FFF
+				i
+					&:before,
+					&:after
+						border-color: #fff
 			i
-				+s(arr-brown)
-				&:before
-					+s(arr-white)
-	&.is-news
+				&:before,
+				&:after
+					border-color: #cb572f
+	&.is-blue
 		.footer__bl,
 		.footer__mail,
 		.footer__icons
-			color: #646aaf
+			color: #42607c
 		.footer__icons
 			&:hover
-				color: lighten(#646aaf, 10%)
+				color: lighten(#42607c, 10%)
 		.btn
-			border-color: #646aaf
-			color: #646aaf
-			&:before
-				background: #646aaf
+			color: #42607c
+			border-color: #42607c
 			&:hover
 				color: #FFF
+				background: #42607c
+				i
+					&:before,
+					&:after
+						border-color: #fff
 			i
-				+s(arr-blue)
-				&:before
-					+s(arr-white)
+				&:before,
+				&:after
+					border-color: #42607c
+	&.is-brown
+		.footer__bl,
+		.footer__mail,
+		.footer__icons
+			color: #b16d35
+		.footer__icons
+			&:hover
+				color: darken(#b16d35, 10%)
+		.btn
+			color: #b16d35
+			border-color: #b16d35
+			&:hover
+				color: #FFF
+				background: #b16d35
+				i
+					&:before,
+					&:after
+						border-color: #fff
+			i
+				&:before,
+				&:after
+					border-color: #b16d35
 	&__in
 		display: table
 		width: 100%
