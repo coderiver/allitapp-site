@@ -795,7 +795,6 @@ $(document).ready(function() {
 					figure.eq(index - 1).addClass('is-active');
 				}
 
-				console.log($(this).width())
 			});
 		}
 	});
@@ -805,8 +804,6 @@ $(document).ready(function() {
 			$('.js-images div').each(function() {
 				var path = $(this).data('src');
 				$(this).attr('style', 'background-image: url('+ path +');');
-
-				console.log(path);
 			});
 		};
 	};
