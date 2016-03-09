@@ -18,6 +18,8 @@ body
 	line-height: 1.4
 	+cb
 	overflow: hidden
+	+r(1024)
+		overflow: visible
 
 .out
 	position: relative
@@ -33,8 +35,6 @@ a
 	font-size: 54px
 	color: #dc6c7a
 	+csb
-	+r1
-		font-size: 44px
 
 .btn
 	position: relative
@@ -52,6 +52,7 @@ a
 	transition: color 0.3s ease, background 0.2s ease
 	&.is-red
 		color: #DC6C7A
+		border-color: #DC6C7A
 		&:hover
 			color: #fff
 			background: #DC6C7A

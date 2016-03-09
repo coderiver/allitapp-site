@@ -62,7 +62,10 @@
 	+g(#ffcda0, #fff4d1)
 	padding-top: 100px
 	+r(1024)
+		padding-top: 0
 		+g(#f7f6ff, #e8e8ff)
+		.section__in
+			padding-top: 0
 	.section__in
 		vertical-align: top
 		padding-top: 20px
@@ -86,8 +89,6 @@
 				+cover
 				display: block
 	.skew
-		+r(1024)
-			display: none
 		&:before
 			top: 0
 			left: -20%
@@ -95,6 +96,16 @@
 			height: 100%
 			transform: skewX(20deg)
 			+g(#ffcda0, #fff4d1)
+		+r(1024)
+			&:before
+				top: auto
+				left: 0
+				bottom: -300px
+				height: 500px
+				transform: skewY(-10deg)
+			&:after
+				display: none
+
 
 .member
 	display: inline-block
