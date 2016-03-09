@@ -70,7 +70,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .section.ads .skew:after, .section.ads .skew:before { width: 100%; -webkit-transform: skewX(-38deg); -ms-transform: skewX(-38deg); transform: skewX(-38deg); }
 .section.ads .skew:after { left: 50%; background-image: -webkit-gradient(linear, left top, left bottom, from(#7abdb8), color-stop(50%, #7dbfac), color-stop(80%, #95cca9)); background-image: -webkit-linear-gradient(#7abdb8, #7dbfac 50%, #95cca9 80%); background-image: linear-gradient(#7abdb8, #7dbfac 50%, #95cca9 80%); }
 .section.ads .skew:before { left: -49%; background-color: #f8f1f0; background-image: -webkit-gradient(linear, left top, right top, from(#f8f1f0), to(#ecd3cc)); background-image: -webkit-linear-gradient(left, #f8f1f0, #ecd3cc); background-image: linear-gradient(to right, #f8f1f0, #ecd3cc); }
-.section.ads .model-images div { background-position: right top; }
+.section.ads .model-images div { background-position: right center; }
 .section.affiliate .inner { position: static; }
 .section.affiliate .skew:after, .section.affiliate .skew:before { width: 200%; }
 .section.affiliate .skew:before { left: -100%; -webkit-transform: skewX(-40deg); -ms-transform: skewX(-40deg); transform: skewX(-40deg); background-color: #c54a5f; background-image: -webkit-gradient(linear, left top, right top, from(#c54a5f), to(#f3a998)); background-image: -webkit-linear-gradient(left, #c54a5f, #f3a998); background-image: linear-gradient(to right, #c54a5f, #f3a998); }
@@ -153,8 +153,8 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .inner__text { position: relative; z-index: 20; margin: 0 -15px; padding: 0 15px; *zoom: 1; }
 .inner__text:after { content: " "; display: table; clear: both; }
 
-.model-images { width: 90vw; height: 90vh; max-width: 100%; max-height: 1700px; position: relative; }
-.model-images div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-repeat: no-repeat; background-size: contain; opacity: 0; }
+.model-images { width: 100vw; height: 100vh; max-width: 1300px; position: absolute; top: 0; bottom: 0; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+.model-images div { position: absolute; top: 20px; left: 0; right: 0; bottom: 20px; background-repeat: no-repeat; background-size: contain; opacity: 0; }
 .model-images div.is-active { opacity: 1; }
 .model-images img { max-width: 100%; max-height: 100%; }
 

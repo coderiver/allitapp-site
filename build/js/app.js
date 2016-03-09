@@ -936,6 +936,29 @@ $(document).ready(function() {
 		};
 	};
 
+	var state = null;
+	function setState() {
+		if ($('body').width() < 1024) {
+			if (state !== "mobile") {
+				state = "mobile";
+				console.log(state);
+				$('.out').off('wheel');
+				slides.filter(".is-active").removeClass('is-active');
+				slides.eq(0).addClass('is-active').removeClass('is-animate');
+			}
+		} else {
+			if (state !== "desktop") {
+				state = "desktop";
+				console.log(state);
+				currentIndex = 0;
+				scrollWheel();
+			}
+		}
+	};
+
+	$(window).resize(function() {
+		setState();
+	});
 
 });
 $(document).ready(function() {
