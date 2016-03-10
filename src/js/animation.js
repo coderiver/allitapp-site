@@ -869,14 +869,14 @@ $(document).ready(function() {
 	});
 
 	function initImages() {
-		if ($('.js-images').length) {
+		$('.js-images').each(function() {
 			if (!window.matchMedia("(max-width: 1024px)").matches) {
-				$('.js-images div').each(function() {
+				$(this).find('div').each(function() {
 					var path = $(this).data('src');
 					$(this).attr('style', 'background-image: url('+ path +');');
 				});
 			};
-		};
+		});
 	}
 	initImages();
 
