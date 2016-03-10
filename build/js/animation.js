@@ -87,7 +87,7 @@ $(document).ready(function() {
 	var newsList = [newsTitle, newsSubtitle, newsText];
 
 
-	if (!window.matchMedia("(max-width: 1024px)").matches) {
+	// if (!window.matchMedia("(max-width: 1024px)").matches) {
 		//Animations
 		var animationDown = [
 			//main
@@ -661,6 +661,7 @@ $(document).ready(function() {
 		//Move to next slide
 		function moveToNextSlide() {
 			currentIndex = currentIndex + 1;
+			console.log(currentIndex, animationDown);
 			slides.eq(currentIndex).addClass('is-animate');
 			// animationDown[currentIndex].play(0);
 
@@ -694,7 +695,13 @@ $(document).ready(function() {
 		function animateLeave() {
 			slides.filter(".is-active").removeClass('is-active');
 			slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
-			scrollWheel();
+			if ($(window).width() > 1024) {
+				scrollWheel();
+			};
+			$(window).on('resize', function() {
+				setState();
+				console.log('bla')
+			});
 		}
 
 		//change color for header and footer
@@ -707,32 +714,36 @@ $(document).ready(function() {
 		var prevDeltaY = null;
 		var direction  = null;
 		function scrollWheel() {
-			$('.out').one('wheel', function(e) {
-				if (!$('.js-menu').hasClass('is-active')) {
-					//mousewheel direction
-					var deltaY = e.originalEvent.deltaY;
-					if (deltaY / 50 < 0) {
-						direction = 'up';
-						if (currentIndex == 0) {
-							scrollWheel();
+			if (!window.matchMedia("(max-width: 1024px)").matches) {
+				$('.out').one('wheel', function(e) {
+					if (!$('.js-menu').hasClass('is-active')) {
+						//mousewheel direction
+						var deltaY = e.originalEvent.deltaY;
+						if (deltaY / 50 < 0) {
+							direction = 'up';
+							if (currentIndex == 0) {
+								scrollWheel();
+							} else {
+								moveToPrevSlide();
+							}
+						} else if (deltaY > 0) {
+							direction = 'down';
+							if (currentIndex == 6) {
+								scrollWheel();
+							} else {
+								moveToNextSlide();
+							}
 						} else {
-							moveToPrevSlide();
+							direction = (prevDeltaY < 0) ? 'up' : 'down'; //for touchpad
 						}
-					} else if (deltaY > 0) {
-						direction = 'down';
-						if (currentIndex == 6) {
-							scrollWheel();
-						} else {
-							moveToNextSlide();
-						}
-					} else {
-						direction = (prevDeltaY < 0) ? 'up' : 'down'; //for touchpad
-					}
-					prevDeltaY = deltaY;
-				};
-			});
+						prevDeltaY = deltaY;
+					};
+					$(window).off('resize');
+					console.log(currentIndex)
+				});
+			}
 		}
-	} else {
+	if (window.matchMedia("(max-width: 1024px)").matches) {
 		$(window).scroll(function() {
 			if ($(window).scrollTop() >= $('#ads').offset().top) {
 				logo.addClass('is-active');
@@ -858,38 +869,44 @@ $(document).ready(function() {
 		}
 	});
 
-	if ($('.js-images').length) {
-		if (!window.matchMedia("(max-width: 1024px)").matches) {
-			$('.js-images div').each(function() {
-				var path = $(this).data('src');
-				$(this).attr('style', 'background-image: url('+ path +');');
-			});
+	function initImages() {
+
+		if ($('.js-images').length) {
+			if (!window.matchMedia("(max-width: 1024px)").matches) {
+				$('.js-images div').each(function() {
+					var path = $(this).data('src');
+					$(this).attr('style', 'background-image: url('+ path +');');
+				});
+			};
 		};
+	}
+	initImages();
+
+	var state = null;
+	function setState() {
+		if ($('body').width() < 1024) {
+			$('.out').off('wheel');
+			currentIndex = 0;
+			if (state !== "mobile") {
+				// $('.out').on('wheel');
+				state = "mobile";
+				slides.removeClass('is-active');
+				slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
+				console.log(state, currentIndex);
+			}
+		} else {
+			if (state !== "desktop") {
+				$('.out').off('wheel');
+				state = "desktop";
+				scrollWheel();
+				console.log(state, currentIndex);
+				initImages();
+			}
+		}
 	};
 
-	// var state = null;
-	// function setState() {
-	// 	currentIndex = 0;
-	// 	if ($('body').width() < 1024) {
-	// 		$('.out').off('wheel');
-	// 		if (state !== "mobile") {
-	// 			state = "mobile";
-	// 			slides.removeClass('is-active');
-	// 			slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
-	// 			console.log(state, currentIndex);
-	// 		}
-	// 	} else {
-	// 		if (state !== "desktop") {
-	// 			state = "desktop";
-	// 			currentIndex = 0;
-	// 			scrollWheel();
-	// 			console.log(state, currentIndex);
-	// 		}
-	// 	}
-	// };
-
-	// $(window).resize(function() {
-	// 	setState();
-	// });
+	$(window).on('resize', function() {
+		setState();
+	});
 
 });
