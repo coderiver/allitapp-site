@@ -867,28 +867,29 @@ $(document).ready(function() {
 		};
 	};
 
-	var state = null;
-	function setState() {
-		if ($('body').width() < 1024) {
-			if (state !== "mobile") {
-				state = "mobile";
-				console.log(state);
-				$('.out').off('wheel');
-				slides.filter(".is-active").removeClass('is-active');
-				slides.eq(0).addClass('is-active').removeClass('is-animate');
-			}
-		} else {
-			if (state !== "desktop") {
-				state = "desktop";
-				console.log(state);
-				currentIndex = 0;
-				scrollWheel();
-			}
-		}
-	};
+	// var state = null;
+	// function setState() {
+	// 	currentIndex = 0;
+	// 	if ($('body').width() < 1024) {
+	// 		$('.out').off('wheel');
+	// 		if (state !== "mobile") {
+	// 			state = "mobile";
+	// 			slides.removeClass('is-active');
+	// 			slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
+	// 			console.log(state, currentIndex);
+	// 		}
+	// 	} else {
+	// 		if (state !== "desktop") {
+	// 			state = "desktop";
+	// 			currentIndex = 0;
+	// 			scrollWheel();
+	// 			console.log(state, currentIndex);
+	// 		}
+	// 	}
+	// };
 
-	$(window).resize(function() {
-		setState();
-	});
+	// $(window).resize(function() {
+	// 	setState();
+	// });
 
 });
