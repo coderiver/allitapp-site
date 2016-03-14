@@ -120,6 +120,7 @@ $(document).ready(function() {
 				} else {
 					if (about !== 'about') {
 						about = 'about';
+						teamItem.removeClass('is-active');
 					}
 				}
 				console.log(aboutTop, teamTop, about)
@@ -937,13 +938,13 @@ $(document).ready(function() {
 				var winWidth = $(window).width();
 				var currWidth = (winWidth - itemWidth)/2; //side margin
 				var x = event.pageX; //mouse position X
-				var xZone = event.pageX - currWidth; //mouse start
+				var xZone = event.pageX - winWidth/4; //mouse start
 				var active = $(this).find('.js-images div.is-active');
 				var step = Math.round(100 / figureItems);
 				// if (x < winWidth/2) { //left side
-					if (x >= currWidth) { //mouse in left side of hover zone
+					if (x >= winWidth/4) { //mouse in left side of hover zone
 						// var mouseX = Math.round(xZone*2/(itemWidth/100)); //mouse position inside hover zone from 0 to 100
-						var mouseX = Math.round(xZone/(itemWidth/100)); //mouse position inside hover zone from 0 to 100
+						var mouseX = Math.round(xZone/(winWidth/200)); //mouse position inside hover zone from 0 to 100
 						var index = Math.round(mouseX / step);
 						active.removeClass('is-active');
 						if (index <= 0) {
@@ -954,7 +955,7 @@ $(document).ready(function() {
 						} else {
 							figure.eq(index - 1).addClass('is-active');
 						}
-						console.log(index);
+						console.log(mouseX, index);
 					};
 				// } else { //right side
 				// 	if (x <= winWidth - currWidth) { //mouse in right side of hover zone
