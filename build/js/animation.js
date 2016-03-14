@@ -12,8 +12,8 @@ $(document).ready(function() {
 		affiliateSl = slides.eq(2),
 		companySl = slides.eq(3),
 		aboutSl = slides.eq(4),
-		teamSl = slides.eq(5),
-		newsSl = slides.eq(6);
+		// teamSl = slides.eq(5),
+		newsSl = slides.eq(5);
 
 	//varMain
 	var slideMain = slides.eq(0),
@@ -68,14 +68,14 @@ $(document).ready(function() {
 	var aboutList = [aboutTitle, aboutText];
 
 	//varTeam
-	var teamSlide = teamSl,
+	var teamSlide = $('.js-team'),
 		teamItem = teamSlide.find('.js-item');
 
 	//array
-	var teamList = [];
-	teamItem.each(function() {
-		teamList.push($(this));
-	});
+	// var teamList = [];
+	// teamItem.each(function() {
+	// 	teamList.push($(this));
+	// });
 
 	//varNews
 	var newsSlide = newsSl,
@@ -89,6 +89,65 @@ $(document).ready(function() {
 
 	// if (!window.matchMedia("(max-width: 1024px)").matches) {
 		//Animations
+
+		// team
+
+		// function teamDown() {
+		// 	new TimelineMax()
+		// 		.staggerFrom(teamList, 0.4, {
+		// 				opacity: 0,
+		// 				y: '60px'
+		// 			},
+		// 			0.3,
+		// 			"-=0.4"
+		// 		)
+		// 		.set([teamItem, teamSlide], {clearProps:'all'});
+		// };
+
+		var teamItem = $('.js-item');
+
+		aboutSlide.each(function() {
+			var about = 'about';
+			$(this).scroll(function() {
+				var aboutTop = aboutSlide.scrollTop();
+				var teamTop = teamSlide.position().top;
+				var teamHeight = teamSlide.outerHeight();
+				if (aboutTop >= teamTop) {
+					if (about !== 'team') {
+						about = 'team';
+						teamItem.addClass('is-active');
+					};
+				} else {
+					if (about !== 'about') {
+						about = 'about';
+					}
+				}
+				console.log(aboutTop, teamTop, about)
+			});
+		});
+		// (function(){
+		// 	new TimelineMax()
+		// 		.to(aboutSlide, 0.6, {
+		// 				top: '-100%'
+		// 			}
+		// 		)
+		// 		.fromTo(teamSlide, 0.6, {
+		// 				y: '100%'
+		// 			}, {
+		// 				y: '0%'
+		// 			},
+		// 			"-=0.6"
+		// 		)
+		// 		.staggerFrom(teamList, 0.4, {
+		// 				opacity: 0,
+		// 				y: '60px'
+		// 			},
+		// 			0.3,
+		// 			"-=0.4"
+		// 		)
+		// 		.add(animateLeave)
+		// 		.set([aboutSlide, teamItem, teamSlide], {clearProps:'all'});
+		// });
 		var animationDown = [
 			//main
 			new TimelineMax({paused: true})
@@ -148,274 +207,251 @@ $(document).ready(function() {
 					},
 					"-=0.5"
 				)
-				.add(scrollWheel),
+				.add(mouseDrag),
+				// .add(scrollWheel),
 			//ads
 			(function(){
-			new TimelineMax()
-				.to(logoBlue, 0.5, {
-						x: '-40%',
-						opacity: 0
-					}
-				)
-				.to(logoRed, 0.5, {
-						x: '40%',
-						opacity: 0
-					},
-					"-=0.5"
-				)
-				.to(logoViolet, 0.5, {
-						x: '-20%',
-						opacity: 0
-					},
-					"-=0.5"
-				)
-				.to(logoName, 0.5, {
-						left: '61%',
-						opacity: 0
-					},
-					"-=0.5"
-				)
-				.call(changeColor, ['is-green'])
-				.fromTo(logoGreenIn, 1, {
-						x: '-50%',
-						y: '-50%',
-					}, {
-						rotation: '-60deg',
-						x: '-50%',
-						y: '-50%',
-						scale: '15'
-					},
-					"-=0.05"
-				)
-				.to(logo, 0.5, {
-						x: '0%'
-					},
-					"-=1"
-				)
-				.from(adsSlide, 0.7, {
-						x: '200%'
-					},
-					"-=1"
-				)
-				.staggerFrom(adsList, 0.5, {
-						opacity: 0,
-						y: '50px'
-					},
-					0.3,
-					"-=0.4"
-				)
-				.add(animateLeave)
-				.set([adsSlide, adsTitle, adsSubtitle, adsText, logoGreenIn, logoBlue, logoRed, logoViolet, logoName], {clearProps:'all'});
+				new TimelineMax()
+					.to(logoBlue, 0.5, {
+							x: '-40%',
+							opacity: 0
+						}
+					)
+					.to(logoRed, 0.5, {
+							x: '40%',
+							opacity: 0
+						},
+						"-=0.5"
+					)
+					.to(logoViolet, 0.5, {
+							x: '-20%',
+							opacity: 0
+						},
+						"-=0.5"
+					)
+					.to(logoName, 0.5, {
+							left: '61%',
+							opacity: 0
+						},
+						"-=0.5"
+					)
+					.call(changeColor, ['is-green'])
+					.fromTo(logoGreenIn, 1, {
+							x: '-50%',
+							y: '-50%',
+						}, {
+							rotation: '-60deg',
+							x: '-50%',
+							y: '-50%',
+							scale: '15'
+						},
+						"-=0.05"
+					)
+					.to(logo, 0.5, {
+							x: '0%'
+						},
+						"-=1"
+					)
+					.from(adsSlide, 0.7, {
+							x: '200%'
+						},
+						"-=1"
+					)
+					.staggerFrom(adsList, 0.5, {
+							opacity: 0,
+							y: '50px'
+						},
+						0.3,
+						"-=0.4"
+					)
+					.add(animateLeave)
+					.set([adsSlide, adsTitle, adsSubtitle, adsText, logoGreenIn, logoBlue, logoRed, logoViolet, logoName], {clearProps:'all'});
 			}),
 			//affiliate
 			(function(){
-			new TimelineMax()
-				.staggerTo(adsList, 0.5, {
-					opacity: 0,
-					y: '-150px'
-					},
-					0.3
-				)
-				.to(adsSlide, 0.7, {
-						x: '-145%'
-					}
-				)
-				.from(affiliateSlide, 0.7, {
-						x: '250%'
-					},
-					"-=0.7"
-				)
-				.staggerFrom(affiliateList, 0.5, {
+				new TimelineMax()
+					.staggerTo(adsList, 0.5, {
 						opacity: 0,
-						y: '50px'
-					},
-					0.3
-				)
-				.add(animateLeave)
-				.set([adsSlide, adsTitle, adsSubtitle, adsText, affiliateSlide, affiliateList], {clearProps: 'all'});
+						y: '-150px'
+						},
+						0.3
+					)
+					.to(adsSlide, 0.7, {
+							x: '-145%'
+						}
+					)
+					.from(affiliateSlide, 0.7, {
+							x: '250%'
+						},
+						"-=0.7"
+					)
+					.staggerFrom(affiliateList, 0.5, {
+							opacity: 0,
+							y: '50px'
+						},
+						0.3
+					)
+					.add(animateLeave)
+					.set([adsSlide, adsTitle, adsSubtitle, adsText, affiliateSlide, affiliateList], {clearProps: 'all'});
 			}),
 			//company
 			(function(){
-			new TimelineMax()
-				.staggerTo(affiliateList, 0.5, {
-					opacity: 0,
-					y: '-150px'
-					},
-					0.3
-				)
-				.call(changeColor, ['is-red'])
-				.to(affiliateSlide, 0.7, {
-						x: '-145%'
-					}
-				)
-				.from(companySlide, 0.9, {
-						x: '250%'
-					},
-					"-=0.7"
-				)
-				.staggerFrom(companyList, 0.5, {
+				new TimelineMax()
+					.staggerTo(affiliateList, 0.5, {
 						opacity: 0,
-						y: '50px'
-					},
-					0.3
-				)
-				.add(animateLeave)
-				.set([affiliateSlide, affiliateTitle, affiliateSubtitle, affiliateText, companySlide, companyTitle, companySubtitle, companyText], {clearProps:'all'});
+						y: '-150px'
+						},
+						0.3
+					)
+					.call(changeColor, ['is-red'])
+					.to(affiliateSlide, 0.7, {
+							x: '-145%'
+						}
+					)
+					.from(companySlide, 0.9, {
+							x: '250%'
+						},
+						"-=0.7"
+					)
+					.staggerFrom(companyList, 0.5, {
+							opacity: 0,
+							y: '50px'
+						},
+						0.3
+					)
+					.add(animateLeave)
+					.set([affiliateSlide, affiliateTitle, affiliateSubtitle, affiliateText, companySlide, companyTitle, companySubtitle, companyText], {clearProps:'all'});
 			}),
 			//about
 			(function(){
-			new TimelineMax()
-				.staggerTo(companyList, 0.5, {
-					opacity: 0,
-					y: '-150px'
-					},
-					0.3
-				)
-				.to(companySlide, 0.7, {
-						x: '-145%'
-					}
-				)
-				.call(changeColor, ['is-brown'])
-				.fromTo(aboutSlide, 0.7, {
-						x: '300%'
-					}, {
-						x: '0%'
-					},
-					"-=0.7"
-				)
-				.from(aboutSkew, 0.9, {
-						x: '100%',
-						y: '50%'
-					},
-					"-=0.7"
-				)
-				.fromTo(aboutModel, 0.5, {
-						y: '-50%',
-						x: '100%',
-						ease:Power2.easeOut
-					}, {
-						y: '-50%',
-						x: '0%',
-						ease:Power2.easeOut
-					},
-					"-=0.5"
-				)
-				.staggerFrom(aboutList, 0.5, {
+				new TimelineMax()
+					.staggerTo(companyList, 0.5, {
 						opacity: 0,
-						y: '50px'
-					},
-					0.3
-				)
-				.add(animateLeave)
-				.set([companySlide, companyTitle, companySubtitle, companyText, aboutTitle, aboutText, aboutModel, aboutSkew], {clearProps:'all'});
-			}),
-			//team
-			(function(){
-			new TimelineMax()
-				.to(aboutSlide, 0.6, {
-						top: '-100%'
-					}
-				)
-				.fromTo(teamSlide, 0.6, {
-						y: '100%'
-					}, {
-						y: '0%'
-					},
-					"-=0.6"
-				)
-				.staggerFrom(teamList, 0.4, {
-						opacity: 0,
-						y: '60px'
-					},
-					0.3,
-					"-=0.4"
-				)
-				.add(animateLeave)
-				.set([aboutSlide, teamItem, teamSlide], {clearProps:'all'});
+						y: '-150px'
+						},
+						0.3
+					)
+					.to(companySlide, 0.7, {
+							x: '-145%'
+						}
+					)
+					.call(changeColor, ['is-brown'])
+					.fromTo(aboutSlide, 0.7, {
+							x: '300%'
+						}, {
+							x: '0%'
+						},
+						"-=0.7"
+					)
+					.from(aboutSkew, 0.9, {
+							x: '100%',
+							y: '50%'
+						},
+						"-=0.7"
+					)
+					.fromTo(aboutModel, 0.5, {
+							y: '-50%',
+							x: '100%',
+							ease:Power2.easeOut
+						}, {
+							y: '-50%',
+							x: '0%',
+							ease:Power2.easeOut
+						},
+						"-=0.5"
+					)
+					.staggerFrom(aboutList, 0.5, {
+							opacity: 0,
+							y: '50px'
+						},
+						0.3
+					)
+					.add(animateLeave)
+					.set([companySlide, companyTitle, companySubtitle, companyText, aboutTitle, aboutText, aboutModel, aboutSkew], {clearProps:'all'});
 			}),
 			//news
 			(function(){
-			new TimelineMax()
-				.staggerFromTo(teamList, 0.5, {
-						opacity: 1,
-						y: '0%'
-					}, {
-						opacity: 0,
-						y: '-150px'
-					},
-					0.3
-				)
-				.call(changeColor, ['is-blue'])
-				.to(teamSlide, 0.7, {
-						left: '-180%'
-					}
-				)
-				.from(newsSlide, 0.7, {
-						x: '180%'
-					},
-					"-=0.9"
-				)
-				.staggerFrom(newsList, 0.5, {
-						opacity: 0,
-						y: '50px'
-					},
-					0.3
-				)
-				.add(animateLeave)
-				.set([newsSlide, newsTitle, newsSubtitle, newsText, teamSlide, teamList], {clearProps:'all'});
+				new TimelineMax()
+					// .staggerFromTo(teamList, 0.5, {
+					// 		opacity: 1,
+					// 		y: '0%'
+					// 	}, {
+					// 		opacity: 0,
+					// 		y: '-150px'
+					// 	},
+					// 	0.3
+					// )
+					.call(changeColor, ['is-blue'])
+					.to(aboutSlide, 0.9, {
+							left: '-180%'
+						}
+					)
+					.from(newsSlide, 0.7, {
+							x: '180%'
+						},
+						"-=0.9"
+					)
+					.staggerFrom(newsList, 0.5, {
+							opacity: 0,
+							y: '50px'
+						},
+						0.3
+					)
+					.add(animateLeave)
+					.set([newsSlide, newsTitle, newsSubtitle, newsText], {clearProps:'all'});
 			}),
 		];
 		var animationUp = [
 			//ads
 			(function(){
-			new TimelineMax()
-				.call(changeColor, ['is-first'])
-				.to(adsSlide, 0.7, {
-						x: '200%'
-					}
-				)
-				.to(logo, 0.5, {
-						x: '-130%'
-					},
-					"-=0.7"
-				)
-				.set([adsSlide, logo], {clearProps: 'all'})
-				.add(animateLeave);
+				new TimelineMax()
+					.call(changeColor, ['is-first'])
+					.to(adsSlide, 0.7, {
+							x: '200%'
+						}
+					)
+					.to(logo, 0.5, {
+							x: '-130%'
+						},
+						"-=0.7"
+					)
+					.set([adsSlide, logo], {clearProps: 'all'})
+					.add(animateLeave);
 			}),
 			//affiliate
 			(function(){
-			new TimelineMax()
-				.to(affiliateSlide, 0.7, {
-						x: '250%'
-					}
-				)
-				.fromTo(adsSlide, 0.7, {
-						x: '-145%'
-					}, {
-						x: '0%'
-					},
-					"-=0.7"
-				)
-				.set([affiliateSlide, adsSlide, adsTitle, adsSubtitle, adsText], {clearProps: 'all'})
-				.add(animateLeave);
+				new TimelineMax()
+					.to(affiliateSlide, 0.7, {
+							x: '250%'
+						}
+					)
+					.fromTo(adsSlide, 0.7, {
+							x: '-145%'
+						}, {
+							x: '0%'
+						},
+						"-=0.7"
+					)
+					.set([affiliateSlide, adsSlide, adsTitle, adsSubtitle, adsText], {clearProps: 'all'})
+					.add(animateLeave);
 			}),
 			//company
 			(function(){
-			new TimelineMax()
-				.call(changeColor, ['is-green'])
-				.to(companySlide, 0.7, {
-						x: '250%'
-					}
-				)
-				.fromTo(affiliateSlide, 0.7, {
-						x: '-145%'
-					}, {
-						x: '0%'
-					},
-					"-=0.7"
-				)
-				.set([companySlide, affiliateSlide], {clearProps: 'all'})
-				.add(animateLeave);
+				new TimelineMax()
+					.call(changeColor, ['is-green'])
+					.to(companySlide, 0.7, {
+							x: '250%'
+						}
+					)
+					.fromTo(affiliateSlide, 0.7, {
+							x: '-145%'
+						}, {
+							x: '0%'
+						},
+						"-=0.7"
+					)
+					.set([companySlide, affiliateSlide], {clearProps: 'all'})
+					.add(animateLeave);
 			}),
 			//about
 			(function(){
@@ -458,28 +494,28 @@ $(document).ready(function() {
 			}),
 			//news
 			(function(){
-			new TimelineMax()
-				.call(changeColor, ['is-brown'])
-				.to(newsSlide, 0.7, {
-						x: '180%'
-					}
-				)
-				.from(teamSlide, 0.7, {
-						left: '-180%'
-					},
-					"-=0.9"
-				)
-				.staggerFromTo(teamList, 0.4, {
-						opacity: 0,
-						y: '60px'
-					}, {
-						opacity: 1,
-						y: '0%'
-					},
-					0.3
-				)
-				.set([teamSlide, newsSlide, teamItem], {clearProps: 'all'})
-				.add(animateLeave);
+				new TimelineMax()
+					.call(changeColor, ['is-brown'])
+					.to(newsSlide, 0.7, {
+							x: '180%'
+						}
+					)
+					.from(teamSlide, 0.7, {
+							left: '-180%'
+						},
+						"-=0.9"
+					)
+					.staggerFromTo(teamList, 0.4, {
+							opacity: 0,
+							y: '60px'
+						}, {
+							opacity: 1,
+							y: '0%'
+						},
+						0.3
+					)
+					.set([teamSlide, newsSlide, teamItem], {clearProps: 'all'})
+					.add(animateLeave);
 			}),
 		];
 		var animationClick = [
@@ -662,8 +698,7 @@ $(document).ready(function() {
 		function moveToNextSlide() {
 			currentIndex = currentIndex + 1;
 			slides.eq(currentIndex).addClass('is-animate');
-			// animationDown[currentIndex].play(0);
-
+			console.log(currentIndex);
 			if (typeof animationDown[currentIndex] == 'function') {
 				animationDown[currentIndex]();
 			} else {
@@ -695,7 +730,8 @@ $(document).ready(function() {
 			slides.filter(".is-active").removeClass('is-active');
 			slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
 			if ($(window).width() > 1024) {
-				scrollWheel();
+				// scrollWheel();
+				mouseDrag();
 			};
 			$(window).on('resize', function() {
 				setState();
@@ -711,35 +747,76 @@ $(document).ready(function() {
 		//wheelToggle
 		var prevDeltaY = null;
 		var direction  = null;
-		function scrollWheel() {
-			if (!window.matchMedia("(max-width: 1024px)").matches) {
-				$('.out').one('wheel', function(e) {
-					if (!$('.js-menu').hasClass('is-active')) {
-						//mousewheel direction
-						var deltaY = e.originalEvent.deltaY;
-						if (deltaY / 50 < 0) {
-							direction = 'up';
-							if (currentIndex == 0) {
-								scrollWheel();
-							} else {
-								moveToPrevSlide();
-							}
-						} else if (deltaY > 0) {
-							direction = 'down';
-							if (currentIndex == 6) {
-								scrollWheel();
+		// function scrollWheel() {
+		// 	if (!window.matchMedia("(max-width: 1024px)").matches) {
+		// 		$('.out').one('wheel', function(e) {
+		// 			if (!$('.js-menu').hasClass('is-active')) {
+		// 				//mousewheel direction
+		// 				var deltaY = e.originalEvent.deltaY;
+		// 				if (deltaY / 50 < 0) {
+		// 					direction = 'up';
+		// 					if (currentIndex == 0) {
+		// 						scrollWheel();
+		// 					} else {
+		// 						moveToPrevSlide();
+		// 					}
+		// 				} else if (deltaY > 0) {
+		// 					direction = 'down';
+		// 					if (currentIndex == 6) {
+		// 						scrollWheel();
+		// 					} else {
+		// 						moveToNextSlide();
+		// 					}
+		// 				} else {
+		// 					direction = (prevDeltaY < 0) ? 'up' : 'down'; //for touchpad
+		// 				}
+		// 				prevDeltaY = deltaY;
+		// 			};
+		// 			$(window).off('resize');
+		// 		});
+		// 	}
+		// }
+
+		var threshold = 50;
+
+		function mouseDrag() {
+			$('body').one('mousedown', function(e){
+				var node = $(this);
+				var position = node.offset();
+				var xStart = e.pageX;
+				console.log(xStart);
+				var handlers = {
+					mousemove : function(e){
+						var xEnd = e.pageX;
+						console.log(xStart, xEnd);
+						// $(this).off(handlers);
+					},
+					mouseup : function(e){
+						$(this).off(handlers);
+						xEnd = e.pageX;
+						if (xStart > xEnd + threshold) {
+							// moveToNextSlide();
+							if (currentIndex == 5) {
+								mouseDrag();
 							} else {
 								moveToNextSlide();
 							}
+						} else if (xStart < xEnd - threshold) {
+							// moveToPrevSlide();
+							if (currentIndex == 0) {
+								mouseDrag();
+							} else {
+								moveToPrevSlide();
+							}
 						} else {
-							direction = (prevDeltaY < 0) ? 'up' : 'down'; //for touchpad
+							mouseDrag();
 						}
-						prevDeltaY = deltaY;
-					};
-					$(window).off('resize');
-				});
-			}
+					}
+				};
+				$(document).on(handlers);
+			});
 		}
+
 		$('body').on("keydown", function(e){
 			if (!$('.js-menu').hasClass('is-active')) {
 				if (!$('.section').hasClass('is-animate')) {
@@ -747,7 +824,7 @@ $(document).ready(function() {
 					if(e.keyCode === 38 || e.keyCode === 37) {
 						// up
 						if (currentIndex == 0) {
-							scrollWheel();
+							// scrollWheel();
 						} else {
 							moveToPrevSlide();
 						}
@@ -755,7 +832,7 @@ $(document).ready(function() {
 					else if(e.keyCode === 40 || e.keyCode === 39) {
 						// down
 						if (currentIndex == 6) {
-							scrollWheel();
+							// scrollWheel();
 						} else {
 							moveToNextSlide();
 						}
@@ -777,12 +854,14 @@ $(document).ready(function() {
 	//showMenu
 	$('.js-show-menu').click(function(evt) {
 		evt.preventDefault();
-		$('.out').off('wheel'); //remove double call for scroll
+		// $('.out').off('wheel'); //remove double call for scroll
+		$('body').off('mousedown');
 
 		if ($(this).hasClass('is-active')) {
 			$(this).removeClass('is-active');
 			$('.js-menu').removeClass('is-active');
-			scrollWheel();
+			// scrollWheel();
+			mouseDrag();
 		} else {
 			$(this).addClass('is-active');
 			$('.js-menu').addClass('is-active');
@@ -795,7 +874,8 @@ $(document).ready(function() {
 		$('.js-show-menu').removeClass('is-active');
 		if (!window.matchMedia("(max-width: 1024px)").matches) {
 			if (!$('.section').hasClass('is-animate')) {
-				$('.out').off('wheel');
+				// $('.out').off('wheel');
+				$('body').off('mousedown');
 				var id = $(this).attr('href');
 				var dataColor = 'is-' + $(this).data('color');
 				fastShowSlide(id);
@@ -860,31 +940,35 @@ $(document).ready(function() {
 				var xZone = event.pageX - currWidth; //mouse start
 				var active = $(this).find('.js-images div.is-active');
 				var step = Math.round(100 / figureItems);
-				if (x < winWidth/2) { //left side
+				// if (x < winWidth/2) { //left side
 					if (x >= currWidth) { //mouse in left side of hover zone
-						var mouseX = Math.round(xZone*2/(itemWidth/100)); //mouse position inside hover zone from 0 to 100
+						// var mouseX = Math.round(xZone*2/(itemWidth/100)); //mouse position inside hover zone from 0 to 100
+						var mouseX = Math.round(xZone/(itemWidth/100)); //mouse position inside hover zone from 0 to 100
 						var index = Math.round(mouseX / step);
 						active.removeClass('is-active');
 						if (index <= 0) {
 							//show first image when mouse is out of container on the left side
 							figure.eq(0).addClass('is-active');
+						} else if (index >= figureItems - 1) {
+							figure.eq(figureItems - 1).addClass('is-active');
 						} else {
 							figure.eq(index - 1).addClass('is-active');
 						}
+						console.log(index);
 					};
-				} else { //right side
-					if (x <= winWidth - currWidth) { //mouse in right side of hover zone
-						var mouseX = Math.round(200 - xZone*2/(itemWidth/100)); //mouse position inside hover zone from 100 to 0
-						var index = Math.round(mouseX / step);
-						active.removeClass('is-active');
-						if (index <= 0) {
-							//show first image when mouse is out of container on the left side
-							figure.eq(0).addClass('is-active');
-						} else {
-							figure.eq(index - 1).addClass('is-active');
-						}
-					}
-				}
+				// } else { //right side
+				// 	if (x <= winWidth - currWidth) { //mouse in right side of hover zone
+				// 		var mouseX = Math.round(200 - xZone*2/(itemWidth/100)); //mouse position inside hover zone from 100 to 0
+				// 		var index = Math.round(mouseX / step);
+				// 		active.removeClass('is-active');
+				// 		if (index <= 0) {
+				// 			//show first image when mouse is out of container on the left side
+				// 			figure.eq(0).addClass('is-active');
+				// 		} else {
+				// 			figure.eq(index - 1).addClass('is-active');
+				// 		}
+				// 	}
+				// }
 			});
 		}
 	});
@@ -916,7 +1000,7 @@ $(document).ready(function() {
 			if (state !== "desktop") {
 				$('.out').off('wheel');
 				state = "desktop";
-				scrollWheel();
+				// scrollWheel();
 				console.log(state, currentIndex);
 				initImages();
 			}
