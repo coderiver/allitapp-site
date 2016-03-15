@@ -854,11 +854,11 @@ $(document).ready(function() {
 				var node = $(this);
 				var position = node.offset();
 				var xStart = e.pageX;
-				console.log(xStart);
+				// console.log(xStart);
 				var handlers = {
 					mousemove : function(e){
 						var xEnd = e.pageX;
-						console.log(xStart, xEnd);
+						// console.log(xStart, xEnd);
 						// $(this).off(handlers);
 					},
 					mouseup : function(e){
@@ -1025,7 +1025,7 @@ $(document).ready(function() {
 						} else {
 							figure.eq(index - 1).addClass('is-active');
 						}
-						console.log(mouseX, index, halfItem/100);
+						// console.log(mouseX, index, halfItem/100);
 					};
 				// } else { //right side
 				// 	if (x <= winWidth - currWidth) { //mouse in right side of hover zone

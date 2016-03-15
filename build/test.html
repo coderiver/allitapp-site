@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="theme-color" content="#fff">
+	<link rel="stylesheet" media="all" href="css/fancybox.css" >
+	<link rel="stylesheet" media="all" href="css/style.css" >
+	<script src="js/app.js"></script>
+	<script>
+		$(document).ready(function() {
+			var timer = null;
+			var stoppedElement = $('#stopped');	 // store element for faster access
+
+			var index;
+			var cur = 0;
+			var item = $('.item');
+			var items = $('.item').length;
+			var i;
+			var a = [];
+
+			item.each(function() {
+				a.push($(this));
+			});
+
+			function mouseRight(){
+					stoppedElement.text("Mouse stopped");
+
+					(function() {
+
+						var newIndex = index + 5;
+
+						for (i = index; i < a.length; i++) {
+
+							if (i < newIndex) {
+								a[i].each(function() {
+									if (i < a.length) {
+										var elem = $(this);
+										setTimeout(function() {
+											// console.log(elem);
+											item.removeClass('is-active');
+											elem.addClass('is-active');
+										}, (i-index)*100);
+									}
+								});
+							}
+
+							cur = newIndex;
+						}
+					}());
+			}
+
+			function mouseLeft(){
+					stoppedElement.text("Mouse stopped");
+
+					(function() {
+
+						var newIndex = index - 5;
+
+						for (i = index; i > 0; i--) {
+
+							if (i > newIndex) {
+
+								a[i].each(function() {
+									// if (i < a.length) {
+										var elem = $(this);
+										setTimeout(function() {
+											// console.log(elem);
+											item.removeClass('is-active');
+											elem.addClass('is-active');
+										}, (index-i)*100);
+									// }
+								});
+							}
+
+							// console.log(i, index)
+
+							cur = index + 5;
+						}
+					}());
+			}
+
+			var endX;
+			var mX = 0;
+
+			$(window).on("mousemove", function(e) {
+
+					var startX = e.pageX;
+					setTimeout(function() {
+						endX = e.pageX;
+					}, 100);
+					if (startX != endX) {
+
+						index = Math.round(e.pageX/($(window).width()/100)/4);
+
+						stoppedElement.text("Mouse moving");
+
+						if (index > 5) {
+							clearTimeout(timer);
+
+							if (e.pageX < mX) {
+								// console.log('left');
+								timer=setTimeout(mouseLeft, 100);
+							} else {
+								// console.log('right');
+								timer=setTimeout(mouseRight, 100);
+							}
+
+						};
+
+						mX = e.pageX;
+						if (cur > 5) {
+
+							if (index >= cur) {
+								$('.item.is-active').removeClass('is-active');
+
+								if (index <= 0) {
+									item.eq(0).addClass('is-active');
+								} else if (index >= items) {
+									item.eq(items - 1).addClass('is-active');
+								} else {
+									item.eq(index - 1).addClass('is-active');
+								}
+							}
+						}
+					};
+			});
+		});
+	</script>
+	<style>
+		.items {
+			font-size: 0;
+			padding: 5px;
+		}
+		.item {
+			width: 50px;
+			height: 50px;
+			background: green;
+			display: inline-block;
+			vertical-align: top;
+			margin: 5px;
+		}
+		.item.is-active {
+			background: red;
+		}
+	</style>
+</head>
+<body>
+<div id="stopped">Mouse stopped</div>
+<div class="items">
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+</div>
+</body>
+</html>
