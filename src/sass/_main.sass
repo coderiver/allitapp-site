@@ -575,3 +575,32 @@ body
 	width: 100%
 	.inner
 		z-index: 2
+
+.button-prev, .button-next
+	position: fixed
+	top: 87px
+	bottom: 92px
+	width: 133px
+	padding: 23px
+	z-index: 32
+	background: none
+	opacity: 0
+	will-change: opacity
+	transition: visibility 0.2s, opacity 0.2s
+	&:hover
+		opacity: 1
+	i
+		width: 39px
+		height: 39px
+		text-align: center
+		line-height: 39px
+		background-color: rgba(#fff, 0.8)
+		box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1)
+		border-radius: 50%
+		font-size: 15px
+.button-prev
+	left: 0
+	text-align: left
+.button-next
+	right: 0
+	text-align: right

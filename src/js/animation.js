@@ -399,7 +399,7 @@ $(document).ready(function() {
 						0.3
 					)
 					.add(animateLeave)
-					.set([newsSlide, newsTitle, newsSubtitle, newsText], {clearProps:'all'});
+					.set([newsSlide, newsTitle, newsSubtitle, newsText, aboutSlide], {clearProps:'all'});
 			}),
 		];
 		var animationUp = [
@@ -479,20 +479,20 @@ $(document).ready(function() {
 					.add(animateLeave);
 			}),
 			//team
-			(function(){
-				new TimelineMax()
-					.to(teamSlide, 0.7, {
-							y: '100%'
-						}
-					)
-					.from(aboutSlide, 0.7, {
-							top: '-100%'
-						},
-						"-=0.7"
-					)
-					.set([aboutSlide, teamSlide], {clearProps: 'all'})
-					.add(animateLeave);
-			}),
+			// (function(){
+			// 	new TimelineMax()
+			// 		.to(teamSlide, 0.7, {
+			// 				y: '100%'
+			// 			}
+			// 		)
+			// 		.from(aboutSlide, 0.7, {
+			// 				top: '-100%'
+			// 			},
+			// 			"-=0.7"
+			// 		)
+			// 		.set([aboutSlide, teamSlide], {clearProps: 'all'})
+			// 		.add(animateLeave);
+			// }),
 			//news
 			(function(){
 				new TimelineMax()
@@ -501,21 +501,21 @@ $(document).ready(function() {
 							x: '180%'
 						}
 					)
-					.from(teamSlide, 0.7, {
+					.from(aboutSlide, 0.7, {
 							left: '-180%'
 						},
-						"-=0.9"
+						"-=0.7"
 					)
-					.staggerFromTo(teamList, 0.4, {
-							opacity: 0,
-							y: '60px'
-						}, {
-							opacity: 1,
-							y: '0%'
-						},
-						0.3
-					)
-					.set([teamSlide, newsSlide, teamItem], {clearProps: 'all'})
+					// .staggerFromTo(teamList, 0.4, {
+					// 		opacity: 0,
+					// 		y: '60px'
+					// 	}, {
+					// 		opacity: 1,
+					// 		y: '0%'
+					// 	},
+					// 	0.3
+					// )
+					.set([aboutSlide, newsSlide, teamItem], {clearProps: 'all'})
 					.add(animateLeave);
 			}),
 		];
@@ -661,21 +661,21 @@ $(document).ready(function() {
 					.set([aboutModel, aboutTitle, aboutText], {clearProps:'all'});
 				}),
 			//team
-			(function(){
-				new TimelineMax()
-					.to(logo, 0.5, {
-						x: '0%'
-					})
-					.staggerFrom(teamList, 0.4, {
-							opacity: 0,
-							y: '60px'
-						},
-						0.3,
-						"-=0.5"
-					)
-					.add(animateLeave)
-					.set([teamItem, logo], {clearProps:'all'});
-				}),
+			// (function(){
+			// 	new TimelineMax()
+			// 		.to(logo, 0.5, {
+			// 			x: '0%'
+			// 		})
+			// 		.staggerFrom(teamList, 0.4, {
+			// 				opacity: 0,
+			// 				y: '60px'
+			// 			},
+			// 			0.3,
+			// 			"-=0.5"
+			// 		)
+			// 		.add(animateLeave)
+			// 		.set([teamItem, logo], {clearProps:'all'});
+			// 	}),
 			//news
 			(function(){
 				new TimelineMax()
@@ -697,6 +697,8 @@ $(document).ready(function() {
 		animationDown[currentIndex].play();
 		//Move to next slide
 		function moveToNextSlide() {
+			$('.js-prev').off('click');
+			$('.js-next').off('click');
 			currentIndex = currentIndex + 1;
 			slides.eq(currentIndex).addClass('is-animate');
 			console.log(currentIndex);
@@ -709,9 +711,11 @@ $(document).ready(function() {
 
 		//Move to prev slide
 		function moveToPrevSlide() {
+			$('.js-prev').off('click');
+			$('.js-next').off('click');
 			currentIndex = currentIndex - 1;
 			slides.eq(currentIndex).addClass('is-animate');
-
+			console.log(currentIndex);
 			if (typeof animationUp[currentIndex] == 'function') {
 				animationUp[currentIndex]();
 			} else {
@@ -730,6 +734,7 @@ $(document).ready(function() {
 		function animateLeave() {
 			slides.filter(".is-active").removeClass('is-active');
 			slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
+			navBtns();
 			if ($(window).width() > 1024) {
 				// scrollWheel();
 				mouseDrag();
@@ -818,29 +823,58 @@ $(document).ready(function() {
 			});
 		}
 
-		$('body').on("keydown", function(e){
-			if (!$('.js-menu').hasClass('is-active')) {
-				if (!$('.section').hasClass('is-animate')) {
-					$('.out').off('wheel'); //remove double call for scroll
-					if(e.keyCode === 38 || e.keyCode === 37) {
-						// up
-						if (currentIndex == 0) {
-							// scrollWheel();
-						} else {
-							moveToPrevSlide();
-						}
-					}
-					else if(e.keyCode === 40 || e.keyCode === 39) {
-						// down
-						if (currentIndex == 6) {
-							// scrollWheel();
-						} else {
-							moveToNextSlide();
-						}
-					}
-				}
-			};
-		});
+		// $('body').on("keydown", function(e){
+		// 	if (!$('.js-menu').hasClass('is-active')) {
+		// 		if (!$('.section').hasClass('is-animate')) {
+		// 			$('.out').off('wheel'); //remove double call for scroll
+		// 			if(e.keyCode === 38 || e.keyCode === 37) {
+		// 				// up
+		// 				if (currentIndex == 0) {
+		// 					// scrollWheel();
+		// 				} else {
+		// 					moveToPrevSlide();
+		// 				}
+		// 			}
+		// 			else if(e.keyCode === 40 || e.keyCode === 39) {
+		// 				// down
+		// 				if (currentIndex == 6) {
+		// 					// scrollWheel();
+		// 				} else {
+		// 					moveToNextSlide();
+		// 				}
+		// 			}
+		// 		}
+		// 	};
+		// });
+		function btnPrev() {
+			$('body').off('mousedown');
+			// moveToPrevSlide();
+			if (currentIndex == 0) {
+				mouseDrag();
+			} else {
+				moveToPrevSlide();
+			}
+			return false;
+		}
+		function btnNext() {
+			$('body').off('mousedown');
+			// moveToNextSlide();
+			if (currentIndex == 5) {
+				mouseDrag();
+			} else {
+				moveToNextSlide();
+			}
+			return false;
+		}
+		function navBtns() {
+			$('.js-prev').one('click', function() {
+				btnPrev();
+			});
+			$('.js-next').one('click', function() {
+				btnNext();
+			});
+		}
+		navBtns();
 	if (window.matchMedia("(max-width: 1024px)").matches) {
 		$(window).scroll(function() {
 			if ($(window).scrollTop() >= $('#ads').offset().top) {
@@ -857,12 +891,15 @@ $(document).ready(function() {
 		evt.preventDefault();
 		// $('.out').off('wheel'); //remove double call for scroll
 		$('body').off('mousedown');
+		$('.js-prev').off('click');
+		$('.js-next').off('click');
 
 		if ($(this).hasClass('is-active')) {
 			$(this).removeClass('is-active');
 			$('.js-menu').removeClass('is-active');
 			// scrollWheel();
 			mouseDrag();
+			navBtns();
 		} else {
 			$(this).addClass('is-active');
 			$('.js-menu').addClass('is-active');
@@ -894,86 +931,131 @@ $(document).ready(function() {
 		$('.js-menu').removeClass('is-active');
 	});
 
-	//move 3d models
-	// var win = $('.inner__text');
+	//animation models
+	var mrefreshinterval = 50; // update display every 100ms
+	var dists = [];
+	var dist = 0;
+	var mousex = 0;
+	var current = 0;
+	var prev = 0;
+	var togo = 0;
+	var prevtogo = 0;
+	var velo = 0;
+	var stopped = 1;
+	var velo_set = 0;
+	var MAX = $(window).width();
+	var index; //current slide
 
+	function setkadr(kadr){
+
+		var figure = $('.section.is-active .js-images div'),
+			figureItems = figure.length;
+
+		kadr = parseInt(25*kadr/MAX);
+		index = kadr;
+		$('.section.is-active .js-images div.is-active').removeClass('is-active');
+		if (index <= 0) {
+			figure.eq(0).addClass('is-active');
+		} else if (index >= figureItems - 1) {
+			figure.eq(figureItems - 1).addClass('is-active');
+		} else {
+			figure.eq(index - 1).addClass('is-active');
+		}
+	}
+
+	$('html').mousemove(function(e) {
+		velo_set = 0;
+		mousex = e.pageX;
+	});
+
+	var mdraw = function() {
+
+		prev = current;
+		current = mousex;
+
+		// ====================
+		// begin inertia algo
+		// ====================
+		if(velo_set){
+			velo = velo*0.8;
+			if(Math.abs(velo)<3){velo = 0;}
+		}
+		else{
+			if(current==prev) {
+				velo = dists[dists.length-1];
+				// velo = 20*Math.sign(dists[dists.length-1]);
+				velo_set = 1;
+			}
+			else{
+				velo = 0;
+				velo_set = 0;
+			}
+		}
+		// ====================
+		// end inertia algorithm
+		// ====================
+
+		// mouse path
+		dist =  (current - prev)*2;
+		if(dist>200) dist = 200;
+
+		// add non zero path to array
+		if(Math.abs(dist)>1) dists.push(dist);
+		if(dists.length>10) dists.splice(0,1);
+
+		//get last pos
+		curcur = prevtogo;
+
+		togo = curcur + dist + velo;
+		if(!togo) togo = 0;
+		// console.log(togo);
+
+
+		//safe bounds
+		if(curcur+dist>MAX){
+			togo = MAX;
+		}
+		if(curcur+dist<0){
+			togo = 0;
+		}
+
+		// SETTING POSITION
+		setkadr(togo);
+		prevtogo = togo;
+		setTimeout(mdraw, mrefreshinterval);
+	}
+
+	setTimeout(mdraw, mrefreshinterval);
+
+	// var win = $('.section');
 	// win.each(function() {
-	// 	if ($(this).parents('.inner').find('.js-images').length) {
-	// 		var figure = $(this).parents('.inner').find('.js-images div'),
+	// 	if ($(this).find('.js-images').length) {
+	// 		var figure = $(this).find('.js-images div'),
 	// 			figureItems = figure.length;
-
 	// 		$(this).mousemove(function(event) {
-	// 			var winWidth = Math.round(win.width() / 100),
-	// 				step = Math.round(100 / figureItems),
-	// 				mousePos = Math.round((event.pageX - ($(window).width() - win.width())/2 ) / winWidth),
-	// 				index = Math.round(mousePos / step),
-	// 				active = $(this).parents('.inner').find('.js-images div.is-active');
-
-	// 			console.log(winWidth, step, mousePos, index);
-
-	// 			if (index >= figureItems) {
-	// 				//show last image when mouse is out of container on the right side
+	// 			var itemWidth = $('.inner').outerWidth(); //hover zone
+	// 			var winWidth = $(window).width();
+	// 			var currWidth = (winWidth - itemWidth)/2; //side margin
+	// 			var x = event.pageX; //mouse position X
+	// 			var xZone = event.pageX - (currWidth + itemWidth/4); //mouse start
+	// 			var active = $(this).find('.js-images div.is-active');
+	// 			var step = Math.round(100 / figureItems);
+	// 			if (x >= currWidth + itemWidth/4) {
+	// 				var halfItem = itemWidth/2;
+	// 				var mouseX = Math.round(xZone/(halfItem/100)); //mouse position inside hover zone from 0 to 100
+	// 				var index = Math.round(mouseX / step);
 	// 				active.removeClass('is-active');
-	// 				figure.eq(figureItems - 1).addClass('is-active');
-	// 			} else if (index <= 0) {
-	// 				//show first image when mouse is out of container on the left side
-	// 				active.removeClass('is-active');
-	// 				figure.eq(0).addClass('is-active');
-	// 			}  else {
-	// 				active.removeClass('is-active');
-	// 				figure.eq(index - 1).addClass('is-active');
-	// 			}
-
+	// 				if (index <= 0) {
+	// 					figure.eq(0).addClass('is-active');
+	// 				} else if (index >= figureItems - 1) {
+	// 					figure.eq(figureItems - 1).addClass('is-active');
+	// 				} else {
+	// 					figure.eq(index - 1).addClass('is-active');
+	// 				}
+	// 			};
 	// 		});
 	// 	}
 	// });
-
-	var win = $('.section');
-	win.each(function() {
-		if ($(this).find('.js-images').length) {
-			var figure = $(this).find('.js-images div'),
-				figureItems = figure.length;
-			$(this).mousemove(function(event) {
-				var itemWidth = $('.inner').outerWidth(); //hover zone
-				var winWidth = $(window).width();
-				var currWidth = (winWidth - itemWidth)/2; //side margin
-				var x = event.pageX; //mouse position X
-				var xZone = event.pageX - (currWidth + itemWidth/4); //mouse start
-				var active = $(this).find('.js-images div.is-active');
-				var step = Math.round(100 / figureItems);
-				// if (x < winWidth/2) { //left side
-					if (x >= currWidth + itemWidth/4) { //mouse in left side of hover zone
-						// var mouseX = Math.round(xZone*2/(itemWidth/100)); //mouse position inside hover zone from 0 to 100
-						var halfItem = itemWidth/2;
-						var mouseX = Math.round(xZone/(halfItem/100)); //mouse position inside hover zone from 0 to 100
-						var index = Math.round(mouseX / step);
-						active.removeClass('is-active');
-						if (index <= 0) {
-							//show first image when mouse is out of container on the left side
-							figure.eq(0).addClass('is-active');
-						} else if (index >= figureItems - 1) {
-							figure.eq(figureItems - 1).addClass('is-active');
-						} else {
-							figure.eq(index - 1).addClass('is-active');
-						}
-						// console.log(mouseX, index, halfItem/100);
-					};
-				// } else { //right side
-				// 	if (x <= winWidth - currWidth) { //mouse in right side of hover zone
-				// 		var mouseX = Math.round(200 - xZone*2/(itemWidth/100)); //mouse position inside hover zone from 100 to 0
-				// 		var index = Math.round(mouseX / step);
-				// 		active.removeClass('is-active');
-				// 		if (index <= 0) {
-				// 			//show first image when mouse is out of container on the left side
-				// 			figure.eq(0).addClass('is-active');
-				// 		} else {
-				// 			figure.eq(index - 1).addClass('is-active');
-				// 		}
-				// 	}
-				// }
-			});
-		}
-	});
 
 	function initImages() {
 		$('.js-images').each(function() {
