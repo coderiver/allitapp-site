@@ -170,11 +170,15 @@ body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;
 
 .button-prev, .button-next { position: fixed; top: 87px; bottom: 92px; width: 133px; padding: 23px; z-index: 32; background: none; opacity: 0; will-change: opacity; -webkit-transition: visibility 0.2s, opacity 0.2s; transition: visibility 0.2s, opacity 0.2s; }
 .button-prev:hover, .button-next:hover { opacity: 1; }
-.button-prev i, .button-next i { width: 39px; height: 39px; text-align: center; line-height: 39px; background-color: rgba(255, 255, 255, 0.8); -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); -webkit-border-radius: 50%; border-radius: 50%; font-size: 15px; }
+.button-prev:hover i, .button-next:hover i { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); }
+.button-prev i, .button-next i { width: 39px; height: 39px; text-align: center; line-height: 39px; background-color: rgba(255, 255, 255, 0.8); -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); -webkit-border-radius: 50%; border-radius: 50%; font-size: 15px; -webkit-transition: -webkit-transform 0.2s ease-in-out, background 0.1s linear, color 0.1s linear; transition: transform 0.2s ease-in-out, background 0.1s linear, color 0.1s linear; }
+.button-prev i:hover, .button-next i:hover { background-color: rgba(0, 0, 0, 0.8); color: #fff; }
 
 .button-prev { left: 0; text-align: left; }
+.button-prev i { -webkit-transform: translate(-50px, 0); -ms-transform: translate(-50px, 0); transform: translate(-50px, 0); }
 
 .button-next { right: 0; text-align: right; }
+.button-next i { -webkit-transform: translate(50px, 0); -ms-transform: translate(50px, 0); transform: translate(50px, 0); }
 
 .about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
 .about.is-active { overflow-y: auto; overflow-x: hidden; }

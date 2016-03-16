@@ -589,6 +589,8 @@ body
 	transition: visibility 0.2s, opacity 0.2s
 	&:hover
 		opacity: 1
+		i
+			transform: translate(0,0)
 	i
 		width: 39px
 		height: 39px
@@ -598,9 +600,17 @@ body
 		box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1)
 		border-radius: 50%
 		font-size: 15px
+		transition: transform .2s ease-in-out, background .1s linear,color .1s linear
+		&:hover
+			background-color: rgba(#000, 0.8)
+			color: #fff 
 .button-prev
 	left: 0
 	text-align: left
+	i
+		transform: translate(-50px,0)
 .button-next
 	right: 0
 	text-align: right
+	i
+		transform: translate(50px,0)
