@@ -749,6 +749,13 @@ $(document).ready(function() {
 			footer.removeClass(footer.attr('class').split(' ').pop()).addClass(color);
 			headerBtn.removeClass(headerBtn.attr('class').split(' ').pop()).addClass(color);
 		}
+		function showarrows(left,right){
+			if(left) {$('.button-prev').show();}
+			else{$('.button-prev').hide();}
+
+			if(right) {$('.button-next').show();}
+			else{$('.button-next').hide();}
+		}
 
 		//wheelToggle
 		var prevDeltaY = null;
