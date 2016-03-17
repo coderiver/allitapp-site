@@ -174,10 +174,10 @@ body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;
 .button-prev:hover, .button-next:hover { opacity: 1; }
 .button-prev:hover i, .button-next:hover i { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); }
 .button-prev i, .button-next i { width: 39px; height: 39px; text-align: center; line-height: 39px; background-color: rgba(255, 255, 255, 0.8); -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); -webkit-border-radius: 50%; border-radius: 50%; font-size: 15px; -webkit-transition: -webkit-transform 0.2s ease-in-out, background 0.1s linear, color 0.1s linear; transition: transform 0.2s ease-in-out, background 0.1s linear, color 0.1s linear; }
-body.is-green .button-prev i, body.is-green .button-next i { background: #195031; color: #fff; }
-body.is-red .button-prev i, body.is-red .button-next i { background: #a24525; color: #fff; }
-body.is-brown .button-prev i, body.is-brown .button-next i { background: #8a5529; color: #fff; }
-body.is-blue .button-prev i, body.is-blue .button-next i { background: #547a9d; color: #fff; }
+body.is-green .button-prev i, body.is-green .button-next i { color: #195031; }
+body.is-red .button-prev i, body.is-red .button-next i { color: #a24525; }
+body.is-brown .button-prev i, body.is-brown .button-next i { color: #8a5529; }
+body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 
 .button-prev { left: 0; text-align: left; }
 .button-prev i { -webkit-transform: translate(-50px, 0); -ms-transform: translate(-50px, 0); transform: translate(-50px, 0); }
