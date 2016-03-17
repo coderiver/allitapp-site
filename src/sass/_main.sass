@@ -601,9 +601,21 @@ body
 		border-radius: 50%
 		font-size: 15px
 		transition: transform .2s ease-in-out, background .1s linear,color .1s linear
-		&:hover
-			background-color: rgba(#000, 0.8)
+		body.is-green &
+			background: #195031 
 			color: #fff 
+		body.is-red &
+			background: #a24525 
+			color: #fff 
+		body.is-brown &
+			background: #8a5529 
+			color: #fff 
+		body.is-blue &
+			background: #547a9d 
+			color: #fff 
+		// &:hover
+		// 	background-color: rgba(#000, 0.8)
+		// 	color: #fff 
 .button-prev
 	left: 0
 	text-align: left

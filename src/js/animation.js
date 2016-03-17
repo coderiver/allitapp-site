@@ -2,7 +2,8 @@ $(document).ready(function() {
 
 	//header/footer
 	var headerBtn = $('.js-show-menu'),
-		footer = $('.js-footer');
+		footer = $('.js-footer'),
+		b = $('body');
 
 	//Slides vars
 	var currentIndex = 0,
@@ -213,6 +214,7 @@ $(document).ready(function() {
 			//ads
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,1])
 					.to(logoBlue, 0.5, {
 							x: '-40%',
 							opacity: 0
@@ -382,6 +384,7 @@ $(document).ready(function() {
 					// 	},
 					// 	0.3
 					// )
+					.call(showarrows, [1,0])
 					.call(changeColor, ['is-blue'])
 					.to(aboutSlide, 0.9, {
 							left: '-180%'
@@ -407,6 +410,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.call(changeColor, ['is-first'])
+					.call(showarrows, [0,1])
 					.to(adsSlide, 0.7, {
 							x: '200%'
 						}
@@ -422,6 +426,7 @@ $(document).ready(function() {
 			//affiliate
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,1])
 					.to(affiliateSlide, 0.7, {
 							x: '250%'
 						}
@@ -440,6 +445,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.call(changeColor, ['is-green'])
+					.call(showarrows, [1,1])
 					.to(companySlide, 0.7, {
 							x: '250%'
 						}
@@ -497,6 +503,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.call(changeColor, ['is-brown'])
+					.call(showarrows, [1,1])
 					.to(newsSlide, 0.7, {
 							x: '180%'
 						}
@@ -746,16 +753,19 @@ $(document).ready(function() {
 
 		//change color for header and footer
 		function changeColor(color) {
+			b.removeClass(b.attr('class').split(' ').pop()).addClass(color);
 			footer.removeClass(footer.attr('class').split(' ').pop()).addClass(color);
 			headerBtn.removeClass(headerBtn.attr('class').split(' ').pop()).addClass(color);
 		}
 		function showarrows(left,right){
+			console.log(left,right);
 			if(left) {$('.button-prev').show();}
 			else{$('.button-prev').hide();}
 
 			if(right) {$('.button-next').show();}
 			else{$('.button-next').hide();}
 		}
+		showarrows(0,1);
 
 		//wheelToggle
 		var prevDeltaY = null;
