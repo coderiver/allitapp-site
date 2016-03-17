@@ -103,10 +103,14 @@
 				background-position: right center
 
 	&.info
+		padding-right: 0 
 		.section__in
 			padding-bottom: 20px
 			vertical-align: top
 			z-index: auto
+			padding-right: 0
+		.inner
+			padding-right: 0 
 		.skew
 			transform: skewX(20deg)
 			&:before
@@ -437,7 +441,9 @@
 	z-index: 2
 	+rh1
 		max-height: calc(100vh - 140px)
-		overflow: hidden
+		overflow: auto
+		max-width: none
+		padding-right: 100px  
 	.h2
 		margin-bottom: 50px
 	&__bl

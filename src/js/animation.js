@@ -530,6 +530,8 @@ $(document).ready(function() {
 			//main
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [0,1])
+					.call(changeColor, ['is-first'])
 					.to(logo, 0.5, {
 						x: '-130%'
 					})
@@ -596,6 +598,8 @@ $(document).ready(function() {
 			//ads
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,1])
+					.call(changeColor, ['is-green'])
 					.to(logo, 0.5, {
 						x: '0%'
 					})
@@ -612,6 +616,8 @@ $(document).ready(function() {
 			//affiliate
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,1])
+					.call(changeColor, ['is-green'])
 					.to(logo, 0.5, {
 						x: '0%'
 					})
@@ -628,6 +634,8 @@ $(document).ready(function() {
 			//company
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,1])
+					.call(changeColor, ['is-red'])
 					.to(logo, 0.5, {
 						x: '0%'
 					})
@@ -644,6 +652,8 @@ $(document).ready(function() {
 			//about
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,1])
+					.call(changeColor, ['is-brown'])
 					.to(logo, 0.5, {
 						x: '0%'
 					})
@@ -686,6 +696,8 @@ $(document).ready(function() {
 			//news
 			(function(){
 				new TimelineMax()
+					.call(showarrows, [1,0])
+					.call(changeColor, ['is-blue'])
 					.to(logo, 0.5, {
 						x: '0%'
 					})
