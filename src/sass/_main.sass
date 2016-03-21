@@ -63,6 +63,7 @@
 		.inner
 			position: static
 		.skew
+			background: linear-gradient(to right, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%) 
 			&:after, &:before
 				width: 200%
 			&:before
@@ -70,12 +71,16 @@
 				transform: skewX(-40deg)
 				// +gh(#c54a5f, #f3a998)
 				// background-image: linear-gradient(to right, #c54a5f, #f3a998)
-				background: #c54a5f
-				background: url(../img/111.png), linear-gradient(to right, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%)
+				
+				// background: #c54a5f
+				// background: url(../img/111.png), linear-gradient(to right, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%)
+				background-image: url('http://payload.persona.co/1/0/1016/42102/grain-1.jpg')
+				opacity: .2 
 			&:after
 				left: 200px
 				transform: skewX(-63.3deg)
 				+gh(#ebf5f3, #b8dfd8)
+				// display: none // @r
 		.model
 			top: 67px
 			transform: translateY(0)
