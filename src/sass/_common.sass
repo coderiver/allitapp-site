@@ -108,3 +108,34 @@ a
 			border-bottom: 1px solid #C6C5EE
 			transform-origin: bottom left
 			+rotate(-45)
+
+.popup-news
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 3000
+	background-color: rgba(#151025, 0.89)
+	+vertical
+	visibility: hidden
+	opacity: 0
+	transform: scale(1.2)
+	transition: visibility 0.3s, opacity 0.3s, transform 0.3s
+	&.is-active
+		opacity: 1
+		visibility: visible
+		transform: scale(1)
+	&__slider
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		opacity: 0
+		visibility: hidden
+		&.is-active
+			opacity: 1
+			visibility: visible
+	&__slide
+		padding: 0 44px
+		&:not(.slick-active)
+			cursor: pointer
