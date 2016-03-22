@@ -121,7 +121,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .section.ads .model-images div { background-position: right center; }
 .section.affiliate .inner { position: static; }
 .section.affiliate .skew:after, .section.affiliate .skew:before { width: 200%; }
-.section.affiliate .skew:before { left: -100%; -webkit-transform: skewX(-40deg); -ms-transform: skewX(-40deg); transform: skewX(-40deg); background: #c54a5f; background: url(../img/111.png), -webkit-gradient(linear, left top, right top, from(#c54a5f), color-stop(51%, #d35269), color-stop(75%, #f4ab99), to(#f3a998)); background: url(../img/111.png), -webkit-linear-gradient(left, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%); background: url(../img/111.png), linear-gradient(to right, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%); }
+.section.affiliate .skew:before { left: -100%; -webkit-transform: skewX(-40deg); -ms-transform: skewX(-40deg); transform: skewX(-40deg); background: #c54a5f; background-image: url("http://payload.persona.co/1/0/1016/42102/grain-1.jpg"); }
 .section.affiliate .skew:after { left: 200px; -webkit-transform: skewX(-63.3deg); -ms-transform: skewX(-63.3deg); transform: skewX(-63.3deg); background-color: #ebf5f3; background-image: -webkit-gradient(linear, left top, right top, from(#ebf5f3), to(#b8dfd8)); background-image: -webkit-linear-gradient(left, #ebf5f3, #b8dfd8); background-image: linear-gradient(to right, #ebf5f3, #b8dfd8); }
 .section.affiliate .model { top: 67px; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
 .section.affiliate .model .model-images div { background-position: left top; }
