@@ -588,7 +588,10 @@ body
 	width: 100%
 	.inner
 		z-index: 2
-
+body
+	cursor: url(../img/grab.png) 8 8, move
+	&:active
+		cursor: url(../img/grabbing.png) 8 8, move
 .button-prev, .button-next
 	position: fixed
 	top: 87px
@@ -600,10 +603,9 @@ body
 	opacity: 0
 	will-change: opacity
 	transition: visibility 0.2s, opacity 0.2s
-	cursor: url(../img/grab.png) 8 8, move
+	
 	// cursor: url(../img/grab.png) 8 8, move
-	&:active
-		cursor: url(../img/grabbing.png) 8 8, move
+	
 	&:hover
 		opacity: 1
 		i
