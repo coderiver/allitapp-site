@@ -1168,7 +1168,8 @@ $(document).ready(function() {
 	//news items
 	var newsItem = $('.js-news-item'),
 		newsPopup = $('.js-popup-news'),
-		newsSlider = $('.js-news-slider');
+		newsSlider = $('.js-news-slider'),
+		newsSlide = $('.popup-news__slide');
 
 	var newsOptions = {
 		slidesToShow: 1,
@@ -1187,7 +1188,8 @@ $(document).ready(function() {
 		var parent = $(this).parents('.js-news-items'),
 			newsItems = parent.find('.js-news-item'),
 			a = [],
-			i;
+			i,
+			currItem = $(this).index();
 
 		newsItems.each(function() {
 			a.push($(this).attr('href'));
@@ -1202,22 +1204,23 @@ $(document).ready(function() {
 			console.log(a, i);
 		}
 		setTimeout(function() {
-			newsSlider.slick(newsOptions);
 			newsSlider.addClass('is-active');
+			newsSlider.slick(newsOptions);
+			newsSlider.slick('slickGoTo', currItem);
 		}, 300);
 		return false;
 	});
 
-	newsPopup.click(function() {
-		$(this).removeClass('is-active');
-		newsSlider.removeClass('is-active');
-		newsSlider.slick('unslick');
-		$('.popup-news__slide').remove();
-		mouseDrag();
-	});
-
-	newsSlider.click(function(event) {
-		event.stopPropagation();
+	newsPopup.click(function(event) {
+		if (event.target.tagName.toLowerCase() === 'img') {
+			event.stopPropagation();
+		} else {
+			$(this).removeClass('is-active');
+			newsSlider.removeClass('is-active');
+			newsSlider.slick('unslick');
+			$('.popup-news__slide').remove();
+			mouseDrag();
+		}
 	});
 });
 $(document).ready(function() {
