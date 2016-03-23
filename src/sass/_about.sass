@@ -31,7 +31,7 @@
 			top: 60%
 			left: -100%
 			width: 300%
-			background: #ffcda0
+			background: url(../img/111.png), #ffcda0
 			transform: skewY(-7deg)
 	.model-images
 		right: 0
@@ -64,11 +64,13 @@
 .team
 	+g(#ffcda0, #fff4d1)
 	padding-top: 100px
+	background: url(../img/111.png), linear-gradient(to bottom, #ffcda0 0%, #fff4d1 100%)
 	+rh1
 		padding-top: 50px
 	+r(1024)
 		padding-top: 0
 		+g(#f7f6ff, #e8e8ff)
+		background: url(../img/111.png), linear-gradient(to bottom, #f7f6ff 0%, #e8e8ff 100%)
 		.section__in
 			padding-top: 0
 	.section__in
@@ -105,7 +107,8 @@
 			width: 140%
 			height: 100%
 			transform: skewX(20deg)
-			+g(#ffcda0, #fff4d1)
+			// +g(#ffcda0, #fff4d1)
+			background: url(../img/111.png), linear-gradient(to bottom, #ffcda0 0%, #fff4d1 100%)
 		+r(1024)
 			&:before
 				top: auto
@@ -129,12 +132,12 @@
 	transition: transform 0.3s ease-out, opacity 0.3s linear
 	transform: translateY(0)
 	opacity: 1
-	margin-bottom: 100px 
-	margin-top: -100px 
-	
+	margin-bottom: 100px
+	margin-top: -100px
+
 	+r(1120)
 		padding: 0 4%
-		margin-top: 0 
+		margin-top: 0
 	+r(1024)
 		width: 100%
 		max-width: 320px
