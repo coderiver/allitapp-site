@@ -156,6 +156,12 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .logo.is-fixed .logo-green { width: 56px; height: 56px; margin-top: -28px; }
 .logo.is-fixed .logo__name { width: 64px; height: 17px; background-size: contain; }
 .logo__main { position: relative; max-width: 400px; height: 265px; margin: 0 auto 14px; z-index: 2; }
+.logo__main > * { -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+.logo__main:hover > * { -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+.logo__main:hover .logo-blue { -webkit-transform: translate(-7px, 0); -ms-transform: translate(-7px, 0); transform: translate(-7px, 0); }
+.logo__main:hover .logo-red { -webkit-transform: translate(7px, 0); -ms-transform: translate(7px, 0); transform: translate(7px, 0); }
+.logo__main:hover .logo-green { -webkit-transform: translate(4px, 0); -ms-transform: translate(4px, 0); transform: translate(4px, 0); }
+.logo__main:hover .logo-violet { -webkit-transform: translate(-3px, 0); -ms-transform: translate(-3px, 0); transform: translate(-3px, 0); }
 .logo__sq { position: absolute; }
 .logo-blue, .logo-red { top: 50%; width: 182px; height: 182px; margin-top: -91px; }
 .logo-blue { left: 0; background-image: url(../img/svg-bg/logo-blue.svg); background-repeat: no-repeat; }
