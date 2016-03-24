@@ -107,6 +107,13 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 
 .sections { overflow: hidden; }
 
+.ohdragme { width: 128px; height: 80px; overflow: hidden; background: url(../img/drag_sprite.png) no-repeat 0 0; -webkit-animation: ohdragme 2s steps(38) infinite alternate; animation: ohdragme 2s steps(38) infinite alternate; margin: 0 auto; }
+
+@-webkit-keyframes ohdragme { from { background-position: 0 0; }
+  to { background-position: -4864px 0; } }
+
+@keyframes ohdragme { from { background-position: 0 0; }
+  to { background-position: -4864px 0; } }
 .section { position: fixed; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; visibility: hidden; text-align: center; font-size: 0; }
 .section:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .section.is-active, .section.is-animate { visibility: visible; }

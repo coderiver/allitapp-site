@@ -1,6 +1,21 @@
 // sections
 .sections
 	overflow: hidden
+.dragme-animation
+	
+.ohdragme
+	width: 128px 
+	height: 80px 
+	overflow: hidden
+	background: url(../img/drag_sprite.png) no-repeat 0 0
+	animation: ohdragme 2s steps(38) infinite alternate
+	margin: 0 auto 
+	 
+@keyframes ohdragme
+	from
+		background-position: 0 0 
+	to
+		background-position: -4864px 0 
 
 .section
 	position: fixed
