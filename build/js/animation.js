@@ -13,7 +13,6 @@ $(document).ready(function() {
 		affiliateSl = slides.eq(2),
 		companySl = slides.eq(3),
 		aboutSl = slides.eq(4),
-		// teamSl = slides.eq(5),
 		newsSl = slides.eq(5);
 
 	//varMain
@@ -375,23 +374,16 @@ $(document).ready(function() {
 			//news
 			(function(){
 				new TimelineMax()
-					// .staggerFromTo(teamList, 0.5, {
-					// 		opacity: 1,
-					// 		y: '0%'
-					// 	}, {
-					// 		opacity: 0,
-					// 		y: '-150px'
-					// 	},
-					// 	0.3
-					// )
 					.call(showarrows, [1,0])
 					.call(changeColor, ['is-blue'])
 					.to(aboutSlide, 0.9, {
 							left: '-180%'
 						}
 					)
-					.from(newsSlide, 0.7, {
-							x: '180%'
+					.fromTo(newsSl, 0.7, {
+							left: '180%'
+						}, {
+							left: '0%'
 						},
 						"-=0.9"
 					)
@@ -402,8 +394,8 @@ $(document).ready(function() {
 						0.3
 					)
 					.add(animateLeave)
-					.set([newsSlide, newsTitle, newsSubtitle, newsText, aboutSlide], {clearProps:'all'});
-			}),
+					.set([newsSl, newsTitle, newsSubtitle, newsText, aboutSlide], {clearProps:'all'});
+			})
 		];
 		var animationUp = [
 			//ads
@@ -484,45 +476,25 @@ $(document).ready(function() {
 					.set([aboutSlide, aboutSkew, companySlide], {clearProps: 'all'})
 					.add(animateLeave);
 			}),
-			//team
-			// (function(){
-			// 	new TimelineMax()
-			// 		.to(teamSlide, 0.7, {
-			// 				y: '100%'
-			// 			}
-			// 		)
-			// 		.from(aboutSlide, 0.7, {
-			// 				top: '-100%'
-			// 			},
-			// 			"-=0.7"
-			// 		)
-			// 		.set([aboutSlide, teamSlide], {clearProps: 'all'})
-			// 		.add(animateLeave);
-			// }),
 			//news
 			(function(){
 				new TimelineMax()
 					.call(changeColor, ['is-brown'])
 					.call(showarrows, [1,1])
-					.to(newsSlide, 0.7, {
-							x: '180%'
+					.fromTo(newsSl, 0.7, {
+							left: '0%'
+						}, {
+							left: '180%'
 						}
 					)
-					.from(aboutSlide, 0.7, {
+					.fromTo(aboutSlide, 0.7, {
 							left: '-180%'
+						}, {
+							left: '0%'
 						},
 						"-=0.7"
 					)
-					// .staggerFromTo(teamList, 0.4, {
-					// 		opacity: 0,
-					// 		y: '60px'
-					// 	}, {
-					// 		opacity: 1,
-					// 		y: '0%'
-					// 	},
-					// 	0.3
-					// )
-					.set([aboutSlide, newsSlide, teamItem], {clearProps: 'all'})
+					.set([aboutSlide, newsSl], {clearProps: 'all'})
 					.add(animateLeave);
 			}),
 		];
@@ -761,6 +733,12 @@ $(document).ready(function() {
 			$(window).on('resize', function() {
 				setState();
 			});
+			$('.news-ico').each(function() {
+				if (!$(this).hasClass('is-arrow')) {
+					$(this).addClass('is-arrow');
+					$(this).parent('.js-toggle-news').siblings('.js-content').removeAttr('style');
+				}
+			});
 		}
 
 		//change color for header and footer
@@ -770,7 +748,7 @@ $(document).ready(function() {
 			headerBtn.removeClass(headerBtn.attr('class').split(' ').pop()).addClass(color);
 		}
 		function showarrows(left,right){
-			console.log(left,right);
+			// console.log(left,right);
 			if(left) {$('.button-prev').show();}
 			else{$('.button-prev').hide();}
 

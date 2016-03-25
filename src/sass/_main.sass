@@ -2,20 +2,20 @@
 .sections
 	overflow: hidden
 .dragme-animation
-	
+
 .ohdragme
-	width: 128px 
-	height: 80px 
+	width: 128px
+	height: 80px
 	overflow: hidden
 	background: url(../img/drag_sprite.png) no-repeat 0 0
-	animation: ohdragme 2s steps(38) infinite alternate
-	margin: 0 auto 
-	 
+	animation: ohdragme 2s steps(34) infinite alternate
+	margin: 0 auto
+
 @keyframes ohdragme
 	from
-		background-position: 0 0 
+		background-position: 0 0
 	to
-		background-position: -4864px 0 
+		background-position: -(128px*34) 0
 
 .section
 	position: fixed
@@ -69,7 +69,8 @@
 				background-image: url(../img/111.png), linear-gradient(#7abdb8, #7dbfac 50%, #95cca9 80%)
 			&:before
 				left: -49%
-				+gh(#f8f1f0, #ecd3cc)
+				background: url(../img/grain.png), linear-gradient(to right, #f8f1f0 0%, #ecd3cc 100%)
+				background-blend-mode: overlay
 		.model-images
 			div
 				background-position: right center
@@ -89,7 +90,7 @@
 
 				background: #c54a5f
 				background: url(../img/grain.png), linear-gradient(to right, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%)
-				background-blend-mode: overlay 
+				background-blend-mode: overlay
 				// background-image: url(../img/grain.png)
 				// opacity: .2
 			&:after
@@ -97,6 +98,8 @@
 				transform: skewX(-63.3deg)
 				+gh(#ebf5f3, #b8dfd8)
 				// display: none // @r
+				background: url(../img/grain.png), linear-gradient(to right, #ebf5f3, #b8dfd8)
+				background-blend-mode: overlay
 		.model
 			top: 67px
 			transform: translateY(0)
@@ -110,6 +113,8 @@
 				left: -100%
 				transform: skewX(-35deg)
 				+gh(#ebf4ff, #dbeaff)
+				background: url(../img/grain.png), linear-gradient(to right, #ebf4ff, #dbeaff)
+				background-blend-mode: overlay
 			&:after
 				left: 50%
 				width: 100%
@@ -118,7 +123,7 @@
 				// background: #ce986c
 				// background-image: linear-gradient(to bottom, #b46e42 0%, #d0a174 51%, #edd198 75%, #e7ce95 100%)
 				background: url(../img/grain.png), linear-gradient(-19deg, #e7ce95 0%, #edd198 51%, #d0a174 75%, #b46e42 100%)
-				background-blend-mode: overlay 
+				background-blend-mode: overlay
 		.model-images
 			right: 0
 			div
@@ -154,7 +159,7 @@
 			z-index: 3
 			// +gh(#9dc6d4, #aacdda)
 			background: url(../img/grain.png), linear-gradient(to bottom, #9dc6d4 0%, #aacdda 100%)
-			background-blend-mode: overlay 
+			background-blend-mode: overlay
 			+rh1
 				top: 85%
 	+r(1024)
@@ -477,17 +482,15 @@
 // news
 .news
 	position: relative
-	max-width: 800px
-	margin: 0 auto
 	font-size: 16px
 	color: #dc6c7a
 	z-index: 2
-	+rh1
-		// max-height: calc(100vh - 140px)
-		max-height: 100vh
-		// overflow: auto
-		max-width: none
-		padding-right: 100px
+	max-height: 100vh
+	max-width: none
+	padding-right: 100px
+	&__inner
+		max-width: 800px
+		margin: 0 auto
 	.h2
 		margin-bottom: 50px
 	&__bl
