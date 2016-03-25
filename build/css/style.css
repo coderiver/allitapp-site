@@ -107,7 +107,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 
 .sections { overflow: hidden; }
 
-.ohdragme { width: 128px; height: 80px; overflow: hidden; background: url(../img/drag_sprite.png) no-repeat 0 0; -webkit-animation: ohdragme 2s steps(34) infinite alternate; animation: ohdragme 2s steps(34) infinite alternate; margin: 0 auto; }
+.ohdragme { width: 128px; height: 80px; overflow: hidden; background: url(../img/drag_sprite.png) no-repeat 0 0; -webkit-animation: ohdragme 2s steps(34) infinite normal; animation: ohdragme 2s steps(34) infinite normal; margin: 0 auto; }
 
 @-webkit-keyframes ohdragme { from { background-position: 0 0; }
   to { background-position: -4352px 0; } }
