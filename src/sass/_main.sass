@@ -288,6 +288,20 @@
 		margin: 20px 0 0 23px
 		transform: translateX(-130%)
 		.logo__main
+			&>*
+				transition: all .3s ease-in-out
+		&:hover
+			&>*
+				transition: all .3s ease-in-out
+			.logo-blue
+				transform: translate(-7px,0)
+			.logo-red
+				transform: translate(7px,0)
+			.logo-green
+				transform: translate(4px,0)
+			.logo-violet
+				transform: translate(-3px,0)
+		.logo__main
 			max-width: 103px
 			height: 56px
 			margin-bottom: 0
@@ -319,19 +333,6 @@
 		height: 265px
 		margin: 0 auto 14px
 		z-index: 2
-		&>*
-			transition: all .3s ease-in-out
-		&:hover
-			&>*
-				transition: all .3s ease-in-out
-			.logo-blue
-				transform: translate(-7px,0)
-			.logo-red
-				transform: translate(7px,0)
-			.logo-green
-				transform: translate(4px,0)
-			.logo-violet
-				transform: translate(-3px,0)
 
 
 
