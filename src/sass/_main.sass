@@ -76,6 +76,8 @@
 				background-position: right center
 
 	&.affiliate
+		.model-images
+			left: 50% 
 		.inner
 			position: static
 		.skew
@@ -125,7 +127,8 @@
 				background: url(../img/grain.png), linear-gradient(-19deg, #e7ce95 0%, #edd198 51%, #d0a174 75%, #b46e42 100%)
 				background-blend-mode: overlay
 		.model-images
-			right: 0
+			right: -70%
+			left: auto
 			div
 				background-position: right center
 
@@ -263,10 +266,13 @@
 			background: url(../img/main-bl-right.jpg) no-repeat
 		&.is-left
 			left: 0
-			bottom: 0
-			width: 239px
-			height: 422px
-			background: url(../img/main-bl-left.jpg) no-repeat
+			// bottom: -200px
+			top: 100px 
+			left: -60px 
+			width: 339px
+			height: 622px
+			background: url(../img/main-c.png) no-repeat 100% 0
+			background-size: cover 
 	+r(830)
 		&__bl
 			display: none
@@ -608,7 +614,7 @@
 	position: absolute
 	top: 0
 	bottom: 0
-	left: 50%
+	left: 60%
 	transform: translateX(-50%)
 	z-index: 1
 	+r(1024)
