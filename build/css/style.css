@@ -256,7 +256,7 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .about__btns .btn, .about__btns .btn-next { display: none; }
 .about .skew:before { top: -30%; left: -100%; width: 260%; height: 160%; -webkit-transform: skew(20deg, 3deg); -ms-transform: skew(20deg, 3deg); transform: skew(20deg, 3deg); background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
 .about .skew div { position: absolute; height: 100%; top: 60%; left: -100%; width: 300%; background: url(../img/111.png), #ffcda0; -webkit-transform: skewY(-7deg); -ms-transform: skewY(-7deg); transform: skewY(-7deg); }
-.about .model-images { right: 0; }
+.about .model-images { right: 0; left: 56%; }
 .about .model-images div { background-position: right center; }
 
 .text_about { max-width: 540px; min-height: 580px; }
