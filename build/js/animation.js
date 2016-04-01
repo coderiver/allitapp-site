@@ -564,7 +564,7 @@ $(document).ready(function() {
 						},
 						"-=0.5"
 					)
-					.add(scrollWheel)
+					// .add(scrollWheel)
 					.set([logoGreenIn, logoBlue, logoRed, logoViolet, logoName, logo], {clearProps:'all'});
 			}),
 			//ads
