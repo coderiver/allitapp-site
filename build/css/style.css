@@ -159,7 +159,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .skew:after, .skew:before { content: ""; position: absolute; top: 0; height: 100%; }
 
 .main__bl { position: absolute; }
-.main__bl.is-right { top: 135px; right: 0; width: 260px; height: 297px; background: url(../img/main-bl-right.jpg) no-repeat; }
+.main__bl.is-right { top: 135px; right: 0; width: 260px; height: 297px; background: url(../img/main-r.png) no-repeat; }
 .main__bl.is-left { left: 0; top: 100px; left: -60px; width: 339px; height: 622px; background: url(../img/main-c.png) no-repeat 100% 0; background-size: cover; }
 
 .logo { position: relative; display: inline-block; width: 100%; vertical-align: middle; text-align: center; font-size: 36px; color: #f3f1ed; }
