@@ -109,6 +109,10 @@
 				div
 					background-position: left top
 	&.company
+		.text__bl
+			padding-right: 120px 
+			+r(1000)
+				padding-right: 0 
 		.skew
 			&:before
 				width: 200%
@@ -229,7 +233,19 @@
 			.skew
 				&:after
 					box-shadow: none
-
+.download
+	font-size: 14px 
+	color: #DC6C7A 
+	text-decoration: none
+	width: 90px 
+	float: right
+	margin-right: -130px 
+	padding-top: 2px 
+	+r(1000)
+		display: none
+	i
+		font-size: 25px 
+		margin-top: 7px 
 // inner centered block
 .inner
 	position: relative
