@@ -160,8 +160,20 @@
 		padding-bottom: 137%
 		+cover
 		margin: 15px 0 49px
+		position: relative
 		+rh1
 			margin: 5px 0 49px
+	&__img1
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0  
+		+cover
+		transition: all .3s linear
+		opacity: 0
+	&:hover .member__img1
+		opacity: 1   
 	&__title
 		font-size: 30px
 		line-height: 1
