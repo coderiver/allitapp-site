@@ -44,8 +44,10 @@
 	visibility: hidden
 	z-index: 35
 	+tr(0.5s)
-	+gh(#384e86, #7261a9)
+	// +gh(#384e86, #7261a9)
 	padding: 80px 0 0
+	background: url(../img/grain.png), linear-gradient(left, #384e86 0%, #7261a9 100%)
+	background-blend-mode: overlay
 	&.is-active
 		opacity: 1
 		visibility: visible
