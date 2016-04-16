@@ -9,6 +9,8 @@
 		font-size: 0
 		text-align: center
 		padding: 38px 0 0
+		+r(1024)
+			margin: 0 -15px
 		.btn, .btn-next
 			display: none
 			+r(1024)
@@ -33,6 +35,21 @@
 			width: 300%
 			background: url(../img/grain.png), #ffcda0
 			transform: skewY(-7deg)
+	.skew_mob
+		+r(1024)
+			display: block
+			&:before
+				content: ""
+				top: auto
+				left: 0
+				bottom: -200px
+				height: 500px
+				width: 140%
+				background: url(../img/grain.png), linear-gradient(to bottom, #ffcda0 0%, #fff4d1 100%)
+				background-blend-mode: overlay
+				transform: skewY(-10deg)
+			&:after
+				display: none
 	.model-images
 		right: 0px
 		// left: 56% 
@@ -40,7 +57,8 @@
 		transform: none
 		div
 			background-position: right center
-
+	.footer
+		padding-top: 50px
 .text
 	&_about
 		max-width: 540px
@@ -73,9 +91,9 @@
 		padding-top: 50px
 	+r(1024)
 		padding-top: 0
-		+g(#e8e9ff, #fafbff)
-		background: url(../img/grain.png), linear-gradient(to bottom, #e8e9ff 0%, #fafbff 100%)
-		background-blend-mode: overlay
+		// +g(#fafaff, #e6e6ff)
+		background: linear-gradient(to bottom, #f7f6ff 0%, #e6e6ff 100%)
+		// background-blend-mode: overlay
 		.section__in
 			padding-top: 0
 	.section__in
@@ -100,30 +118,14 @@
 			margin: 0 auto
 		&__mobile
 			+r(1024)
-				max-width: 461px
-				height: 402px
-				background-image: url(../img/about-mobile.png)
-				+cover
+				// max-width: 461px
+				// height: 402px
+				// // background-image: url(../img/about-mobile.png)
+				// +cover
 				display: block
-	// .skew
-	// 	&:before
-	// 		top: 0
-	// 		left: -20%
-	// 		width: 140%
-	// 		height: 100%
-	// 		transform: skewX(20deg)
-	// 		// +g(#ffcda0, #fff4d1)
-	// 		background: url(../img/grain.png), linear-gradient(to bottom, #ffcda0 0%, #fff4d1 100%)
-	// 		background-blend-mode: overlay
-	// 	+r(1024)
-	// 		&:before
-	// 			top: auto
-	// 			left: 0
-	// 			bottom: -300px
-	// 			height: 500px
-	// 			transform: skewY(-10deg)
-	// 		&:after
-	// 			display: none
+			img
+				+r(560)
+					transform: translateX(-73%)
 
 
 .member
@@ -138,7 +140,6 @@
 	transition: transform 0.3s ease-out, opacity 0.3s linear
 	// opacity: 1
 	margin-bottom: 100px
-
 	+r(1120)
 		padding: 0 4%
 		margin-top: 0
@@ -148,6 +149,8 @@
 		padding: 0 25px
 		display: block
 		margin: 0 auto
+		opacity: 1
+		transform: translateY(0)
 	&.is-active
 		transform: translateY(0)
 		opacity: 1

@@ -3,6 +3,7 @@
 	overflow: hidden
 	width: 100%
 	margin: 0
+	height: 100%
 .dragme-animation
 
 .ohdragme
@@ -27,17 +28,23 @@
 	// right: 0
 	// display: table
 	width: 100%
-	height: 100vh
+	height: 100%
 	// visibility: hidden
 	position: relative
 	+vertical
 	overflow: hidden
 	+r(1024)
-		position: relative
-		display: block
-		height: auto
-		visibility: visible
+		// position: relative
+		// display: block
+		// height: auto
+		// visibility: visible
 		overflow: hidden
+	.footer
+		display: none
+		position: relative
+		+r(1024)
+			display: block
+			text-align: left
 	&.is-active, &.is-animate
 		// visibility: visible
 	&.is-active
@@ -59,8 +66,8 @@
 		overflow: hidden
 		position: relative
 		min-height: 100%
-		+r(1024)
-			padding-bottom: 260px
+		// +r(1024)
+		// 	padding-bottom: 260px
 	&__in
 		position: relative
 		// display: table-cell
@@ -72,11 +79,12 @@
 		text-align: left
 		+r(1024)
 			display: block
-		+rh1
-			padding: 50px 7.8%
+			padding: 130px 7% 50px
 	&.main
 		background-color: #25345c
 		background-image: linear-gradient(#25345c, #314477 50%, #324577 80%)
+		.footer
+			padding-top: 115px
 	&.ads
 		.skew
 			&:after, &:before
@@ -92,7 +100,6 @@
 		.model-images
 			div
 				background-position: right center
-
 	&.affiliate
 		.model-images
 			left: 50% 
@@ -189,8 +196,9 @@
 			// +gh(#9dc6d4, #aacdda)
 			background: url(../img/grain.png), linear-gradient(to bottom, #9dc6d4 0%, #aacdda 100%)
 			background-blend-mode: overlay
-			+rh1
-				top: 85%
+			+r(1024)
+				display: none
+				
 	+r(1024)
 		.model
 			margin: 0 auto
@@ -202,8 +210,10 @@
 			.model
 				max-width: 585px
 				&__mobile
-					height: 577px
-					background-image: url(../img/ads-circle.png)
+					// height: 577px
+					// background-image: url(../img/ads-circle.png)
+					img
+						transform: translateX(-60%)
 			.skew
 				&:before
 					left: 0
@@ -211,13 +221,21 @@
 				&:after
 					width: 200%
 					left: 70%
+					+r(1024)
+						width: 200% !important
+						left: 0 !important
+						top: auto
+						bottom: 0
+						height: 790px
+						transform: skewY(-45deg)
 		&.affiliate
 			.model
 				max-width: 303px
 				padding-right: 20px
 				&__mobile
-					height: 630px
-					background-image: url(../img/affiliate-cube.png)
+					// height: 630px
+					// background-image: url(../img/affiliate-cube2.png)
+					padding-right: 0
 			.skew
 				&:before
 					transform: skew(0)
@@ -230,8 +248,10 @@
 			.model
 				max-width: 558px
 				&__mobile
-					height: 569px
-					background-image: url(../img/company-pic.png)
+					// height: 569px
+					// background-image: url(../img/company-pic.png)
+					img
+						max-width: 552px
 			.skew
 				&:before
 					left: 0
@@ -287,6 +307,11 @@
 	left: 0
 	right: 0
 	bottom: 0
+	+r(1024)
+		display: none
+	&_mob
+		+r(1024)
+			display: block
 	&:after, &:before
 		content: ""
 		position: absolute
@@ -476,6 +501,9 @@
 		+cm
 		+rh1
 			margin-bottom: 32px
+		+r(1024)
+			letter-spacing: 0.015em
+			width: 90%
 	&__bl
 		p
 			margin-bottom: 33px
@@ -513,6 +541,12 @@
 	&__mobile
 		display: none
 		margin: 0 -15px
+		img
+			display: block
+			position: relative
+			left: 50%
+			transform: translateX(-53%)
+			max-width: none
 	+r(1200)
 		padding-left: 375px
 		&.is-left
@@ -521,8 +555,6 @@
 		position: static
 		padding-left: 0
 		transform: translateY(0)
-		img
-			display: none
 
 // news
 .news
@@ -642,7 +674,8 @@
 	margin: 0 -15px
 	padding: 0 15px
 	+clr
-
+	+r(1024)
+		padding: 0
 
 .model-images
 	width: 100vw
@@ -704,7 +737,8 @@ body
 	transition: visibility 0.2s, opacity 0.2s
 
 	// cursor: url(../img/grab.png) 8 8, move
-
+	+r(1024)
+		display: none !important
 	&:hover
 		opacity: 1
 		i
@@ -752,3 +786,17 @@ body
 .js-subtitle, .js-text, .js-title
 	opacity: 0
 	position: relative
+.info
+	.inner
+		+r(1024)
+			padding: 0
+	.news
+		+r(1024)
+			padding: 0
+			+g(#cae7ed, #eff7f9)
+		&__inner
+			+r(1024)
+				padding: 130px 7% 50px
+	.section__in
+		+r(1024)
+			padding: 0	

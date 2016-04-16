@@ -347,7 +347,7 @@ $(document).ready(function() {
 					)
 					.add(mouseDrag)
 					.add(navBtns)
-					.set([adsTitle, adsSubtitle, adsText, affiliateList], {clearProps: 'all'});
+					.set([adsTitle, adsSubtitle, adsText, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps: 'all'});
 			}),
 			//company
 			(function(){
@@ -981,11 +981,6 @@ $(document).ready(function() {
 				currentIndex = currentIndex - 1;
 				sections.slick('slickGoTo', currentIndex);
 				btnPrevOn = false;
-				if (currentIndex == 1 || currentIndex == 2) {
-					changeColor(prevColors[1]);				
-				} else {					
-					changeColor(prevColors[currentIndex]);
-				}
 			}
 			// 	animationUp[currentIndex]();
 			// };
@@ -1325,7 +1320,17 @@ $(document).ready(function() {
 			showarrows(1, 0);
 		};
 		if (nextSlide < currentSlide) {
-			showarrows(1, 1);
+			if (nextSlide <= 0) {
+				navBtns();
+				showarrows(0, 1);
+			} else {
+				showarrows(1, 1);				
+			};
+			// if (currentIndex == 1 || currentIndex == 2) {
+			// 	changeColor(prevColors[1]);				
+			// } else {					
+				changeColor(prevColors[currentIndex]);
+			// }
 		};
 		console.log(currentSlide, nextSlide, currentIndex);
 	});
