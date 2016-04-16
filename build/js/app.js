@@ -969,27 +969,42 @@ $(document).ready(function() {
 		// 		}
 		// 	};
 		// });
+		var btnPrevOn = true;
+		var prevColors = ['is-first', 'is-green', 'is-green', 'is-red', 'is-brown'];
 		function btnPrev() {
 			$('body').off('mousedown');
 			// moveToPrevSlide();
-			if (currentIndex == 0) {
-				mouseDrag();
-			} else {
+			// if (currentIndex == 0) {
+			// 	mouseDrag();
+			// } else {
+			if (btnPrevOn == true) {
 				currentIndex = currentIndex - 1;
-				animationUp[currentIndex]();
-			};
-			console.log(currentIndex);
+				sections.slick('slickGoTo', currentIndex);
+				btnPrevOn = false;
+				if (currentIndex == 1 || currentIndex == 2) {
+					changeColor(prevColors[1]);				
+				} else {					
+					changeColor(prevColors[currentIndex]);
+				}
+			}
+			// 	animationUp[currentIndex]();
+			// };
+			console.log('btnPrev ' + currentIndex);
 			return false;
 		};
 		function btnNext() {
 			$('body').off('mousedown');
 			// moveToNextSlide();
-			if (currentIndex == 5) {
-				mouseDrag();
-			} else {
+			// if (currentIndex == 5) {
+			// 	mouseDrag();
+			// } else {
+			if (btnPrevOn == true) {
 				currentIndex = currentIndex + 1;
-				animationDown[currentIndex]();
-			};
+			// 	animationDown[currentIndex]();
+			// };
+				sections.slick('slickGoTo', currentIndex);
+				btnPrevOn = false;
+			}
 			console.log(currentIndex);
 			return false;
 		};
@@ -999,10 +1014,10 @@ $(document).ready(function() {
 			$('.js-next').off('click');
 		};
 		function navBtns() {
-			$('.js-prev').one('click', function() {
+			$('.js-prev').on('click', function() {
 				btnPrev();
 			});
-			$('.js-next').one('click', function() {
+			$('.js-next').on('click', function() {
 				btnNext();
 			});
 		};
@@ -1301,7 +1316,27 @@ $(document).ready(function() {
 		if (nextSlide >= 0 && currentSlide != 5 && nextSlide > currentSlide) {
 			animationDown[currentIndex]();
 		};
+		if (nextSlide <= 0) {
+			navBtns();
+			showarrows(0, 1);
+		};
+		if (nextSlide > 5) {
+			navBtns();
+			showarrows(1, 0);
+		};
+		if (nextSlide < currentSlide) {
+			showarrows(1, 1);
+		};
 		console.log(currentSlide, nextSlide, currentIndex);
+	});
+	sections.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+		btnPrevOn = true;
+		// $('.js-prev').on('click', function() {
+		// 	if (btnPrevOn = true) {
+		// 		currentIndex = currentIndex - 1;
+		// 		sections.slick('slickGoTo', currentIndex)			
+		// 	};
+		// });
 	});
 	var xStart,
 		xNew,
