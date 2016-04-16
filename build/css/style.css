@@ -382,6 +382,7 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 @media only screen and (max-width: 1024px){
  body{ overflow: visible; }
  .section{ position: relative; display: block; height: auto; visibility: visible; overflow: hidden; }
+ .section__row{ padding-bottom: 260px; }
  .section__in{ display: block; }
  .section .model{ margin: 0 auto; }
  .section .model__mobile{ display: block; background-repeat: no-repeat; background-size: contain; }
