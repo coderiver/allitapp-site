@@ -259,6 +259,11 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .button-next { right: 0; text-align: right; }
 .button-next i { -webkit-transform: translate(50px, 0); -ms-transform: translate(50px, 0); transform: translate(50px, 0); }
 
+.slick-active .js-subtitle, .slick-active .js-text, .slick-active .js-title { opacity: 1; }
+.slick-active .text { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+.js-subtitle, .js-text, .js-title { opacity: 0; position: relative; }
+
 .about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
 .about.is-active { overflow-y: auto; overflow-x: hidden; }
 .about__btns { font-size: 0; text-align: center; padding: 38px 0 0; }

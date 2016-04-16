@@ -211,42 +211,42 @@ $(document).ready(function() {
 				new TimelineMax()
 					.call(showarrows, [1,1])
 					.add(btnsOff)
-					.to(logoBlue, 0.5, {
-							x: '-40%',
-							opacity: 0
-						}
-					)
-					.to(logoRed, 0.5, {
-							x: '40%',
-							opacity: 0
-						},
-						"-=0.5"
-					)
-					.to(logoViolet, 0.5, {
-							x: '-20%',
-							opacity: 0
-						},
-						"-=0.5"
-					)
-					.to(logoName, 0.5, {
-							left: '61%',
-							opacity: 0
-						},
-						"-=0.5"
-					)
+					// .to(logoBlue, 0.5, {
+					// 		x: '-40%',
+					// 		opacity: 0
+					// 	}
+					// )
+					// .to(logoRed, 0.5, {
+					// 		x: '40%',
+					// 		opacity: 0
+					// 	},
+					// 	"-=0.5"
+					// )
+					// .to(logoViolet, 0.5, {
+					// 		x: '-20%',
+					// 		opacity: 0
+					// 	},
+					// 	"-=0.5"
+					// )
+					// .to(logoName, 0.5, {
+					// 		left: '61%',
+					// 		opacity: 0
+					// 	},
+					// 	"-=0.5"
+					// )
 					.call(changeColor, ['is-green'])
-					.fromTo(logoGreenIn, 1, {
-							x: '-50%',
-							y: '-50%',
-						}, {
-							rotation: '-60deg',
-							x: '-50%',
-							y: '-50%',
-							scale: '15'
-						},
-						"-=0.05"
-					)
-					.add(slideGoNext, '-=0.9')
+					// .fromTo(logoGreenIn, 1, {
+					// 		x: '-50%',
+					// 		y: '-50%',
+					// 	}, {
+					// 		rotation: '-60deg',
+					// 		x: '-50%',
+					// 		y: '-50%',
+					// 		scale: '15'
+					// 	},
+					// 	"-=0.05"
+					// )
+					// .add(slideGoNext, '-=0.9')
 					.to(logo, 0.5, {
 							x: '0%'
 						},
@@ -257,9 +257,12 @@ $(document).ready(function() {
 					// 	},
 					// 	"-=1"
 					// )
-					.staggerFrom(adsList, 0.5, {
+					.staggerFromTo(adsList, 0.5, {
 							opacity: 0,
 							y: '50px'
+						}, {
+							opacity: '1',
+							y: 0
 						},
 						0.3,
 						"-=0.4"
@@ -272,13 +275,16 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.staggerTo(adsList, 0.5, {
-						opacity: 0,
-						y: '-150px'
-						},
-						0.3
-					)
-					.add(slideGoNext)
+					// .staggerTo(adsList, 0.5, 
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3
+					// )
+					// .add(slideGoNext)
 					// .to(adsSlide, 0.7, {
 					// 		x: '-145%'
 					// 	}
@@ -288,9 +294,12 @@ $(document).ready(function() {
 					// 	},
 					// 	"-=0.7"
 					// )
-					.staggerFrom(affiliateList, 0.5, {
+					.staggerFromTo(affiliateList, 0.5, {
 							opacity: 0,
 							y: '50px'
+						}, {
+							opacity: '1',
+							y: 0
 						},
 						0.3,
 						'+=0.5'
@@ -303,12 +312,12 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.staggerTo(affiliateList, 0.5, {
-						opacity: 0,
-						y: '-150px'
-						},
-						0.3
-					)
+					// .staggerTo(affiliateList, 0.5, {
+					// 	opacity: 0,
+					// 	y: '-150px'
+					// 	},
+					// 	0.3
+					// )
 					.call(changeColor, ['is-red'])
 					// .to(affiliateSlide, 0.7, {
 					// 		x: '-145%'
@@ -319,10 +328,13 @@ $(document).ready(function() {
 					// 	},
 					// 	"-=0.7"
 					// )
-					.add(slideGoNext)
-					.staggerFrom(companyList, 0.5, {
+					// .add(slideGoNext)
+					.staggerFromTo(companyList, 0.5, {
 							opacity: 0,
 							y: '50px'
+						}, {
+							opacity: '1',
+							y: 0
 						},
 						0.3,
 						'+=0.5'
@@ -335,13 +347,13 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.staggerTo(companyList, 0.5, {
-						opacity: 0,
-						y: '-150px'
-						},
-						0.3
-					)
-					.add(slideGoNext)
+					// .staggerTo(companyList, 0.5, {
+					// 	opacity: 0,
+					// 	y: '-150px'
+					// 	},
+					// 	0.3
+					// )
+					// .add(slideGoNext)
 					// .to(companySlide, 0.7, {
 					// 		x: '-145%'
 					// 	}
@@ -371,9 +383,12 @@ $(document).ready(function() {
 					// 	},
 					// 	"-=0.5"
 					// )
-					.staggerFrom(aboutList, 0.5, {
+					.staggerFromTo(aboutList, 0.5, {
 							opacity: 0,
 							y: '50px'
+						}, {
+							opacity: '1',
+							y: 0
 						},
 						0.3,
 						'+=0.5'
@@ -399,10 +414,13 @@ $(document).ready(function() {
 					// 	},
 					// 	"-=0.9"
 					// )
-					.add(slideGoNext)
-					.staggerFrom(newsList, 0.5, {
+					// .add(slideGoNext)
+					.staggerFromTo(newsList, 0.5, {
 							opacity: 0,
 							y: '50px'
+						}, {
+							opacity: '1',
+							y: 0
 						},
 						0.3
 					)
@@ -844,47 +862,47 @@ $(document).ready(function() {
 		var threshold = 50;
 
 		function mouseDrag() {
-			$('body').one('mousedown', function(e){
-				var node = $(this);
-				var position = node.offset();
-				var xStart = e.pageX;
-				// console.log(xStart);
-				var handlers = {
-					mousemove : function(e){
-						var xEnd = e.pageX;
-						// console.log(xStart, xEnd);
-						// $(this).off(handlers);
-					},
-					mouseup : function(e){
-						$(this).off(handlers);
-						xEnd = e.pageX;
-						if (xStart > xEnd + threshold) {
-							// moveToNextSlide();
-							if (currentIndex == 5) {
-								mouseDrag();
-							} else {
-								// moveToNextSlide();
-								currentIndex = currentIndex + 1;
-								animationDown[currentIndex]();
-								console.log(currentIndex);								
-							}
-						} else if (xStart < xEnd - threshold) {
-							// moveToPrevSlide();
-							if (currentIndex == 0) {
-								mouseDrag();
-							} else {
-								// moveToPrevSlide();
-								currentIndex = currentIndex - 1;
-								animationUp[currentIndex]();
-								console.log(currentIndex);
-							}
-						} else {
-							mouseDrag();
-						}
-					}
-				};
-				$(document).on(handlers);
-			});
+			// $('body').one('mousedown', function(e){
+			// 	var node = $(this);
+			// 	var position = node.offset();
+			// 	var xStart = e.pageX;
+			// 	// console.log(xStart);
+			// 	var handlers = {
+			// 		mousemove : function(e){
+			// 			var xEnd = e.pageX;
+			// 			// console.log(xStart, xEnd);
+			// 			// $(this).off(handlers);
+			// 		},
+			// 		mouseup : function(e){
+			// 			$(this).off(handlers);
+			// 			xEnd = e.pageX;
+			// 			if (xStart > xEnd + threshold) {
+			// 				// moveToNextSlide();
+			// 				if (currentIndex == 5) {
+			// 					mouseDrag();
+			// 				} else {
+			// 					// moveToNextSlide();
+			// 					currentIndex = currentIndex + 1;
+			// 					animationDown[currentIndex]();
+			// 					console.log(currentIndex);								
+			// 				}
+			// 			} else if (xStart < xEnd - threshold) {
+			// 				// moveToPrevSlide();
+			// 				if (currentIndex == 0) {
+			// 					mouseDrag();
+			// 				} else {
+			// 					// moveToPrevSlide();
+			// 					currentIndex = currentIndex - 1;
+			// 					animationUp[currentIndex]();
+			// 					console.log(currentIndex);
+			// 				}
+			// 			} else {
+			// 				mouseDrag();
+			// 			}
+			// 		}
+			// 	};
+			// 	$(document).on(handlers);
+			// });
 		}
 
 		// $('body').on("keydown", function(e){
@@ -1230,16 +1248,76 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		infinite: false,
 		arrows: false,
-		swipe: false
+		// swipe: false
 	});
-	// sections.on('afterChange', function(event, slick, currentSlide, nextSlide) {
-	// 	console.log(currentSlide, nextSlide);
-
-	// });
-	// sections.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-	//   console.log(currentSlide, nextSlide);
-	//   if (nextSlide != 0) {
-	// 	  animationDown[nextSlide]();
-	//   } 
-	// });
+	sections.on('swipe', function(event, slick, direction){
+		console.log(direction);
+		slideDrag();
+	});
+	sections.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+		currentIndex = nextSlide;
+		slideDrag();
+		if (nextSlide >= 0 && currentSlide != 5 && nextSlide > currentSlide) {
+			animationDown[currentIndex]();
+		};
+		console.log(currentSlide, nextSlide, currentIndex);
+	});
+	var xStart,
+		xNew,
+		threshold = 100;
+	function slideDrag() {
+		$('.section.slick-active').one('mousedown', function(e) {
+			var el = $(this),
+				elTitle = el.find('.js-title'),
+				elSubtitle = el.find('.js-subtitle'),
+				elText = el.find('.js-text'),
+				// elInfo = el.find('.js-title, .js-subtitle, .js-text');
+				elInfo = el.find('.text');
+				xStart = e.pageX;
+				console.log(elTitle.text());
+			if (elInfo.length) {
+				var elInfoTop = elInfo.offset().top;
+				var elInfoLeft = elInfo.offset().left;
+			}
+			var handlers = {			
+				mousemove: function(e) {
+					xNew = e.pageX;
+					// if (xStart < xNew) {
+						elInfo.css({
+							left: (xStart - xNew)/3
+						});				
+					// } else {				
+					// 	elInfo.css({
+					// 		left: xStart - xNew
+					// 	});		
+					// }
+					console.log(xStart, xNew);
+				},
+				mouseup : function(e){
+					$(this).off(handlers);
+					xEnd = e.pageX;
+					elInfo.removeAttr('style');
+					if (xStart > xEnd + threshold) {
+						// moveToNextSlide();
+						if (currentIndex == 5) {
+							slideDrag();
+						} else {
+							// moveToNextSlide();							
+						}
+					} else if (xStart < xEnd - threshold) {
+						// moveToPrevSlide();
+						if (currentIndex == 0) {
+							slideDrag();
+						} else {
+							// moveToPrevSlide();
+						}
+					} else {
+						slideDrag();
+					}
+				}
+			};
+			$(document).on(handlers);
+		});		
+	}
+	slideDrag();
 });
