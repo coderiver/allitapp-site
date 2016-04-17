@@ -68,6 +68,10 @@
 		min-height: 100%
 		// +r(1024)
 		// 	padding-bottom: 260px
+		.skew
+			display: none
+			+r(1024)
+				display: block
 	&__in
 		position: relative
 		// display: table-cell
@@ -101,6 +105,9 @@
 			div
 				background-position: right center
 	&.affiliate
+		+r(1024)
+			background: url(../img/grain.png), linear-gradient(to right, #ebf5f3, #b8dfd8)
+			background-blend-mode: overlay
 		.model-images
 			left: 50% 
 		.inner
@@ -127,6 +134,32 @@
 				// display: none // @r
 				background: url(../img/grain.png), linear-gradient(to right, #ebf5f3, #b8dfd8)
 				background-blend-mode: overlay
+				+r(1024)
+					display: none
+		.footer
+			+r(1024)
+				.footer__bl,
+				.footer__bl a,
+				.footer__mail,
+				.footer__icons
+					color: #cb572f
+				.footer__icons
+					&:hover
+						color: darken(#cb572f, 10%)
+				.btn
+					color: #cb572f
+					border-color: #cb572f
+					&:hover
+						background: #cb572f
+						color: #FFF
+						i
+							&:before,
+							&:after
+								border-color: #fff
+					i
+						&:before,
+						&:after
+							border-color: #cb572f		
 		.model
 			top: 67px
 			transform: translateY(0)
@@ -238,8 +271,12 @@
 					padding-right: 0
 			.skew
 				&:before
-					transform: skew(0)
-					left: 0
+					transform: skewY(29deg)
+					background: url(../img/grain.png), linear-gradient(to right, #c54a5f 0%, #d35269 25%, #f4ab99 75%, #f3a998 100%)
+					// left: 0
+					height: 730px
+					top: auto
+					bottom: 0
 				&:after
 					width: 3000px
 					left: 0
