@@ -110,7 +110,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 
 .sections { overflow: hidden; width: 100%; margin: 0; height: 100%; }
 
-.ohdragme { width: 128px; height: 80px; overflow: hidden; background: url(../img/drag_sprite.png) no-repeat 0 0; -webkit-animation: ohdragme 2s steps(34) infinite normal; animation: ohdragme 2s steps(34) infinite normal; margin: 0 auto; }
+.ohdragme { width: 128px; height: 80px; overflow: hidden; background: url(../img/drag_sprite.png) no-repeat 0 0; -webkit-animation: ohdragme 2s steps(34) infinite normal; animation: ohdragme 2s steps(34) infinite normal; margin: 60px auto 0; }
 
 @-webkit-keyframes ohdragme { from { background-position: 0 0; }
   to { background-position: -4352px 0; } }
