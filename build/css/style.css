@@ -149,7 +149,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .section.info .section__in { padding-bottom: 20px; vertical-align: top; z-index: auto; padding-right: 0; padding-top: 0; padding-bottom: 0; }
 .section.info .inner { padding-right: 0; }
 .section.info .skew { -webkit-transform: skewX(20deg); -ms-transform: skewX(20deg); transform: skewX(20deg); }
-.section.info .skew:before { width: 200%; left: -50%; background: url(../img/grain.png), -webkit-linear-gradient(30deg, #e9f5f3 0%, #e9f5f3 12%, #c0e3dd 100%); background: url(../img/grain.png), linear-gradient(60deg, #e9f5f3 0%, #e9f5f3 12%, #c0e3dd 100%); background-blend-mode: overlay; z-index: 1; }
+.section.info .skew:before { width: 200%; left: -50%; background: url(../img/grain.png), -webkit-linear-gradient(30deg, #c0e3dd 0%, #e9f5f3 88%, #e9f5f3 100%); background: url(../img/grain.png), linear-gradient(60deg, #c0e3dd 0%, #e9f5f3 88%, #e9f5f3 100%); background-blend-mode: overlay; z-index: 1; }
 .section.info .news__skew { position: absolute; top: 90%; left: -24%; width: 200%; height: 130%; -webkit-transform: skew(20deg, 3deg); -ms-transform: skew(20deg, 3deg); transform: skew(20deg, 3deg); -webkit-box-shadow: 0 0 80px 5px rgba(0, 0, 0, 0.2); box-shadow: 0 0 80px 5px rgba(0, 0, 0, 0.2); z-index: 3; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#9dc6d4), to(#aacdda)); background: url(../img/grain.png), -webkit-linear-gradient(top, #9dc6d4 0%, #aacdda 100%); background: url(../img/grain.png), linear-gradient(to bottom, #9dc6d4 0%, #aacdda 100%); background-blend-mode: overlay; }
 
 .download { font-size: 14px; color: #DC6C7A; text-decoration: none; width: 90px; float: right; margin-right: -130px; padding-top: 2px; }
@@ -188,7 +188,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .logo-green { top: 50%; left: 22%; width: 265px; height: 265px; margin-top: -132.5px; }
 .logo-green div { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 100%; height: 100%; background-image: url(../img/svg-bg/logo-green.svg); background-repeat: no-repeat; background-size: cover; }
 .logo-red { right: 0; background-image: url(../img/svg-bg/logo-red.svg); }
-.logo__name { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 303px; height: 82px; background-image: url(../img/svg-bg/logo-text.svg); background-repeat: no-repeat; background-size: 303px 82px; line-height: 1; }
+.logo__name { position: absolute; top: 50%; left: 50%; -webkit-transform: translate3d(-50%, -50%, 0); transform: translate3d(-50%, -50%, 0); width: 303px; height: 82px; background-image: url(../img/svg-bg/logo-text.svg); background-repeat: no-repeat; background-size: 303px 82px; line-height: 1; }
 
 .text { position: relative; max-width: 475px; padding-bottom: 70px; font-size: 16px; color: #DC6C7A; z-index: 1; }
 .text.is-right { float: right; max-width: 475px; }
@@ -264,11 +264,6 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 
 .button-next { right: 17px; text-align: right; }
 .button-next i { -webkit-transform: translate(50px, 0); -ms-transform: translate(50px, 0); transform: translate(50px, 0); }
-
-.slick-active .js-subtitle, .slick-active .js-text, .slick-active .js-title { opacity: 1; }
-.slick-active .text { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-
-.js-subtitle, .js-text, .js-title { opacity: 0; position: relative; }
 
 .about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
 .about.is-active { overflow-y: auto; overflow-x: hidden; }
@@ -399,7 +394,6 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 @media only screen and (max-width: 1024px){
  body{ overflow: visible; }
  .h2{ font-size: 44px; }
- .section{ overflow: hidden; }
  .section .footer{ display: block; text-align: left; }
  .section__row .skew{ display: block; }
  .section__in{ display: block; padding: 130px 7% 50px; }
