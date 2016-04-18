@@ -381,6 +381,8 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .footer .icon-tw { font-size: 14px; }
 @media only screen and (max-width: 1024px) and (max-width: 1024px){
  .section.ads .skew:after{ width: 200% !important; left: 0 !important; top: auto; bottom: 0; height: 790px; -webkit-transform: skewY(-45deg); -ms-transform: skewY(-45deg); transform: skewY(-45deg); } }
+@media only screen and (max-width: 1024px) and (max-width: 1000px){
+ .footer__in.is-right, .footer__bl.is-right{ padding-bottom: 60px; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px){
  *{ -webkit-text-size-adjust: none; } }
 @media only screen and (max-width: 1440px){
