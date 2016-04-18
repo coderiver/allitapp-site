@@ -472,7 +472,8 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
  .footer__social{ max-width: 300px; } }
 @media only screen and (max-width: 1000px){
  .section.company .text__bl{ padding-right: 0; }
- .download{ display: none; } }
+ .download{ display: none; }
+ .btn-next{ display: none !important; } }
 @media only screen and (max-width: 830px){
  .section.affiliate .skew:after{ left: -300px; }
  .section.company .skew:after{ top: 300px; }
