@@ -458,12 +458,13 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
  .menu__option{ font-size: 32px; }
  .menu-ico{ position: fixed; top: 0; right: 0; }
  .footer{ display: none; }
+ .footer .btn{ display: none !important; }
  .footer__in, .footer__bl{ display: block; }
  .footer__in.is-right, .footer__bl.is-right{ text-align: left; }
  .footer__bl{ font-size: 16px; }
  .footer__address{ margin-bottom: 46px; }
  .footer__mail{ margin-bottom: 65px; }
- .footer__social{ display: table; width: 100%; margin: 0; table-layout: fixed; }
+ .footer__social{ width: 100%; margin: 0; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; max-width: 1000px !important; }
  .footer__icons{ display: table-cell; padding: 0; }
  .footer__icons.is-center{ text-align: center; }
  .footer__icons:last-child{ text-align: right; }

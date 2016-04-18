@@ -208,6 +208,8 @@
 		// 	&:hover
 		// 		color: lighten(#42607c, 10%)
 		display: none
+		.btn
+			display: none !important
 		&__in,
 		&__bl
 			display: block
@@ -220,10 +222,13 @@
 		&__mail
 			margin-bottom: 65px
 		&__social
-			display: table
+			// display: table
 			width: 100%
 			margin: 0
-			table-layout: fixed
+			// table-layout: fixed
+			display: flex
+			justify-content: space-between
+			max-width: 1000px !important 
 		&__icons
 			display: table-cell
 			padding: 0
