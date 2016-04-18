@@ -1367,10 +1367,10 @@ $(document).ready(function() {
 				var sectionBlock = $(this).find('.section__block');
 				var sectionNews = $(this).find('.news');
 				if (sectionBlock.length) {
-					sectionBlock.scrollTop(0);
+					// sectionBlock.scrollTop(0);
 				};
 				if (sectionNews.length) {
-					sectionNews.scrollTop(0);
+					// sectionNews.scrollTop(0);
 				};
 			};
 		});
