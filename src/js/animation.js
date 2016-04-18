@@ -1375,4 +1375,5 @@ $(document).ready(function() {
 		// 	};
 		// });
 	}
+	$('.section__block').perfectScrollbar();
 });
