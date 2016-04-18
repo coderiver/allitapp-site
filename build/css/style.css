@@ -127,7 +127,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .section__row { overflow: hidden; position: relative; min-height: 100%; }
 .section__row .skew { display: none; }
 .section__in { position: relative; display: inline-block; width: 100%; padding: 100px 7.8%; vertical-align: middle; z-index: 2; text-align: left; }
-.section.main { background-color: #25345c; background-image: -webkit-gradient(linear, left top, left bottom, from(#25345c), color-stop(50%, #314477), color-stop(80%, #324577)); background-image: -webkit-linear-gradient(#25345c, #314477 50%, #324577 80%); background-image: linear-gradient(#25345c, #314477 50%, #324577 80%); }
+.section.main { background-color: #25345c; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#25345c), color-stop(50%, #314477), color-stop(80%, #324577)); background: url(../img/grain.png), -webkit-linear-gradient(#25345c, #314477 50%, #324577 80%); background: url(../img/grain.png), linear-gradient(#25345c, #314477 50%, #324577 80%); background-blend-mode: overlay; }
 .section.main .footer { padding-top: 115px; }
 .section.ads .skew:after, .section.ads .skew:before { width: 100%; -webkit-transform: skewX(-38deg); -ms-transform: skewX(-38deg); transform: skewX(-38deg); }
 .section.ads .skew:after { left: 50%; background-image: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#77bbb6), color-stop(80%, #93cba7)); background-image: url(../img/grain.png), -webkit-linear-gradient(#77bbb6, #93cba7 80%); background-image: url(../img/grain.png), linear-gradient(#77bbb6, #93cba7 80%); }
