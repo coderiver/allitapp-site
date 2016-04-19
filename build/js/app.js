@@ -5639,7 +5639,10 @@ $(document).ready(function() {
 		// 	};
 		// });
 	}
-	$('.section__block').perfectScrollbar();
+	if (!window.matchMedia("(max-width: 1024px)").matches) {
+		$('.section__block').perfectScrollbar();
+	}
+	
 });
 $(document).ready(function() {
 
