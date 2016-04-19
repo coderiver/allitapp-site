@@ -133,7 +133,7 @@
 			background: url(../img/grain.png), linear-gradient(to right, #ebf5f3, #b8dfd8)
 			background-blend-mode: overlay
 		.model-images
-			left: 50% 
+			left: 47% 
 		.inner
 			position: static
 		.skew
@@ -234,7 +234,10 @@
 			right: -10%
 			right: 0 
 			left: auto
+			left: -10%
+			top: -4%  
 			transform: translate(0,0) !important
+			// background: green 
 			div
 				background-position: right center
 
@@ -402,19 +405,25 @@
 		position: absolute
 		&.is-right
 			top: 135px
+			margin-top: -100px 
 			right: 0
-			width: 260px
-			height: 297px
+			width: 360px
+			height: 697px
 			background: url(../img/main-r.png) no-repeat
+			background-size: cover 
 		&.is-left
 			left: 0
 			// bottom: -200px
-			top: 100px 
-			left: -60px 
-			width: 339px
-			height: 622px
+			// top: 100px 
+			left: -80px 
+			margin-left: -40px 
+			width: 380px
+			height: 690px
+			top: 100%
+			margin-top: -350px  
 			background: url(../img/main-c.png) no-repeat 100% 0
 			background-size: cover 
+			
 	+r(830)
 		&__bl
 			display: none
