@@ -101,7 +101,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 
 .popup-news { position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 3000; background-color: rgba(21, 16, 37, 0.89); text-align: center; font-size: 0; visibility: hidden; opacity: 0; -webkit-transform: scale(1.2); -ms-transform: scale(1.2); transform: scale(1.2); -webkit-transition: visibility 0.3s, opacity 0.3s, -webkit-transform 0.3s; transition: visibility 0.3s, opacity 0.3s, transform 0.3s; }
 .popup-news:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
-.popup-news img { object-fit: contain; max-width: 100%; max-height: 80vh; width: 100%; display: block; }
+.popup-news img { object-fit: contain; max-width: 100%; max-height: 80vh; display: block; }
 .popup-news.is-active { opacity: 1; visibility: visible; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
 .popup-news__slider { display: inline-block; vertical-align: middle; width: 100%; opacity: 0; visibility: hidden; }
 .popup-news__slider.is-active { opacity: 1; visibility: visible; }
@@ -495,7 +495,7 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
  .about__btns .btn, .about__btns .btn-next{ margin: 0 15px; display: inline-block; vertical-align: middle; }
  .about .skew{ display: none; }
  .about .skew_mob{ display: block; }
- .about .skew_mob:before{ content: ""; top: auto; left: 0; bottom: -200px; height: 500px; width: 140%; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#ffcda0), to(#fff4d1)); background: url(../img/grain.png), -webkit-linear-gradient(top, #ffcda0 0%, #fff4d1 100%); background: url(../img/grain.png), linear-gradient(to bottom, #ffcda0 0%, #fff4d1 100%); background-blend-mode: overlay; -webkit-transform: skewY(-10deg); -ms-transform: skewY(-10deg); transform: skewY(-10deg); }
+ .about .skew_mob:before{ content: ""; top: auto; left: 0; bottom: -30px; height: 500px; width: 140%; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#ffcda0), to(#fff4d1)); background: url(../img/grain.png), -webkit-linear-gradient(top, #ffcda0 0%, #fff4d1 100%); background: url(../img/grain.png), linear-gradient(to bottom, #ffcda0 0%, #fff4d1 100%); background-blend-mode: overlay; -webkit-transform: skewY(-10deg); -ms-transform: skewY(-10deg); transform: skewY(-10deg); }
  .about .skew_mob:after{ display: none; }
  .text_about{ min-height: 1px; }
  .team{ padding-top: 0; background: -webkit-gradient(linear, left top, left bottom, from(#f7f6ff), to(#e6e6ff)); background: -webkit-linear-gradient(top, #f7f6ff 0%, #e6e6ff 100%); background: linear-gradient(to bottom, #f7f6ff 0%, #e6e6ff 100%); }

@@ -4530,8 +4530,8 @@ $(document).ready(function() {
 					// 	0.3,
 					// 	"-=0.4"
 					// )
-					.add(mouseDrag)
-					.add(navBtns)
+					// .add(mouseDrag)
+					// .add(navBtns)
 					// .set([logoGreenIn, logoName, logoViolet, logoRed, logoBlue, adsTitle, adsSubtitle, adsText], {clearProps:'all'});
 			}),
 			//affiliate
@@ -4666,6 +4666,11 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,0])
 					.call(changeColor, ['is-blue'])
+					.to(logo, 0.5, {
+							x: '0%'
+						},
+						"-=0.2"
+					)
 					// .to(aboutSlide, 0.9, {
 					// 		left: '-180%'
 					// 	}
@@ -5073,7 +5078,7 @@ $(document).ready(function() {
 		function changeColor(color) {
 			b.removeClass(b.attr('class').split(' ').pop()).addClass(color);
 			footer.removeClass(footer.attr('class').split(' ').pop()).addClass(color);
-			headerBtn.removeClass(headerBtn.attr('class').split(' ').pop()).addClass(color);
+			headerBtn.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 		}
 		function showarrows(left,right){
 			// console.log(left,right);
@@ -5521,6 +5526,7 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		infinite: false,
 		arrows: false,
+		infinite: true
 		// swipe: false
 	});
 	// sections.on('swipe', function(event, slick, direction){
@@ -5529,9 +5535,11 @@ $(document).ready(function() {
 	// });
 	sections.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 		currentIndex = nextSlide;
+		console.log(currentSlide);
 		slideDrag();
 		if (nextSlide >= 0 && currentSlide != 5 && nextSlide > currentSlide) {
 			animationDown[currentIndex]();
+			// alert(currentIndex);
 		};
 		if (nextSlide <= 0) {
 			navBtns();
