@@ -74,6 +74,8 @@
 		min-height: 100%
 		// +r(1024)
 		// 	padding-bottom: 260px
+		+r(1024)
+			min-height: 0 
 		.skew
 			display: none
 			+r(1024)
@@ -89,7 +91,7 @@
 		text-align: left
 		+r(1024)
 			display: block
-			padding: 130px 7% 50px
+			padding: 130px 7% 0px
 	&.main
 		background-color: #25345c
 		// background-image: linear-gradient(#25345c, #314477 50%, #324577 80%)
@@ -97,11 +99,13 @@
 		background-blend-mode: overlay
 		.footer
 			padding-top: 115px
+			+r(1024)
+				padding-top: 20px 
 	&.ads
 		.skew
-			&:after, &:before,.skew__after
+			&:before,.skew__after
 				width: 100%
-				transform: skewX(-38deg)
+				transform: skewX(-38deg) translate3d(0,0,0)
 			// &:after
 			.skew__after
 				left: 50%
@@ -128,6 +132,7 @@
 		.model-images
 			div
 				background-position: right center
+				
 	&.affiliate
 		+r(1024)
 			background: url(../img/grain.png), linear-gradient(to right, #ebf5f3, #b8dfd8)
@@ -228,18 +233,19 @@
 					background-blend-mode: overlay
 					transform: skewX(-19deg)
 					transform-origin: 0 0
-				+r(1000)
+				+r(1024)
 					top: 0px 
 		.model-images
 			right: -10%
 			right: 0 
 			left: auto
-			left: -10%
+			left: -4%
 			top: -4%  
 			transform: translate(0,0) !important
 			// background: green 
 			div
 				background-position: right center
+				background-size: 80% 
 
 	&.info
 		padding-right: 0
@@ -285,6 +291,9 @@
 				background-repeat: no-repeat
 				background-size: contain
 		&.ads
+			.footer
+				z-index: 200
+				transform: translate3d(0,0,0) 
 			.model
 				max-width: 585px
 				&__mobile
@@ -342,7 +351,11 @@
 					width: 3000px
 					top: 25%
 					left: 0
-					transform: skewX(-65deg)
+					transform: skewX(-65deg) translate3d(0,0,0)
+					overflow: hidden
+					&:after
+						transform: skewX(65deg)
+						transform-origin: 100% 100%
 	+r(830)
 		&.affiliate
 			.skew
@@ -758,6 +771,7 @@
 	overflow: auto
 	padding-top: 90px
 	padding-bottom: 100px
+	-webkit-overflow-scrolling: touch
 .inner__text
 	position: relative
 	z-index: 20

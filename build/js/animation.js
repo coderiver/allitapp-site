@@ -400,7 +400,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.call(showarrows, [1,0])
+					.call(showarrows, [1,1])
 					.call(changeColor, ['is-blue'])
 					.to(logo, 0.5, {
 							x: '0%'
@@ -554,7 +554,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.call(showarrows, [0,1])
+					.call(showarrows, [1,1])
 					.call(changeColor, ['is-first'])
 					.to(logo, 0.5, {
 						x: '-130%'
@@ -735,7 +735,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.call(showarrows, [1,0])
+					.call(showarrows, [1,1])
 					.call(changeColor, ['is-blue'])
 					.to(logo, 0.5, {
 						x: '0%'
@@ -818,13 +818,13 @@ $(document).ready(function() {
 		}
 		function showarrows(left,right){
 			// console.log(left,right);
-			if(left) {$('.button-prev').show();}
-			else{$('.button-prev').hide();}
+			// if(left) {$('.button-prev').show();}
+			// else{$('.button-prev').hide();}
 
-			if(right) {$('.button-next').show();}
-			else{$('.button-next').hide();}
+			// if(right) {$('.button-next').show();}
+			// else{$('.button-next').hide();}
 		}
-		showarrows(0,1);
+		showarrows(1,1);
 
 		// //wheelToggle
 		// var prevDeltaY = null;
@@ -935,6 +935,7 @@ $(document).ready(function() {
 		var btnPrevOn = true;
 		var prevColors = ['is-first', 'is-green', 'is-green', 'is-red', 'is-brown'];
 		function btnPrev() {
+
 			$('body').off('mousedown');
 			// moveToPrevSlide();
 			// if (currentIndex == 0) {
@@ -967,9 +968,9 @@ $(document).ready(function() {
 			return false;
 		};
 		function btnsOff() {
-			$('body').off('mousedown');
-			$('.js-prev').off('click');
-			$('.js-next').off('click');
+			// $('body').off('mousedown');
+			// $('.js-prev').off('click');
+			// $('.js-next').off('click');
 		};
 		function navBtns() {
 			$('.js-prev').on('click', function() {
