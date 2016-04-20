@@ -101,7 +101,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 
 .popup-news { position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 3000; background-color: rgba(21, 16, 37, 0.89); text-align: center; font-size: 0; visibility: hidden; opacity: 0; -webkit-transform: scale(1.2); -ms-transform: scale(1.2); transform: scale(1.2); -webkit-transition: visibility 0.3s, opacity 0.3s, -webkit-transform 0.3s; transition: visibility 0.3s, opacity 0.3s, transform 0.3s; }
 .popup-news:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
-.popup-news img { object-fit: contain; max-width: 100%; max-height: 80vh; display: block; }
+.popup-news img { object-fit: contain; max-width: 100%; max-height: 80vh; display: block; max-width: 100vw; }
 .popup-news.is-active { opacity: 1; visibility: visible; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
 .popup-news__slider { display: inline-block; vertical-align: middle; width: 100%; opacity: 0; visibility: hidden; }
 .popup-news__slider.is-active { opacity: 1; visibility: visible; }
