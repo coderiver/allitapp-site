@@ -812,8 +812,8 @@ $(document).ready(function() {
 
 		//change color for header and footer
 		function changeColor(color) {
-			b.removeClass(b.attr('class').split(' ').pop()).addClass(color);
-			footer.removeClass(footer.attr('class').split(' ').pop()).addClass(color);
+			b.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
+			footer.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 			headerBtn.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 		}
 		function showarrows(left,right){
@@ -1280,18 +1280,14 @@ $(document).ready(function() {
 		};
 		if (nextSlide <= 0) {
 			navBtns();
-			showarrows(0, 1);
 		};
 		if (nextSlide > 5) {
 			navBtns();
-			showarrows(1, 0);
 		};
 		if (nextSlide < currentSlide) {
 			if (nextSlide <= 0) {
 				navBtns();
-				showarrows(0, 1);
-			} else {
-				showarrows(1, 1);				
+			} else {			
 			};
 			// if (currentIndex == 1 || currentIndex == 2) {
 			// 	changeColor(prevColors[1]);				
@@ -1304,7 +1300,7 @@ $(document).ready(function() {
 	});
 	sections.on('afterChange', function(event, slick, currentSlide, nextSlide) {
 		btnPrevOn = true;
-		toTop();
+		// toTop();
 		// $('.js-prev').on('click', function() {
 		// 	if (btnPrevOn = true) {
 		// 		currentIndex = currentIndex - 1;
