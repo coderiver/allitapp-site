@@ -273,8 +273,8 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .about__btns .btn, .about__btns .btn-next { display: none; }
 .about .skew { display: block; }
 .about .skew div { position: absolute; height: 3000px; top: 420px; left: -100%; width: 300%; background: url(../img/grain.png), #ffcda0; -webkit-transform: skewY(-7deg); -ms-transform: skewY(-7deg); transform: skewY(-7deg); }
-.about .model-images { right: 0px; left: auto; -webkit-transform: none; -ms-transform: none; transform: none; }
-.about .model-images div { background-position: right center; background-size: 60%; }
+.about .model-images { right: 0px; left: auto; right: -13%; -webkit-transform: none; -ms-transform: none; transform: none; }
+.about .model-images div { background-position: center top; background-size: 60%; }
 .about .footer { padding-top: 50px; }
 
 .text_about { max-width: 540px; }
