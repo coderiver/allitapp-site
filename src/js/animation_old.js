@@ -80,6 +80,22 @@ $(document).ready(function() {
 	var newsList = [newsTitle, newsSubtitle, newsText];
 
 
+	// if (!window.matchMedia("(max-width: 1024px)").matches) {
+		//Animations
+
+		// team
+
+		// function teamDown() {
+		// 	new TimelineMax()
+		// 		.staggerFrom(teamList, 0.4, {
+		// 				opacity: 0,
+		// 				y: '60px'
+		// 			},
+		// 			0.3,
+		// 			"-=0.4"
+		// 		)
+		// 		.set([teamItem, teamSlide], {clearProps:'all'});
+		// };
 
 		var teamItem = $('.js-item');
 
@@ -104,7 +120,29 @@ $(document).ready(function() {
 				console.log(aboutTop, teamTop, about)
 			});
 		});
-		
+		// (function(){
+		// 	new TimelineMax()
+		// 		.to(aboutSlide, 0.6, {
+		// 				top: '-100%'
+		// 			}
+		// 		)
+		// 		.fromTo(teamSlide, 0.6, {
+		// 				y: '100%'
+		// 			}, {
+		// 				y: '0%'
+		// 			},
+		// 			"-=0.6"
+		// 		)
+		// 		.staggerFrom(teamList, 0.4, {
+		// 				opacity: 0,
+		// 				y: '60px'
+		// 			},
+		// 			0.3,
+		// 			"-=0.4"
+		// 		)
+		// 		.add(animateLeave)
+		// 		.set([aboutSlide, teamItem, teamSlide], {clearProps:'all'});
+		// });
 		var animationDown = [
 			//main
 			new TimelineMax({paused: true})
@@ -164,6 +202,7 @@ $(document).ready(function() {
 					},
 					"-=0.5"
 				)
+				.add(mouseDrag)
 				.add(navBtns),
 				// .add(scrollWheel),
 			//ads
@@ -171,22 +210,100 @@ $(document).ready(function() {
 				new TimelineMax()
 					.call(showarrows, [1,1])
 					.add(btnsOff)
-					
+					// .to(logoBlue, 0.5, {
+					// 		x: '-40%',
+					// 		opacity: 0
+					// 	}
+					// )
+					// .to(logoRed, 0.5, {
+					// 		x: '40%',
+					// 		opacity: 0
+					// 	},
+					// 	"-=0.5"
+					// )
+					// .to(logoViolet, 0.5, {
+					// 		x: '-20%',
+					// 		opacity: 0
+					// 	},
+					// 	"-=0.5"
+					// )
+					// .to(logoName, 0.5, {
+					// 		left: '61%',
+					// 		opacity: 0
+					// 	},
+					// 	"-=0.5"
+					// )
 					.call(changeColor, ['is-green'])
-					
+					// .fromTo(logoGreenIn, 1, {
+					// 		x: '-50%',
+					// 		y: '-50%',
+					// 	}, {
+					// 		rotation: '-60deg',
+					// 		x: '-50%',
+					// 		y: '-50%',
+					// 		scale: '15'
+					// 	},
+					// 	"-=0.05"
+					// )
+					// .add(slideGoNext, '-=0.9')
 					.to(logo, 0.5, {
 							x: '0%'
 						},
 						"-=0.2"
 					)
-					
+					// .from(adsSlide, 0.7, {
+					// 		x: '200%'
+					// 	},
+					// 	"-=1"
+					// )
+					// .staggerFromTo(adsList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3,
+					// 	"-=0.4"
+					// )
+					// .add(mouseDrag)
+					// .add(navBtns)
+					// .set([logoGreenIn, logoName, logoViolet, logoRed, logoBlue, adsTitle, adsSubtitle, adsText], {clearProps:'all'});
 			}),
 			//affiliate
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					
-					
+					// .staggerTo(adsList, 0.5, 
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3
+					// )
+					// .add(slideGoNext)
+					// .to(adsSlide, 0.7, {
+					// 		x: '-145%'
+					// 	}
+					// )
+					// .from(affiliateSlide, 0.7, {
+					// 		x: '250%'
+					// 	},
+					// 	"-=0.7"
+					// )
+					// .staggerFromTo(affiliateList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3,
+					// 	'+=0.5'
+					// )
+					.add(mouseDrag)
 					.add(navBtns)
 					// .set([adsTitle, adsSubtitle, adsText, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps: 'all'});
 			}),
@@ -194,8 +311,34 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
+					// .staggerTo(affiliateList, 0.5, {
+					// 	opacity: 0,
+					// 	y: '-150px'
+					// 	},
+					// 	0.3
+					// )
 					.call(changeColor, ['is-red'])
-					
+					// .to(affiliateSlide, 0.7, {
+					// 		x: '-145%'
+					// 	}
+					// )
+					// .from(companySlide, 0.9, {
+					// 		x: '250%'
+					// 	},
+					// 	"-=0.7"
+					// )
+					// .add(slideGoNext)
+					// .staggerFromTo(companyList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3,
+					// 	'+=0.5'
+					// )
+					.add(mouseDrag)
 					.add(navBtns)
 					// .set([affiliateTitle, affiliateSubtitle, affiliateText, companyTitle, companySubtitle, companyText], {clearProps:'all'});
 			}),
@@ -203,9 +346,53 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
+					// .staggerTo(companyList, 0.5, {
+					// 	opacity: 0,
+					// 	y: '-150px'
+					// 	},
+					// 	0.3
+					// )
+					// .add(slideGoNext)
+					// .to(companySlide, 0.7, {
+					// 		x: '-145%'
+					// 	}
+					// )
 					.call(changeColor, ['is-brown'])
-					
-					
+					// .fromTo(aboutSlide, 0.7, {
+					// 		x: '300%'
+					// 	}, {
+					// 		x: '0%'
+					// 	},
+					// 	"-=0.7"
+					// )
+					// .from(aboutSkew, 0.9, {
+					// 		x: '100%',
+					// 		y: '50%'
+					// 	},
+					// 	"-=0.7"
+					// )
+					// .fromTo(aboutModel, 0.5, {
+					// 		y: '-50%',
+					// 		x: '100%',
+					// 		ease:Power2.easeOut
+					// 	}, {
+					// 		y: '-50%',
+					// 		x: '0%',
+					// 		ease:Power2.easeOut
+					// 	},
+					// 	"-=0.5"
+					// )
+					// .staggerFromTo(aboutList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3,
+					// 	'+=0.5'
+					// )
+					.add(mouseDrag)
 					.add(navBtns)
 					// .set([companyTitle, companySubtitle, companyText, aboutTitle, aboutText, aboutModel], {clearProps:'all'});
 			}),
@@ -220,12 +407,148 @@ $(document).ready(function() {
 						},
 						"-=0.2"
 					)
-					
-					
+					// .to(aboutSlide, 0.9, {
+					// 		left: '-180%'
+					// 	}
+					// )
+					// .fromTo(newsSl, 0.7, {
+					// 		left: '180%'
+					// 	}, {
+					// 		left: '0%'
+					// 	},
+					// 	"-=0.9"
+					// )
+					// .add(slideGoNext)
+					// .staggerFromTo(newsList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	}, {
+					// 		opacity: '1',
+					// 		y: 0
+					// 	},
+					// 	0.3
+					// )
+					.add(mouseDrag)
 					.add(navBtns)
+					// .set([newsTitle, newsSubtitle, newsText], {clearProps:'all'});
 			})
 		];
-		
+		// var animationUp = [
+		// 	//ads
+		// 	(function(){
+		// 		new TimelineMax()
+		// 			.add(btnsOff)
+		// 			.call(changeColor, ['is-first'])
+		// 			.call(showarrows, [0,1])
+		// 			// .to(adsSlide, 0.7, {
+		// 			// 		x: '200%'
+		// 			// 	}
+		// 			// )
+		// 			.add(slideGoNext)
+		// 			.to(logo, 0.5, {
+		// 					x: '-130%'
+		// 				},
+		// 				"-=0.7"
+		// 			)
+		// 			.set([logo], {clearProps: 'all'})
+		// 			.add(mouseDrag)
+		// 			.add(navBtns);
+		// 	}),
+		// 	//affiliate
+		// 	(function(){
+		// 		new TimelineMax()
+		// 			.add(btnsOff)
+		// 			.call(showarrows, [1,1])
+		// 			// .to(affiliateSlide, 0.7, {
+		// 			// 		x: '250%'
+		// 			// 	}
+		// 			// )
+		// 			// .fromTo(adsSlide, 0.7, {
+		// 			// 		x: '-145%'
+		// 			// 	}, {
+		// 			// 		x: '0%'
+		// 			// 	},
+		// 			// 	"-=0.7"
+		// 			// )
+		// 			.add(slideGoNext)
+		// 			// .set([adsTitle, adsSubtitle, adsText], {clearProps: 'all'})
+		// 			.add(mouseDrag)
+		// 			.add(navBtns);
+		// 	}),
+		// 	//company
+		// 	(function(){
+		// 		new TimelineMax()
+		// 			.add(btnsOff)
+		// 			.call(changeColor, ['is-green'])
+		// 			.call(showarrows, [1,1])
+		// 			// .to(companySlide, 0.7, {
+		// 			// 		x: '250%'
+		// 			// 	}
+		// 			// )
+		// 			// .fromTo(affiliateSlide, 0.7, {
+		// 			// 		x: '-145%'
+		// 			// 	}, {
+		// 			// 		x: '0%'
+		// 			// 	},
+		// 			// 	"-=0.7"
+		// 			// )
+		// 			.add(slideGoNext)
+		// 			// .set([companySlide, affiliateSlide], {clearProps: 'all'})
+		// 			.add(mouseDrag)
+		// 			.add(navBtns);
+		// 	}),
+		// 	//about
+		// 	(function(){
+		// 		new TimelineMax()
+		// 			.add(btnsOff)
+		// 			.call(changeColor, ['is-red'])
+		// 			// .to(aboutSkew, 0.9, {
+		// 			// 		x: '100%',
+		// 			// 		y: '50%'
+		// 			// 	}
+		// 			// )
+		// 			// .to(aboutSlide, 0.7, {
+		// 			// 		x: '300%'
+		// 			// 	},
+		// 			// 	"-=0.9"
+		// 			// )
+		// 			// .fromTo(companySlide, 0.7, {
+		// 			// 		x: '-145%'
+		// 			// 	}, {
+		// 			// 		x: '0%'
+		// 			// 	},
+		// 			// 	"-=0.9"
+		// 			// )
+		// 			.add(slideGoNext)
+		// 			// .set([aboutSlide, aboutSkew, companySlide], {clearProps: 'all'})
+		// 			.add(mouseDrag)
+		// 			.add(navBtns);
+		// 	}),
+		// 	//news
+		// 	(function(){
+		// 		new TimelineMax()
+		// 			.add(btnsOff)
+		// 			.call(changeColor, ['is-brown'])
+		// 			.call(showarrows, [1,1])
+		// 			// .fromTo(newsSl, 0.7, {
+		// 			// 		left: '0%'
+		// 			// 	}, {
+		// 			// 		left: '180%'
+		// 			// 	}
+		// 			// )
+		// 			// .fromTo(aboutSlide, 0.7, {
+		// 			// 		left: '-180%'
+		// 			// 	}, {
+		// 			// 		left: '0%'
+		// 			// 	},
+		// 			// 	"-=0.7"
+		// 			// )
+		// 			.add(slideGoNext)
+		// 			// .set([aboutSlide, newsSl], {clearProps: 'all'})
+		// 			.add(mouseDrag)
+		// 			.add(navBtns);
+		// 	}),
+		// ];
 		var animationClick = [
 			//main
 			(function(){
@@ -295,7 +618,7 @@ $(document).ready(function() {
 					)
 					// .add(scrollWheel)
 					.set([logoGreenIn, logoBlue, logoRed, logoViolet, logoName, logo], {clearProps:'all'})
-					
+					.add(mouseDrag)
 					.add(navBtns);
 			}),
 			//ads
@@ -307,7 +630,16 @@ $(document).ready(function() {
 					.to(logo, 0.5, {
 						x: '0%'
 					})
-					
+					// .staggerFrom(adsList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	},
+					// 	0.3,
+					// 	"-=0.5"
+					// )
+					// .add(animateLeave)
+					// .set([adsTitle, adsSubtitle, adsText], {clearProps:'all'})
+					.add(mouseDrag)
 					.add(navBtns);
 			}),
 			//affiliate
@@ -319,7 +651,16 @@ $(document).ready(function() {
 					.to(logo, 0.5, {
 						x: '0%'
 					})
-					
+					// .staggerFrom(affiliateList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	},
+					// 	0.3,
+					// 	"-=0.5"
+					// )
+					// .add(animateLeave)
+					// .set([affiliateTitle, affiliateSubtitle, affiliateText], {clearProps: 'all'})
+					.add(mouseDrag)
 					.add(navBtns);
 			}),
 			//company
@@ -331,7 +672,16 @@ $(document).ready(function() {
 					.to(logo, 0.5, {
 						x: '0%'
 					})
-					
+					// .staggerFrom(companyList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	},
+					// 	0.3,
+					// 	"-=0.5"
+					// )
+					// .add(animateLeave)
+					// .set([companyText, companyTitle, companySubtitle], {clearProps:'all'})
+					.add(mouseDrag)
 					.add(navBtns);
 			}),
 			//about
@@ -354,10 +704,33 @@ $(document).ready(function() {
 						},
 						"-=0.5"
 					)
-					
+					// .staggerFrom(aboutList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	},
+					// 	0.3
+					// )
+					// .add(animateLeave)
+					// .set([aboutModel, aboutTitle, aboutText], {clearProps:'all'})
+					.add(mouseDrag)
 					.add(navBtns);
 				}),
-			
+			//team
+			// (function(){
+			// 	new TimelineMax()
+			// 		.to(logo, 0.5, {
+			// 			x: '0%'
+			// 		})
+			// 		.staggerFrom(teamList, 0.4, {
+			// 				opacity: 0,
+			// 				y: '60px'
+			// 			},
+			// 			0.3,
+			// 			"-=0.5"
+			// 		)
+			// 		.add(animateLeave)
+			// 		.set([teamItem, logo], {clearProps:'all'});
+			// 	}),
 			//news
 			(function(){
 				new TimelineMax()
@@ -367,13 +740,48 @@ $(document).ready(function() {
 					.to(logo, 0.5, {
 						x: '0%'
 					})
-					
+					// .staggerFrom(newsList, 0.5, {
+					// 		opacity: 0,
+					// 		y: '50px'
+					// 	},
+					// 0.3,
+					// 	"-=0.5"
+					// )
+					// .add(animateLeave)
+					// .set([newsTitle, newsText, newsSubtitle], {clearProps:'all'})
+					.add(mouseDrag)
 					.add(navBtns);
 			}),
 		]
 		//MainSlideAnimationOnLoad!!!
 		animationDown[currentIndex].play();
-		
+		//Move to next slide
+		// function moveToNextSlide() {
+		// 	$('.js-prev').off('click');
+		// 	$('.js-next').off('click');
+		// 	currentIndex = currentIndex + 1;
+		// 	slides.eq(currentIndex).addClass('is-animate');
+		// 	console.log(currentIndex);
+		// 	if (typeof animationDown[currentIndex] == 'function') {
+		// 		animationDown[currentIndex]();
+		// 	} else {
+		// 		animationDown[currentIndex].play(0);
+		// 	}
+		// }
+
+		// //Move to prev slide
+		// function moveToPrevSlide() {
+		// 	$('.js-prev').off('click');
+		// 	$('.js-next').off('click');
+		// 	currentIndex = currentIndex - 1;
+		// 	slides.eq(currentIndex).addClass('is-animate');
+		// 	console.log(currentIndex);
+		// 	if (typeof animationUp[currentIndex] == 'function') {
+		// 		animationUp[currentIndex]();
+		// 	} else {
+		// 		animationUp[currentIndex].play(0);
+		// 	}
+		// }
 		// fastShowSlide
 		function fastShowSlide(num) {
 			currentIndex = + num; //change typeof
@@ -382,7 +790,25 @@ $(document).ready(function() {
 			animationClick[currentIndex]();
 		}
 
-		
+		// //Animate leave Slide
+		// function animateLeave() {
+		// 	slides.filter(".is-active").removeClass('is-active');
+		// 	slides.eq(currentIndex).addClass('is-active').removeClass('is-animate');
+		// 	navBtns();
+		// 	if ($(window).width() > 1024) {
+		// 		// scrollWheel();
+		// 		mouseDrag();
+		// 	};
+		// 	$(window).on('resize', function() {
+		// 		setState();
+		// 	});
+		// 	$('.news-ico').each(function() {
+		// 		if (!$(this).hasClass('is-arrow')) {
+		// 			$(this).addClass('is-arrow');
+		// 			$(this).parent('.js-toggle-news').siblings('.js-content').removeAttr('style');
+		// 		}
+		// 	});
+		// }
 
 		//change color for header and footer
 		function changeColor(color) {
@@ -400,7 +826,38 @@ $(document).ready(function() {
 		}
 		showarrows(1,1);
 
-		
+		// //wheelToggle
+		// var prevDeltaY = null;
+		// var direction  = null;
+		// function scrollWheel() {
+		// 	if (!window.matchMedia("(max-width: 1024px)").matches) {
+		// 		$('.out').one('wheel', function(e) {
+		// 			if (!$('.js-menu').hasClass('is-active')) {
+		// 				//mousewheel direction
+		// 				var deltaY = e.originalEvent.deltaY;
+		// 				if (deltaY / 50 < 0) {
+		// 					direction = 'up';
+		// 					if (currentIndex == 0) {
+		// 						scrollWheel();
+		// 					} else {
+		// 						moveToPrevSlide();
+		// 					}
+		// 				} else if (deltaY > 0) {
+		// 					direction = 'down';
+		// 					if (currentIndex == 6) {
+		// 						scrollWheel();
+		// 					} else {
+		// 						moveToNextSlide();
+		// 					}
+		// 				} else {
+		// 					direction = (prevDeltaY < 0) ? 'up' : 'down'; //for touchpad
+		// 				}
+		// 				prevDeltaY = deltaY;
+		// 			};
+		// 			$(window).off('resize');
+		// 		});
+		// 	}
+		// }
 
 		function slideGoNext(id) {
 			sections.slick('slickGoTo', currentIndex);
@@ -408,9 +865,73 @@ $(document).ready(function() {
 
 		var threshold = 50;
 
-	
+		function mouseDrag() {
+			// $('body').one('mousedown', function(e){
+			// 	var node = $(this);
+			// 	var position = node.offset();
+			// 	var xStart = e.pageX;
+			// 	// console.log(xStart);
+			// 	var handlers = {
+			// 		mousemove : function(e){
+			// 			var xEnd = e.pageX;
+			// 			// console.log(xStart, xEnd);
+			// 			// $(this).off(handlers);
+			// 		},
+			// 		mouseup : function(e){
+			// 			$(this).off(handlers);
+			// 			xEnd = e.pageX;
+			// 			if (xStart > xEnd + threshold) {
+			// 				// moveToNextSlide();
+			// 				if (currentIndex == 5) {
+			// 					mouseDrag();
+			// 				} else {
+			// 					// moveToNextSlide();
+			// 					currentIndex = currentIndex + 1;
+			// 					animationDown[currentIndex]();
+			// 					console.log(currentIndex);								
+			// 				}
+			// 			} else if (xStart < xEnd - threshold) {
+			// 				// moveToPrevSlide();
+			// 				if (currentIndex == 0) {
+			// 					mouseDrag();
+			// 				} else {
+			// 					// moveToPrevSlide();
+			// 					currentIndex = currentIndex - 1;
+			// 					animationUp[currentIndex]();
+			// 					console.log(currentIndex);
+			// 				}
+			// 			} else {
+			// 				mouseDrag();
+			// 			}
+			// 		}
+			// 	};
+			// 	$(document).on(handlers);
+			// });
+		}
 
-		
+		// $('body').on("keydown", function(e){
+		// 	if (!$('.js-menu').hasClass('is-active')) {
+		// 		if (!$('.section').hasClass('is-animate')) {
+		// 			$('.out').off('wheel'); //remove double call for scroll
+		// 			if(e.keyCode === 38 || e.keyCode === 37) {
+		// 				// up
+		// 				if (currentIndex == 0) {
+		// 					// scrollWheel();
+		// 				} else {
+		// 					moveToPrevSlide();
+		// 				}
+		// 			}
+		// 			else if(e.keyCode === 40 || e.keyCode === 39) {
+		// 				// down
+		// 				if (currentIndex == 6) {
+		// 					// scrollWheel();
+		// 				} else {
+		// 					moveToNextSlide();
+		// 				}
+		// 			}
+		// 		}
+		// 	};
+		// });
 		var btnPrevOn = true;
 		var prevColors = ['is-first', 'is-green', 'is-green', 'is-red', 'is-brown'];
 		function btnPrev() {
@@ -483,7 +1004,7 @@ $(document).ready(function() {
 			$(this).removeClass('is-active');
 			$('.js-menu').removeClass('is-active');
 			// scrollWheel();
-			// mouseDrag();
+			mouseDrag();
 			navBtns();
 		} else {
 			$(this).addClass('is-active');
@@ -730,7 +1251,7 @@ $(document).ready(function() {
 			newsSlider.removeClass('is-active');
 			newsSlider.slick('unslick');
 			$('.popup-news__slide').remove();
-			// mouseDrag();
+			mouseDrag();
 		}
 	});
 
