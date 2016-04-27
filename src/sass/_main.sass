@@ -96,7 +96,7 @@
 		background-color: #25345c
 		// background-image: linear-gradient(#25345c, #314477 50%, #324577 80%)
 		background: url(../img/grain.png), linear-gradient(#25345c, #314477 50%, #324577 80%)
-		background-blend-mode: overlay
+		background-blend-mode: multiply
 		.footer
 			padding-top: 115px
 			+r(1024)
@@ -125,6 +125,7 @@
 					transform-origin: 0 100%
 					width: 600% 
 					height: 350% 
+					background-blend-mode: overlay
 			&:before
 				left: -49%
 				background: url(../img/grain.png), linear-gradient(to right, #f8f1f0 0%, #ecd3cc 100%)
@@ -140,6 +141,8 @@
 		.model-images
 			left: 47% 
 			left: 50% 
+			height: 112vh
+			top: -10%
 		.inner
 			position: static
 		.skew
