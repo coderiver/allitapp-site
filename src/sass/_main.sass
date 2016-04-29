@@ -105,6 +105,12 @@
 	&.ads
 		background: url(../img/adv.jpg) no-repeat 50% 50%
 		background-size: cover  
+		+r(1024)
+			background: none 
+		.section__row
+			+r(1024)
+				background: url(../img/adv.jpg) no-repeat 50% 50%
+				background-size: cover
 		.skew
 			// &:before,.skew__after
 			// 	width: 100%

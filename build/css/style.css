@@ -442,6 +442,8 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
  .section__row .skew{ display: block; }
  .section__in{ display: block; padding: 130px 7% 0px; }
  .section.main .footer{ padding-top: 20px; }
+ .section.ads{ background: none; }
+ .section.ads .section__row{ background: url(../img/adv.jpg) no-repeat 50% 50%; background-size: cover; }
  .section.affiliate .footer{ margin-top: 50px; }
  .section.affiliate .footer .footer__bl, .section.affiliate .footer .footer__bl a, .section.affiliate .footer .footer__mail, .section.affiliate .footer .footer__icons{ color: #cb572f; }
  .section.affiliate .footer .footer__icons:hover{ color: #a24525; }
