@@ -30,6 +30,13 @@
 				background: #646aaf
 			span
 				background: #646aaf
+	.logo
+		transform: translateX(0%)
+		transition: all .3s linear  
+	.is-first &
+		.logo
+			transform: translateX(-130%)
+			transition: all .3s linear  
 
 // menu
 .menu

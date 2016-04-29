@@ -174,11 +174,11 @@ $(document).ready(function() {
 					
 					.call(changeColor, ['is-green'])
 					
-					.to(logo, 0.5, {
-							x: '0%'
-						},
-						"-=0.2"
-					)
+					// .to(logo, 0.5, {
+					// 		x: '0%'
+					// 	},
+					// 	"-=0.2"
+					// )
 					
 			}),
 			//affiliate
@@ -215,11 +215,11 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-blue'])
-					.to(logo, 0.5, {
-							x: '0%'
-						},
-						"-=0.2"
-					)
+					// .to(logo, 0.5, {
+					// 		x: '0%'
+					// 	},
+					// 	"-=0.2"
+					// )
 					
 					
 					.add(navBtns)
@@ -233,9 +233,9 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-first'])
-					.to(logo, 0.5, {
-						x: '-130%'
-					})
+					// .to(logo, 0.5, {
+					// 	x: '-130%'
+					// })
 					.from(logoGreen, 0.5, {
 						scale: 0.5,
 						opacity: 0,
@@ -304,9 +304,9 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-green'])
-					.to(logo, 0.5, {
-						x: '0%'
-					})
+					// .to(logo, 0.5, {
+					// 	x: '0%'
+					// })
 					
 					.add(navBtns);
 			}),
@@ -316,9 +316,9 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-green'])
-					.to(logo, 0.5, {
-						x: '0%'
-					})
+					// .to(logo, 0.5, {
+					// 	x: '0%'
+					// })
 					
 					.add(navBtns);
 			}),
@@ -328,9 +328,9 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-red'])
-					.to(logo, 0.5, {
-						x: '0%'
-					})
+					// .to(logo, 0.5, {
+					// 	x: '0%'
+					// })
 					
 					.add(navBtns);
 			}),
@@ -340,9 +340,9 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-brown'])
-					.to(logo, 0.5, {
-						x: '0%'
-					})
+					// .to(logo, 0.5, {
+					// 	x: '0%'
+					// })
 					.fromTo(aboutModel, 0.5, {
 							y: '-50%',
 							x: '100%',
@@ -364,9 +364,9 @@ $(document).ready(function() {
 					.add(btnsOff)
 					.call(showarrows, [1,1])
 					.call(changeColor, ['is-blue'])
-					.to(logo, 0.5, {
-						x: '0%'
-					})
+					// .to(logo, 0.5, {
+					// 	x: '0%'
+					// })
 					
 					.add(navBtns);
 			}),
