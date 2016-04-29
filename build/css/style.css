@@ -127,14 +127,14 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .section__row { overflow: hidden; position: relative; min-height: 100%; }
 .section__row .skew { display: none; }
 .section__in { position: relative; display: inline-block; width: 100%; padding: 100px 7.8%; vertical-align: middle; z-index: 2; text-align: left; }
-.section.main { background-color: #25345c; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#25345c), color-stop(50%, #314477), color-stop(80%, #324577)); background: url(../img/grain.png), -webkit-linear-gradient(#25345c, #314477 50%, #324577 80%); background: url(../img/grain.png), linear-gradient(#25345c, #314477 50%, #324577 80%); background-blend-mode: overlay; }
+.section.main { background-color: #25345c; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#25345c), color-stop(50%, #314477), color-stop(80%, #324577)); background: url(../img/grain.png), -webkit-linear-gradient(#25345c, #314477 50%, #324577 80%); background: url(../img/grain.png), linear-gradient(#25345c, #314477 50%, #324577 80%); background-blend-mode: multiply; }
 .section.main .footer { padding-top: 115px; }
 .section.ads .skew:before, .section.ads .skew .skew__after { width: 100%; -webkit-transform: skewX(-38deg) translate3d(0, 0, 0); transform: skewX(-38deg) translate3d(0, 0, 0); }
 .section.ads .skew .skew__after { left: 50%; position: absolute; height: 100%; overflow: hidden; width: 200%; }
-.section.ads .skew .skew__after:after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; content: ""; background-image: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#77bbb6), color-stop(80%, #93cba7)); background-image: url(../img/grain.png), -webkit-linear-gradient(#77bbb6, #93cba7 80%); background-image: url(../img/grain.png), linear-gradient(#77bbb6, #93cba7 80%); -webkit-transform: skewX(38deg); -ms-transform: skewX(38deg); transform: skewX(38deg); -webkit-transform-origin: 0 100%; -ms-transform-origin: 0 100%; transform-origin: 0 100%; width: 600%; height: 350%; }
+.section.ads .skew .skew__after:after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; content: ""; background-image: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#77bbb6), color-stop(80%, #93cba7)); background-image: url(../img/grain.png), -webkit-linear-gradient(#77bbb6, #93cba7 80%); background-image: url(../img/grain.png), linear-gradient(#77bbb6, #93cba7 80%); -webkit-transform: skewX(38deg); -ms-transform: skewX(38deg); transform: skewX(38deg); -webkit-transform-origin: 0 100%; -ms-transform-origin: 0 100%; transform-origin: 0 100%; width: 600%; height: 350%; background-blend-mode: overlay; }
 .section.ads .skew:before { left: -49%; background: url(../img/grain.png), -webkit-gradient(linear, left top, right top, from(#f8f1f0), to(#ecd3cc)); background: url(../img/grain.png), -webkit-linear-gradient(left, #f8f1f0 0%, #ecd3cc 100%); background: url(../img/grain.png), linear-gradient(to right, #f8f1f0 0%, #ecd3cc 100%); background-blend-mode: overlay; }
 .section.ads .model-images div { background-position: right center; }
-.section.affiliate .model-images { left: 47%; left: 50%; }
+.section.affiliate .model-images { left: 47%; left: 50%; height: 112vh; top: -10%; }
 .section.affiliate .inner { position: static; }
 .section.affiliate .skew:after, .section.affiliate .skew:before { width: 200%; }
 .section.affiliate .skew:before { left: -100%; -webkit-transform: skewX(-40deg); -ms-transform: skewX(-40deg); transform: skewX(-40deg); background: #c54a5f; background: url(../img/grain.png), -webkit-gradient(linear, left top, right top, from(#c54a5f), color-stop(51%, #d35269), color-stop(75%, #f4ab99), to(#f3a998)); background: url(../img/grain.png), -webkit-linear-gradient(left, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%); background: url(../img/grain.png), linear-gradient(to right, #c54a5f 0%, #d35269 51%, #f4ab99 75%, #f3a998 100%); background-blend-mode: overlay; }
@@ -267,13 +267,13 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .button-next { right: 17px; text-align: right; }
 .button-next i { -webkit-transform: translate(50px, 0); -ms-transform: translate(50px, 0); transform: translate(50px, 0); }
 
-.about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); }
+.about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); background-blend-mode: overlay; }
 .about.is-active { overflow-y: auto; overflow-x: hidden; }
 .about__btns { font-size: 0; text-align: center; padding: 38px 0 0; }
 .about__btns .btn, .about__btns .btn-next { display: none; }
 .about .skew { display: block; }
-.about .skew div { position: absolute; height: 3000px; top: 420px; left: -100%; width: 300%; background: url(../img/grain.png), #ffcda0; -webkit-transform: skewY(-7deg); -ms-transform: skewY(-7deg); transform: skewY(-7deg); }
-.about .model-images { right: 0px; left: auto; right: -13%; -webkit-transform: none; -ms-transform: none; transform: none; }
+.about .skew div { position: absolute; height: 3000px; top: 420px; left: -100%; width: 300%; background-color: #25345c; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#f5b988), color-stop(50%, #fff1ca), color-stop(80%, #fff1ca)); -webkit-transform: skewY(-7deg); -ms-transform: skewY(-7deg); transform: skewY(-7deg); background-blend-mode: overlay; }
+.about .model-images { right: 0px; left: auto; right: -13%; -webkit-transform: none; -ms-transform: none; transform: none; width: 90vw; }
 .about .model-images div { background-position: center top; background-size: 60%; }
 .about .footer { padding-top: 50px; }
 
