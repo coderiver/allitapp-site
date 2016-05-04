@@ -4,6 +4,10 @@
 	.section__row.is-mod
 		background: url(../img/team.jpg) no-repeat 0 0
 		background-size: cover  
+		+r(1024)
+			background: url(../img/about_bg_m.jpg) no-repeat 0 100%
+			background-size: cover 
+			 
 	+r(1024)
 		background: #f7f6ff
 	&.is-active
@@ -115,7 +119,7 @@
 	+r(1024)
 		padding-top: 0
 		// +g(#fafaff, #e6e6ff)
-		background: linear-gradient(to bottom, #f7f6ff 0%, #e6e6ff 100%)
+		// background: linear-gradient(to bottom, #f7f6ff 0%, #e6e6ff 100%)
 		// background-blend-mode: overlay
 		.section__in
 			padding-top: 0

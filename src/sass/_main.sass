@@ -149,6 +149,13 @@
 		// 	background-blend-mode: overlay
 		background: url(../img/aff.jpg) no-repeat 0 0
 		background-size: cover  
+		+r(1024)
+			background: url("../img/aff_bg_m.jpg") no-repeat 0 100%
+			background-size: cover 
+			background: none
+			.section__row
+				background: url("../img/aff_bg_m.jpg") no-repeat 0 100%
+				background-size: cover 
 		.model-images
 			left: 47% 
 			left: 50% 
@@ -214,6 +221,11 @@
 	&.company
 		background: url(../img/comp.jpg) no-repeat 0 0
 		background-size: cover  
+		+r(600)
+			background: none
+			.section__row
+				background: url("../img/company_bg_m.jpg") no-repeat 0 100%
+				background-size: 100% auto 
 		.text__bl
 			padding-right: 120px 
 			+r(1000)
@@ -269,6 +281,7 @@
 
 	&.info
 		padding-right: 0
+
 		.section__in
 			padding-bottom: 20px
 			vertical-align: top
@@ -925,6 +938,8 @@ body
 		+r(1024)
 			padding: 0
 			+g(#cae7ed, #eff7f9)
+			background: url("../img/news_bg_m.jpg") no-repeat 0 100%
+			background-size: cover 
 		&__inner
 			+r(1024)
 				padding: 130px 7% 50px
