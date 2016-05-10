@@ -260,7 +260,7 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .info { background: url(../img/news_new.jpg) no-repeat 0 0; background-size: cover; }
 
 .about { background-color: #eeefff; background-image: -webkit-gradient(linear, left top, right top, from(#eeefff), to(#fafaff)); background-image: -webkit-linear-gradient(left, #eeefff, #fafaff); background-image: linear-gradient(to right, #eeefff, #fafaff); background-blend-mode: overlay; }
-.about .section__row.is-mod { background: url(../img/team.jpg) no-repeat 0 0; background-size: cover; }
+.about .section__row.is-mod { background: url(../img/team1.jpg) no-repeat 0 0; background-size: cover; }
 .about.is-active { overflow-y: auto; overflow-x: hidden; }
 .about__btns { font-size: 0; text-align: center; padding: 38px 0 0; }
 .about__btns .btn, .about__btns .btn-next { display: none; }
