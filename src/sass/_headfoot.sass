@@ -53,7 +53,9 @@
 	+tr(0.5s)
 	// +gh(#384e86, #7261a9)
 	padding: 80px 0 0
-	background: url(../img/grain.png), linear-gradient(left, #384e86 0%, #7261a9 100%)
+	// background: url(../img/grain.png), linear-gradient(left, #384e86 0%, #7261a9 100%)
+	background: url("../img/menu.jpg") no-repeat 50% 50%
+	background-size: cover 
 	// background-blend-mode: overlay
 	&.is-active
 		opacity: 1
@@ -117,6 +119,7 @@
 	&.is-green
 		span, .menu-ico__open:before, .menu-ico__open:after
 			background: #257749
+			background: #0042aa 
 	&.is-red
 		span, .menu-ico__open:before, .menu-ico__open:after
 			background: #cb572f
@@ -257,6 +260,7 @@
 		.footer__mail,
 		.footer__icons
 			color: #257749
+			color: #0042aa 
 		.footer__icons
 			&:hover
 				color: darken(#257749, 10%)
