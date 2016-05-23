@@ -145,7 +145,7 @@ a { text-decoration: none; -webkit-tap-highlight-color: transparent; cursor: poi
 .section.info { padding-right: 0; }
 .section.info .section__in { padding-bottom: 20px; vertical-align: top; z-index: auto; padding-right: 0; padding-top: 0; padding-bottom: 0; }
 .section.info .inner { padding-right: 0; }
-.section.info .news__skew { position: absolute; top: 90%; left: -24%; width: 200%; height: 130%; -webkit-transform: skew(20deg, 3deg); -ms-transform: skew(20deg, 3deg); transform: skew(20deg, 3deg); -webkit-box-shadow: 0 0 80px 5px rgba(0, 0, 0, 0.2); box-shadow: 0 0 80px 5px rgba(0, 0, 0, 0.2); z-index: 3; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#9dc6d4), to(#aacdda)); background: url(../img/grain.png), -webkit-linear-gradient(top, #9dc6d4 0%, #aacdda 100%); background: url(../img/grain.png), linear-gradient(to bottom, #9dc6d4 0%, #aacdda 100%); }
+.section.info .news__skew { position: absolute; top: 90%; left: -24%; width: 200%; height: 130%; -webkit-transform: skew(20deg, 3deg); -ms-transform: skew(20deg, 3deg); transform: skew(20deg, 3deg); -webkit-box-shadow: 0 0 80px 5px rgba(0, 0, 0, 0.2); box-shadow: 0 0 80px 5px rgba(0, 0, 0, 0.2); z-index: 3; background: url(../img/grain.png), -webkit-gradient(linear, left top, left bottom, from(#9dc6d4), to(#aacdda)); background: url(../img/grain.png), -webkit-linear-gradient(top, #9dc6d4 0%, #aacdda 100%); background: url(../img/grain.png), linear-gradient(to bottom, #9dc6d4 0%, #aacdda 100%); background-blend-mode: overlay; }
 
 .download { font-size: 14px; color: #DC6C7A; text-decoration: none; width: 90px; float: right; margin-right: -130px; padding-top: 2px; }
 .download i { font-size: 25px; margin-top: 7px; }
