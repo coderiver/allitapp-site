@@ -812,7 +812,7 @@ $(document).ready(function() {
 
 		//change color for header and footer
 		function changeColor(color) {
-			b.removeClass('is-first is-red is-green is-brown is-blue affilates').addClass(color);
+			b.removeClass('is-first is-red is-green is-brown is-blue is-affilates').addClass(color);
 			footer.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 			headerBtn.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 		}

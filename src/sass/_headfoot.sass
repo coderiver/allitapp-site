@@ -120,6 +120,9 @@
 		span, .menu-ico__open:before, .menu-ico__open:after
 			background: #257749
 			// background: #0042aa 
+			.is-affilates &
+				+r(1024)
+					background: #7e2709 
 	&.is-red
 		span, .menu-ico__open:before, .menu-ico__open:after
 			background: #cb572f
@@ -287,6 +290,8 @@
 		.footer__icons
 			color: #cb572f
 			color: #7E2709 
+			.is-affilates &
+				color: #257749 
 		.footer__icons
 			&:hover
 				color: darken(#cb572f, 10%)

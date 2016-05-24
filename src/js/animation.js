@@ -185,7 +185,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					.call(changeColor, ['is-red is-affilates'])
+					.call(changeColor, ['is-green is-affilates'])
 					
 					.add(navBtns)
 					// .set([adsTitle, adsSubtitle, adsText, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps: 'all'});
@@ -315,7 +315,7 @@ $(document).ready(function() {
 				new TimelineMax()
 					.add(btnsOff)
 					.call(showarrows, [1,1])
-					.call(changeColor, ['is-red is-affilates'])
+					.call(changeColor, ['is-green is-affilates'])
 					// .to(logo, 0.5, {
 					// 	x: '0%'
 					// })
@@ -412,7 +412,7 @@ $(document).ready(function() {
 
 		
 		var btnPrevOn = true;
-		var prevColors = ['is-first', 'is-green', 'is-red is-affilates', 'is-red', 'is-brown'];
+		var prevColors = ['is-first', 'is-green', 'is-green is-affilates', 'is-red', 'is-brown'];
 		function btnPrev() {
 
 			$('body').off('mousedown');
