@@ -4452,7 +4452,7 @@ $(document).ready(function() {
 			(function(){
 				new TimelineMax()
 					.add(btnsOff)
-					
+					.call(changeColor, ['is-red is-affilates'])
 					
 					.add(navBtns)
 					// .set([adsTitle, adsSubtitle, adsText, affiliateTitle, affiliateSubtitle, affiliateText], {clearProps: 'all'});
@@ -4582,7 +4582,7 @@ $(document).ready(function() {
 				new TimelineMax()
 					.add(btnsOff)
 					.call(showarrows, [1,1])
-					.call(changeColor, ['is-green'])
+					.call(changeColor, ['is-red is-affilates'])
 					// .to(logo, 0.5, {
 					// 	x: '0%'
 					// })
@@ -4653,7 +4653,7 @@ $(document).ready(function() {
 
 		//change color for header and footer
 		function changeColor(color) {
-			b.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
+			b.removeClass('is-first is-red is-green is-brown is-blue is-affilates').addClass(color);
 			footer.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 			headerBtn.removeClass('is-first is-red is-green is-brown is-blue').addClass(color);
 		}
@@ -4679,7 +4679,7 @@ $(document).ready(function() {
 
 		
 		var btnPrevOn = true;
-		var prevColors = ['is-first', 'is-green', 'is-green', 'is-red', 'is-brown'];
+		var prevColors = ['is-first', 'is-green', 'is-red is-affilates', 'is-red', 'is-brown'];
 		function btnPrev() {
 
 			$('body').off('mousedown');

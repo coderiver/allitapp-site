@@ -341,7 +341,7 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .footer.is-green .btn:hover { color: #FFF; background: #257749; }
 .footer.is-green .btn:hover i:before, .footer.is-green .btn:hover i:after { border-color: #fff; }
 .footer.is-green .btn i:before, .footer.is-green .btn i:after { border-color: #257749; }
-.footer.is-red .footer__bl, .footer.is-red .footer__bl a, .footer.is-red .footer__mail, .footer.is-red .footer__icons { color: #cb572f; }
+.footer.is-red .footer__bl, .footer.is-red .footer__bl a, .footer.is-red .footer__mail, .footer.is-red .footer__icons { color: #cb572f; color: #7E2709; }
 .footer.is-red .footer__icons:hover { color: #a24525; }
 .footer.is-red .btn { color: #cb572f; border-color: #cb572f; }
 .footer.is-red .btn:hover { background: #cb572f; color: #FFF; }
