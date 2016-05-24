@@ -315,7 +315,7 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .menu-ico.is-active .menu-ico__open { opacity: 0; }
 .menu-ico.is-active .menu-ico__open:before, .menu-ico.is-active .menu-ico__open:after { margin: -3px 12px 0; }
 .menu-ico.is-active .menu-ico__close { opacity: 1; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
-.menu-ico.is-green span, .menu-ico.is-green .menu-ico__open:before, .menu-ico.is-green .menu-ico__open:after { background: #257749; background: #0042aa; }
+.menu-ico.is-green span, .menu-ico.is-green .menu-ico__open:before, .menu-ico.is-green .menu-ico__open:after { background: #257749; }
 .menu-ico.is-red span, .menu-ico.is-red .menu-ico__open:before, .menu-ico.is-red .menu-ico__open:after { background: #cb572f; }
 .menu-ico.is-brown span, .menu-ico.is-brown .menu-ico__open:before, .menu-ico.is-brown .menu-ico__open:after { background: #b16d35; }
 .menu-ico.is-blue span, .menu-ico.is-blue .menu-ico__open:before, .menu-ico.is-blue .menu-ico__open:after { background: #42607c; }
@@ -334,7 +334,8 @@ body.is-blue .button-prev i, body.is-blue .button-next i { color: #547a9d; }
 .close-ico:after { -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 
 .footer { position: fixed; bottom: 0; left: 0; right: 0; margin-bottom: 28px; padding: 0 30px; z-index: 30; }
-.footer.is-green .footer__bl, .footer.is-green .footer__bl a, .footer.is-green .footer__mail, .footer.is-green .footer__icons { color: #257749; color: #0042aa; }
+.footer.is-green .footer__bl, .footer.is-green .footer__bl a, .footer.is-green .footer__mail, .footer.is-green .footer__icons { color: #257749; }
+#affiliate .footer.is-green .footer__bl, #affiliate .footer.is-green .footer__bl a, #affiliate .footer.is-green .footer__mail, #affiliate .footer.is-green .footer__icons { color: #7E2709; }
 .footer.is-green .footer__icons:hover { color: #195031; }
 .footer.is-green .btn { color: #257749; border-color: #257749; }
 .footer.is-green .btn:hover { color: #FFF; background: #257749; }
